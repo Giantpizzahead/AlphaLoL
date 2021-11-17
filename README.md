@@ -2,7 +2,7 @@
 
 LoL bot. Will boost you to Iron IV
 
-This bot makes no effort to stay undetected, because it doesn't even work. Use at your own risk.
+This bot makes no attempt to stay undetected, because it doesn't even work. Use at your own risk.
 
 Dedicated to all chat (rip)
 
@@ -14,7 +14,8 @@ Dedicated to all chat (rip)
 2. Make a Python 3 virtual environment (recommended)
 3. Install package dependencies
 4. Make sure League is installed and you're signed in to an **throwaway** account (it will probably get banned!).
-5. Run main.py
+5. Adjust League client resolution in gui/vision.py
+6. Run main.py
 
 Package dependencies:
 ```shell
