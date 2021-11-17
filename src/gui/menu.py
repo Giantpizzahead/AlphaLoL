@@ -1,15 +1,22 @@
 """
 Menu-specific (windowed client) GUI code.
+
+TODO:
+Make mode select marker better
+Make party marker better
 """
 
 from pynput.keyboard import Key
 
+import cv2.cv2 as cv
 from gui import input_handler
 from gui import vision
 from gui.gui_constants import MenuState, MenuOffsets, GameTypes
 from gui.input_handler import press_key
 from misc import color_logging
 from misc.rng import rsleep
+
+MENU_DEBUG = False
 
 logger = color_logging.getLogger('menu', level=color_logging.DEBUG)
 state = MenuState.NOT_VISIBLE
@@ -50,18 +57,15 @@ def update_state() -> MenuState:
 
     global state, origin
 
-    '''
     # Testing
-    logger.info((input_handler.mouse.position[0] - origin[0], input_handler.mouse.position[1] - origin[1]))
-    while True:
-        anchor_l, _, _ = vision.find_image_locs("menu_anchor.png", threshold=0.75, display=True)
+    if MENU_DEBUG:
+        logger.info((input_handler.mouse.position[0] - origin[0], input_handler.mouse.position[1] - origin[1]))
+        anchor_l, _, _ = vision.find_image_locs("menu_anchor.png", display=True)
         if (cv.waitKey(25) & 0xFF) == ord('q'):
             cv.destroyAllWindows()
-            break
-    '''
 
     # Locate the client
-    anchor_l, _, _ = vision.find_image_locs("menu_anchor.png", threshold=0.75)
+    anchor_l, _, _ = vision.find_image_locs("menu_anchor.png")
     on_client = (len(anchor_l) != 0)
     if on_client:
         x = anchor_l[0][0] - MenuOffsets.ANCHOR[0]
@@ -74,8 +78,8 @@ def update_state() -> MenuState:
         return state
 
     # Look for home markers
-    home1_l, _, _ = vision.find_image_locs("home_marker1.png", threshold=0.75)
-    home2_l, _, _ = vision.find_image_locs("home_marker2.png", threshold=0.75)
+    home1_l, _, _ = vision.find_image_locs("home_marker1.png")
+    home2_l, _, _ = vision.find_image_locs("home_marker2.png")
     on_home = False
     for p1 in home1_l:
         for p2 in home2_l:
@@ -84,7 +88,7 @@ def update_state() -> MenuState:
                 on_home = True
 
     # Look for mode select marker
-    mode_select_l, _, _ = vision.find_image_locs("mode_select_marker.png", threshold=0.85)
+    mode_select_l, _, _ = vision.find_image_locs("mode_select_marker.png")
     on_mode_select = (len(mode_select_l) != 0)
 
     # Look for in queue & party markers
@@ -94,8 +98,8 @@ def update_state() -> MenuState:
     on_party = (len(in_queue_l) == 0 and len(party_l) != 0)
 
     # Look for champ select marker
-    champ_select1_l, _, _ = vision.find_image_locs("champ_select_marker1.png", threshold=0.75)
-    champ_select2_l, _, _ = vision.find_image_locs("champ_select_marker2.png", threshold=0.75)
+    champ_select1_l, _, _ = vision.find_image_locs("champ_select_marker1.png")
+    champ_select2_l, _, _ = vision.find_image_locs("champ_select_marker2.png")
     champ_select3_l, _, _ = vision.find_image_locs("champ_select_marker3.png")
     on_champ_select = (len(champ_select1_l) != 0 and len(champ_select2_l) != 0) or len(champ_select3_l) != 0
 

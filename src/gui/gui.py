@@ -5,8 +5,6 @@ TODO:
 Handle client update
 """
 
-import os
-
 import pynput
 
 from gui import key_listener
@@ -77,7 +75,7 @@ def start_client() -> bool:
 
     # Open the client
     logger.info("Opening the League of Legends client...")
-    os.system("open /Applications/League\\ of\\ Legends.app")
+    os_helper.launch_client()
 
     # Periodically check if the client is open
     if update_state(focus=True) == GUIState.CLOSED:
