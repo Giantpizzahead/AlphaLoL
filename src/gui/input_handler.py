@@ -7,6 +7,7 @@ from typing import Union
 import pynput
 from pynput.keyboard import Key
 from pynput.mouse import Button
+
 from misc import color_logging
 from misc.rng import rnum, rsleep
 

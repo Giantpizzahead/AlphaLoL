@@ -3,6 +3,7 @@ Helper file for colorful logging!
 """
 
 import logging
+import os
 
 import colorlog
 
@@ -26,7 +27,8 @@ def getLogger(name: str, level: int = logging.INFO) -> logging.Logger:
         consoleHandler.setLevel(level)
         logger.addHandler(consoleHandler)
         # Record logs in a file
-        fileHandler = logging.FileHandler("{0}/{1}.log".format("logs", name))
+        fileHandler = logging.FileHandler("{}/../../logs/{}.log".format(
+            os.path.dirname(os.path.realpath(__file__)), name))
         fileHandler.setFormatter(basicFormatter)
         fileHandler.setLevel(level)
         logger.addHandler(fileHandler)

@@ -2,15 +2,14 @@
 Menu-specific (windowed client) GUI code.
 """
 
-import cv2.cv2 as cv
+from pynput.keyboard import Key
 
 from gui import input_handler
-from gui.input_handler import press_key
 from gui import vision
 from gui.gui_constants import MenuState, MenuOffsets, GameTypes
+from gui.input_handler import press_key
 from misc import color_logging
 from misc.rng import rsleep
-from pynput.keyboard import Key
 
 logger = color_logging.getLogger('menu', level=color_logging.DEBUG)
 state = MenuState.NOT_VISIBLE
@@ -51,6 +50,16 @@ def update_state() -> MenuState:
 
     global state, origin
 
+    '''
+    # Testing
+    logger.info((input_handler.mouse.position[0] - origin[0], input_handler.mouse.position[1] - origin[1]))
+    while True:
+        anchor_l, _, _ = vision.find_image_locs("menu_anchor.png", threshold=0.75, display=True)
+        if (cv.waitKey(25) & 0xFF) == ord('q'):
+            cv.destroyAllWindows()
+            break
+    '''
+
     # Locate the client
     anchor_l, _, _ = vision.find_image_locs("menu_anchor.png", threshold=0.75)
     on_client = (len(anchor_l) != 0)
@@ -90,15 +99,8 @@ def update_state() -> MenuState:
     champ_select3_l, _, _ = vision.find_image_locs("champ_select_marker3.png")
     on_champ_select = (len(champ_select1_l) != 0 and len(champ_select2_l) != 0) or len(champ_select3_l) != 0
 
-    # Testing
-    # logger.info((input_handler.mouse.position[0] - origin[0], input_handler.mouse.position[1] - origin[1]))
-    '''
-    if (cv.waitKey(25) & 0xFF) == ord('q'):
-        cv.destroyAllWindows()
-    '''
-
     # Update state based on results
-    if on_home + on_mode_select + on_party + on_in_queue + on_champ_select > 1:
+    if on_home + on_mode_select + on_in_queue + on_party + on_champ_select > 1:
         logger.debug("Multiple screens fit the current page (switching pages?)")
         state = MenuState.OTHER
     elif on_home:

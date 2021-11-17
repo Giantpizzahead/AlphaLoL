@@ -3,6 +3,7 @@ Listens to and handles keyboard events (for manually controlling the AI).
 """
 
 import _thread
+
 import pynput
 from pynput.keyboard import HotKey, Key
 

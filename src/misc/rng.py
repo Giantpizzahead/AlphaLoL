@@ -2,8 +2,9 @@
 Utility tool that generates / modifies numbers randomly.
 """
 
-import numpy as np
 import time
+
+import numpy as np
 
 
 def rnum(n: float, s=0.047, a=False) -> float:

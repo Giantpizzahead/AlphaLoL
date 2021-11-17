@@ -1,15 +1,17 @@
 """
 General GUI methods, along with the high-level logic.
+
+TODO:
+Handle client update
 """
 
 import os
-import threading
 
 import pynput
-from AppKit import NSRunningApplication, NSApplicationActivateIgnoringOtherApps, NSApplicationActivateAllWindows
 
 from gui import key_listener
 from gui import menu
+from gui import os_helper
 from gui.gui_constants import GUIState, GameTypes
 from misc import color_logging
 from misc.rng import rsleep
@@ -43,22 +45,19 @@ def update_state(focus=False) -> GUIState:
     """
 
     # Check if the client / game windows are open
-    # TODO: Below code is specific to Mac
-    menu_app = NSRunningApplication.runningApplicationsWithBundleIdentifier_(
-        "com.riotgames.LeagueofLegends.LeagueClientUx")[:1]
-    game_app = NSRunningApplication.runningApplicationsWithBundleIdentifier_(
-        "com.riotgames.LeagueofLegends.GameClient")[:1]
+    menu_app = os_helper.find_menu()
+    game_app = os_helper.find_game()
 
     # Update the GUI state
     global state
     if game_app:
         state = GUIState.GAME
         if focus:
-            game_app[0].activateWithOptions_(NSApplicationActivateIgnoringOtherApps | NSApplicationActivateAllWindows)
+            os_helper.focus_app(game_app)
     elif menu_app:
         state = GUIState.MENU
         if focus:
-            menu_app[0].activateWithOptions_(NSApplicationActivateIgnoringOtherApps | NSApplicationActivateAllWindows)
+            os_helper.focus_app(menu_app)
     else:
         state = GUIState.CLOSED
     logger.debug("Current GUI state: {}".format(state.name))

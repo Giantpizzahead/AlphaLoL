@@ -1,7 +1,12 @@
 """
 Handles screenshot feed and image recognition from the computer screen.
+
+TODO:
+Auto-detect resolution and whether display is retina
+Template size /= 2 for non-retina displays, or other value depending on league client res
 """
 
+import os
 import time
 
 import cv2.cv2 as cv
@@ -11,8 +16,10 @@ from mss import mss, screenshot
 from misc import color_logging
 from misc.rng import rsleep
 
-logger = color_logging.getLogger('vision', level=color_logging.INFO)
+logger = color_logging.getLogger('vision', level=color_logging.DEBUG)
+screen_res = (2560, 1600)
 resize_ratio = 0.3
+template_ratio = 1.0
 update_interval = 0.8
 reaction_delay = 0.1
 sct = mss()
@@ -21,7 +28,7 @@ last_time = -1
 img_cache = {}
 
 
-def take_screenshot(top=0, left=0, width=1600, height=2560) -> None:
+def take_screenshot(top=0, left=0, width=screen_res[0], height=screen_res[1]) -> None:
     """
     Takes a new screenshot of the screen, resizing it based on the resize ratio.
     """
@@ -74,14 +81,16 @@ def find_image_locs(filename: str, threshold=0.8, display=False) -> tuple[list[t
     update_if_needed()
 
     # Load image template in BGR format
-    r = resize_ratio
+    rr = resize_ratio
+    tr = template_ratio
     if filename in img_cache:
         # Use cache
         template_pb = img_cache[filename]
     else:
-        template_pb = cv.imread("img/{}".format(filename), cv.IMREAD_COLOR)
+        template_pb = cv.imread("{}/../../img/{}".format(os.path.dirname(os.path.realpath(__file__)), filename),
+                                cv.IMREAD_COLOR)
         # Resize image to make processing faster
-        template_pb = cv.resize(template_pb, (int(template_pb.shape[1] * r), int(template_pb.shape[0] * r)),
+        template_pb = cv.resize(template_pb, (int(template_pb.shape[1] * rr), int(template_pb.shape[0] * rr)),
                                 interpolation=cv.INTER_AREA)
         # Cache template image for next time
         img_cache[filename] = template_pb
@@ -99,13 +108,15 @@ def find_image_locs(filename: str, threshold=0.8, display=False) -> tuple[list[t
         for pt in points:
             cv.rectangle(new_scr, pt, (pt[0] + template_w, pt[1] + template_h), (0, 0, 255), 2)
         cv.imshow("{} t={}".format(filename, threshold), np.array(new_scr))
+        cv.imshow("{} template".format(filename), template_pb)
 
     # Scale coordinates
     for i, pt in enumerate(points):
-        x = (pt[0] + template_w / 2.0) / r / 2
-        y = (pt[1] + template_h / 2.0) / r / 2
+        x = (pt[0] + template_w / 2.0) / rr / (tr * 2)
+        y = (pt[1] + template_h / 2.0) / rr / (tr * 2)
         points[i] = (x, y)
 
-    logger.debug(f"{filename} with threshold={threshold} found at {len(points)} locations:")
-    logger.debug("[" + ", ".join("({:.0f}, {:.0f})".format(pt[0], pt[1]) for pt in points[:5]) + "]")
+    logger.debug(f"{filename} with threshold={threshold} found at {len(points)} location(s):")
+    logger.debug("maximum match = {:.2f} | ".format(np.max(res)) +
+                 "[" + ", ".join("({:.0f}, {:.0f})".format(pt[0], pt[1]) for pt in points[:3]) + "]")
     return points, template_w, template_h

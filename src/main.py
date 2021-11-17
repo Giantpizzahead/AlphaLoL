@@ -1,7 +1,6 @@
 import time
 
 from gui import gui
-from gui.gui_constants import GameTypes
 from misc import color_logging
 
 logger = color_logging.getLogger('main', level=color_logging.DEBUG)
@@ -10,7 +9,7 @@ logger = color_logging.getLogger('main', level=color_logging.DEBUG)
 def main():
     logger.info("Starting up!")
     gui.init()
-    logger.info("For a list of commands, press <shift>-h")
+    logger.info("For a list of commands, press Shift-H")
     try:
         while True:
             time.sleep(0.1)
