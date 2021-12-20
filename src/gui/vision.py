@@ -10,6 +10,7 @@ import os
 import time
 
 import cv2.cv2 as cv
+import pytesseract
 import numpy as np
 from mss import mss, screenshot
 
@@ -19,6 +20,10 @@ from misc.rng import rsleep
 # The resolution of the League of Legends client
 # Must be correct for image recognition to work
 client_res = (1280, 720)
+
+# The resolution of the League of Legends game
+# Must be correct for image recognition to work
+game_res = (1280, 800)
 
 # The amount that the screenshot & templates are scaled by.
 # Lower values will be faster, but will make the images more blurry / lower image recognition accuracy.
@@ -42,6 +47,10 @@ img_cache = {}
 
 if abs(client_res[0]/client_res[1] - 1280/720) > 1e-5:
     logger.critical("Bad client resolution ({}, {}). (Wrong aspect ratio)".format(client_res[0], client_res[1]))
+    logger.critical("Image recognition will not work until the resolution in vision.py is fixed!")
+
+if abs(game_res[0]/game_res[1] - 1280/800) > 1e-5:
+    logger.critical("Bad game resolution ({}, {}). (Wrong aspect ratio)".format(client_res[0], client_res[1]))
     logger.critical("Image recognition will not work until the resolution in vision.py is fixed!")
 
 
@@ -138,3 +147,23 @@ def find_image_locs(filename: str, threshold=0.75, display=False) -> tuple[list[
     logger.debug("maximum match = {:.2f} | ".format(np.max(res)) +
                  "[" + ", ".join("({:.0f}, {:.0f})".format(pt[0], pt[1]) for pt in points[:3]) + "]")
     return points, template_w, template_h
+
+
+def find_menu_locs(filename: str, threshold=0.75, display=False) -> tuple[list[tuple[float, float]], float, float]:
+    # Adjust template_ratio
+    global template_ratio
+    raw_tr = template_ratio
+    template_ratio *= (client_res[0] / 1280)
+    res = find_image_locs(filename, threshold, display)
+    template_ratio = raw_tr
+    return res
+
+
+def find_game_locs(filename: str, threshold=0.75, display=False) -> tuple[list[tuple[float, float]], float, float]:
+    # Adjust template_ratio
+    global template_ratio
+    raw_tr = template_ratio
+    template_ratio *= (game_res[0] / 1280)
+    res = find_image_locs(filename, threshold, display)
+    template_ratio = raw_tr
+    return res

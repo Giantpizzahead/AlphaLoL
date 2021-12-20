@@ -10,12 +10,15 @@ Dedicated to all chat (rip)
 
 ### All operating systems
 
-1. Clone the repository
-2. Make a Python 3 virtual environment (recommended)
-3. Install package dependencies
-4. Make sure League is installed and you're signed in to an **throwaway** account (it will probably get banned!).
-5. Adjust League client resolution in gui/vision.py
-6. Run main.py
+1. Install [Tesseract](https://github.com/tesseract-ocr/tesseract)
+   1. Windows: `???`
+   2. Mac: `brew install tesseract`
+2. Clone the repository
+3. Make a Python 3 virtual environment (recommended)
+4. Install package dependencies
+5. Make sure League is installed and you're signed in to an **throwaway** account (it will probably get banned!).
+6. Adjust League client and game resolution in gui/vision.py. Make sure both are windowed!
+7. Run main.py
 
 Package dependencies:
 ```shell
@@ -24,6 +27,7 @@ pip install colorlog
 pip install numpy
 pip install opencv-python
 pip install mss
+pip install pytesseract
 ```
 
 ### Windows

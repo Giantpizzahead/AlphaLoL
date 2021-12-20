@@ -14,6 +14,12 @@ def main():
         while True:
             gui.menu.update_state()
             time.sleep(1)
+    elif gui.game.GAME_DEBUG:
+        logger.warning("GAME_DEBUG is on: Debugging game")
+        while True:
+            gui.game.update_state()
+            time.sleep(1)
+
     logger.info("For a list of commands, press Shift-H")
     try:
         while True:

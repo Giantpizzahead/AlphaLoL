@@ -1,9 +1,5 @@
 """
 Menu-specific (windowed client) GUI code.
-
-TODO:
-Make mode select marker better
-Make party marker better
 """
 
 from pynput.keyboard import Key
@@ -60,12 +56,12 @@ def update_state() -> MenuState:
     # Testing
     if MENU_DEBUG:
         logger.info((input_handler.mouse.position[0] - origin[0], input_handler.mouse.position[1] - origin[1]))
-        anchor_l, _, _ = vision.find_image_locs("menu_anchor.png", display=True)
+        anchor_l, _, _ = vision.find_menu_locs("menu_anchor.png", display=True)
         if (cv.waitKey(25) & 0xFF) == ord('q'):
             cv.destroyAllWindows()
 
     # Locate the client
-    anchor_l, _, _ = vision.find_image_locs("menu_anchor.png")
+    anchor_l, _, _ = vision.find_menu_locs("menu_anchor.png")
     on_client = (len(anchor_l) != 0)
     if on_client:
         x = anchor_l[0][0] - MenuOffsets.ANCHOR[0]
@@ -78,8 +74,8 @@ def update_state() -> MenuState:
         return state
 
     # Look for home markers
-    home1_l, _, _ = vision.find_image_locs("home_marker1.png")
-    home2_l, _, _ = vision.find_image_locs("home_marker2.png")
+    home1_l, _, _ = vision.find_menu_locs("home_marker1.png")
+    home2_l, _, _ = vision.find_menu_locs("home_marker2.png")
     on_home = False
     for p1 in home1_l:
         for p2 in home2_l:
@@ -88,23 +84,26 @@ def update_state() -> MenuState:
                 on_home = True
 
     # Look for mode select marker
-    mode_select_l, _, _ = vision.find_image_locs("mode_select_marker.png")
+    mode_select_l, _, _ = vision.find_menu_locs("mode_select_marker.png", threshold=0.65)
     on_mode_select = (len(mode_select_l) != 0)
 
-    # Look for in queue & party markers
-    in_queue_l, _, _ = vision.find_image_locs("in_queue_marker.png")
+    # Look for party markers
+    party1_l, _, _ = vision.find_menu_locs("party_marker1.png")
+    party2_l, _, _ = vision.find_menu_locs("party_marker2.png")
+    on_party = (len(party1_l) != 0 or len(party2_l) != 0)
+
+    # Look for in queue marker
+    in_queue_l, _, _ = vision.find_menu_locs("in_queue_marker.png")
     on_in_queue = (len(in_queue_l) != 0)
-    party_l, _, _ = vision.find_image_locs("party_marker.png")
-    on_party = (len(in_queue_l) == 0 and len(party_l) != 0)
 
     # Look for champ select marker
-    champ_select1_l, _, _ = vision.find_image_locs("champ_select_marker1.png")
-    champ_select2_l, _, _ = vision.find_image_locs("champ_select_marker2.png")
-    champ_select3_l, _, _ = vision.find_image_locs("champ_select_marker3.png")
+    champ_select1_l, _, _ = vision.find_menu_locs("champ_select_marker1.png")
+    champ_select2_l, _, _ = vision.find_menu_locs("champ_select_marker2.png")
+    champ_select3_l, _, _ = vision.find_menu_locs("champ_select_marker3.png")
     on_champ_select = (len(champ_select1_l) != 0 and len(champ_select2_l) != 0) or len(champ_select3_l) != 0
 
     # Update state based on results
-    if on_home + on_mode_select + on_in_queue + on_party + on_champ_select > 1:
+    if on_home + on_mode_select + on_party + on_in_queue + on_champ_select > 1:
         logger.debug("Multiple screens fit the current page (switching pages?)")
         state = MenuState.OTHER
     elif on_home:

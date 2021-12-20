@@ -1113,3 +1113,1175 @@
 2021-11-17 05:22:08,866 menu          DEBUG  Navigating to tutorial
 2021-11-17 05:22:12,182 menu          DEBUG  Selecting the right tutorial part
 2021-11-17 05:22:14,200 menu          DEBUG  Launching the game
+2021-11-17 05:38:46,133 menu          DEBUG  Multiple screens fit the current page (switching pages?)
+2021-11-17 05:38:46,133 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:38:46,134 menu          DEBUG  Navigating to home
+2021-11-17 05:38:46,261 menu          DEBUG  Multiple screens fit the current page (switching pages?)
+2021-11-17 05:38:46,261 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:38:48,337 menu          DEBUG  Multiple screens fit the current page (switching pages?)
+2021-11-17 05:38:48,337 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:38:50,362 menu          DEBUG  Multiple screens fit the current page (switching pages?)
+2021-11-17 05:38:50,362 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:38:52,431 menu          DEBUG  Multiple screens fit the current page (switching pages?)
+2021-11-17 05:38:52,431 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:38:52,431 menu          ERROR  Unable to start game: Could not navigate to home screen
+2021-11-17 05:39:37,612 menu          DEBUG  Multiple screens fit the current page (switching pages?)
+2021-11-17 05:39:37,612 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:39:37,612 menu          DEBUG  Navigating to home
+2021-11-17 05:39:37,730 menu          DEBUG  Multiple screens fit the current page (switching pages?)
+2021-11-17 05:39:37,731 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:39:39,761 menu          DEBUG  Multiple screens fit the current page (switching pages?)
+2021-11-17 05:39:39,761 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:39:41,676 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:39:43,638 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:39:43,638 menu          DEBUG  Navigating to mode select
+2021-11-17 05:39:43,758 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:39:45,194 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:39:45,321 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:39:45,321 menu          DEBUG  Navigating to tutorial
+2021-11-17 05:39:48,588 menu          DEBUG  Selecting the right tutorial part
+2021-11-17 05:39:50,622 menu          DEBUG  Launching the game
+2021-11-17 05:48:22,720 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:48:22,720 menu          DEBUG  Navigating to home
+2021-11-17 05:48:22,839 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:48:24,945 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:48:25,058 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:48:25,058 menu          DEBUG  Navigating to mode select
+2021-11-17 05:48:25,174 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:48:26,682 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:48:28,118 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:48:29,545 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:48:29,545 menu          ERROR  Unable to start game: Could not navigate to mode select screen
+2021-11-17 05:49:20,268 menu           INFO  (859.453125, 675.375)
+2021-11-17 05:49:20,699 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:21,701 menu           INFO  (719.90234375, 619.6875)
+2021-11-17 05:49:22,012 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:23,013 menu           INFO  (1129.671875, 870.83984375)
+2021-11-17 05:49:23,337 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:24,338 menu           INFO  (628.62890625, 150.4296875)
+2021-11-17 05:49:24,763 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:49:25,764 menu           INFO  (1044.08984375, 302.01953125)
+2021-11-17 05:49:26,079 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:27,080 menu           INFO  (771.7265625, 692.8984375)
+2021-11-17 05:49:27,403 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:28,405 menu           INFO  (772.1953125, 691.66015625)
+2021-11-17 05:49:28,728 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:29,730 menu           INFO  (514.0625, -106.50390625)
+2021-11-17 05:49:30,153 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:49:31,154 menu           INFO  (1065.515625, 851.91796875)
+2021-11-17 05:49:31,587 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:49:32,589 menu           INFO  (1112.84765625, 833.51171875)
+2021-11-17 05:49:33,031 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:49:34,031 menu           INFO  (774.296875, 743.06640625)
+2021-11-17 05:49:34,462 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:49:35,463 menu           INFO  (770.953125, 753.37890625)
+2021-11-17 05:49:35,899 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:49:36,901 menu           INFO  (770.953125, 752.6796875)
+2021-11-17 05:49:37,194 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:38,195 menu           INFO  (770.953125, 752.6796875)
+2021-11-17 05:49:38,513 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:39,514 menu           INFO  (772.24609375, 773.7265625)
+2021-11-17 05:49:39,807 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:40,809 menu           INFO  (1064.078125, 842.8046875)
+2021-11-17 05:49:41,094 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:42,095 menu           INFO  (542.453125, 41.45703125)
+2021-11-17 05:49:42,524 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:49:43,524 menu           INFO  (1334.984375, 770.57421875)
+2021-11-17 05:49:43,806 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:44,807 menu           INFO  (1223.91015625, 751.46484375)
+2021-11-17 05:49:45,117 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:46,119 menu           INFO  (1195.9375, 745.03125)
+2021-11-17 05:49:46,404 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:47,405 menu           INFO  (1137.6015625, 849.40234375)
+2021-11-17 05:49:47,719 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:48,720 menu           INFO  (996.85546875, 837.328125)
+2021-11-17 05:49:49,034 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:50,035 menu           INFO  (1207.76953125, 666.27734375)
+2021-11-17 05:49:50,469 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:49:51,471 menu           INFO  (1342.07421875, 546.97265625)
+2021-11-17 05:49:51,899 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:49:52,900 menu           INFO  (1025.453125, 596.76953125)
+2021-11-17 05:49:53,208 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:54,209 menu           INFO  (1025.453125, 596.76953125)
+2021-11-17 05:49:54,491 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:55,492 menu           INFO  (1063.796875, 711.34765625)
+2021-11-17 05:49:55,814 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:56,815 menu           INFO  (642.9765625, 15.31640625)
+2021-11-17 05:49:57,248 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:49:58,250 menu           INFO  (998.18359375, -55.5)
+2021-11-17 05:49:58,577 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:49:59,578 menu           INFO  (663.5390625, -44.42578125)
+2021-11-17 05:49:59,905 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:00,907 menu           INFO  (1031.9765625, -31.27734375)
+2021-11-17 05:50:01,223 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:02,225 menu           INFO  (453.62109375, 575.1171875)
+2021-11-17 05:50:02,549 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:03,551 menu           INFO  (453.62109375, 575.1171875)
+2021-11-17 05:50:03,846 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:04,847 menu           INFO  (1025.49609375, -37.11328125)
+2021-11-17 05:50:05,179 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:06,181 menu           INFO  (597.89453125, -85.2421875)
+2021-11-17 05:50:06,610 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:07,611 menu           INFO  (679.55859375, 17.30859375)
+2021-11-17 05:50:08,041 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:09,042 menu           INFO  (855.53125, 53.3359375)
+2021-11-17 05:50:09,360 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:10,362 menu           INFO  (835.52734375, 77.58203125)
+2021-11-17 05:50:10,672 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:11,673 menu           INFO  (918.625, 71.49609375)
+2021-11-17 05:50:11,995 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:12,996 menu           INFO  (701.765625, 423.46875)
+2021-11-17 05:50:13,416 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:14,417 menu           INFO  (1165.58203125, -118.93359375)
+2021-11-17 05:50:14,851 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:15,853 menu           INFO  (647.640625, 146.99609375)
+2021-11-17 05:50:16,144 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:17,146 menu           INFO  (614.3515625, 262.0390625)
+2021-11-17 05:50:17,462 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:18,463 menu           INFO  (614.3515625, 262.0390625)
+2021-11-17 05:50:18,748 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:19,750 menu           INFO  (614.3515625, 262.0390625)
+2021-11-17 05:50:20,062 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:21,063 menu           INFO  (614.3515625, 262.0390625)
+2021-11-17 05:50:21,348 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:22,349 menu           INFO  (614.3515625, 262.0390625)
+2021-11-17 05:50:22,667 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:23,668 menu           INFO  (836.9765625, 476.71484375)
+2021-11-17 05:50:23,988 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:24,990 menu           INFO  (868.40234375, 461.34375)
+2021-11-17 05:50:25,314 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:26,315 menu           INFO  (874.9140625, 464.72265625)
+2021-11-17 05:50:26,641 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:27,642 menu           INFO  (482.96484375, -326.26953125)
+2021-11-17 05:50:28,081 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:29,082 menu           INFO  (172.578125, 94.12109375)
+2021-11-17 05:50:29,495 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:30,496 menu           INFO  (293.52734375, 46.140625)
+2021-11-17 05:50:30,906 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:31,908 menu           INFO  (207.03125, 102.1875)
+2021-11-17 05:50:32,306 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:33,307 menu           INFO  (454.53515625, 76.73828125)
+2021-11-17 05:50:33,737 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:34,739 menu           INFO  (454.53515625, 76.73828125)
+2021-11-17 05:50:35,156 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:36,158 menu           INFO  (563.1875, 698.6875)
+2021-11-17 05:50:36,467 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:37,468 menu           INFO  (572.01953125, 716.66015625)
+2021-11-17 05:50:37,769 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:38,770 menu           INFO  (952.69140625, 799.6796875)
+2021-11-17 05:50:39,063 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:40,065 menu           INFO  (932.44140625, 802.09765625)
+2021-11-17 05:50:40,489 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:41,491 menu           INFO  (420.640625, 154.89453125)
+2021-11-17 05:50:41,912 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:42,913 menu           INFO  (538.33203125, 693.4609375)
+2021-11-17 05:50:43,339 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:50:44,340 menu           INFO  (546.7109375, 667.234375)
+2021-11-17 05:50:44,750 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:50:45,751 menu           INFO  (127.3046875, 52.32421875)
+2021-11-17 05:50:46,180 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:50:47,181 menu           INFO  (558.125, 673.22265625)
+2021-11-17 05:50:47,586 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:50:48,587 menu           INFO  (1198.94921875, 768.40234375)
+2021-11-17 05:50:49,012 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:50:50,014 menu           INFO  (1183.69921875, 774.90234375)
+2021-11-17 05:50:50,445 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:50:51,447 menu           INFO  (1204.65234375, 784.87890625)
+2021-11-17 05:50:51,857 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:50:52,859 menu           INFO  (1204.65234375, 784.87890625)
+2021-11-17 05:50:53,298 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:50:54,300 menu           INFO  (936.5390625, 687.1875)
+2021-11-17 05:50:54,616 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:55,617 menu           INFO  (936.5390625, 687.1875)
+2021-11-17 05:50:55,921 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:56,922 menu           INFO  (1021.86328125, 815.91796875)
+2021-11-17 05:50:57,229 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:50:58,231 menu           INFO  (999.51171875, 115.1796875)
+2021-11-17 05:50:58,669 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:50:59,671 menu           INFO  (983.55859375, 758.05859375)
+2021-11-17 05:51:00,092 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:01,094 menu           INFO  (979.29296875, 753.921875)
+2021-11-17 05:51:01,516 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:02,517 menu           INFO  (922.328125, 694.9453125)
+2021-11-17 05:51:02,842 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:51:03,842 menu           INFO  (922.328125, 694.9453125)
+2021-11-17 05:51:04,160 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:51:05,162 menu           INFO  (922.328125, 694.9453125)
+2021-11-17 05:51:05,484 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:51:06,486 menu           INFO  (922.328125, 694.9453125)
+2021-11-17 05:51:06,817 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:51:07,818 menu           INFO  (922.328125, 694.9453125)
+2021-11-17 05:51:08,133 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:51:09,134 menu           INFO  (988.1953125, 826.046875)
+2021-11-17 05:51:09,448 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:51:10,449 menu           INFO  (980.84375, 839.55859375)
+2021-11-17 05:51:10,770 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:51:11,771 menu           INFO  (983.05859375, 608.6953125)
+2021-11-17 05:51:12,207 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:13,208 menu           INFO  (983.05859375, 608.6953125)
+2021-11-17 05:51:13,627 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:14,628 menu           INFO  (983.05859375, 608.6953125)
+2021-11-17 05:51:15,069 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:16,070 menu           INFO  (877.609375, 700.51953125)
+2021-11-17 05:51:16,506 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:17,507 menu           INFO  (877.609375, 700.51953125)
+2021-11-17 05:51:17,934 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:18,936 menu           INFO  (877.609375, 700.51953125)
+2021-11-17 05:51:19,353 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:20,355 menu           INFO  (937.578125, 354.6796875)
+2021-11-17 05:51:20,792 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:21,792 menu           INFO  (1000.03515625, 105.5859375)
+2021-11-17 05:51:22,208 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:51:23,210 menu           INFO  (1000.03515625, 105.5859375)
+2021-11-17 05:51:23,642 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:51:24,644 menu           INFO  (1078.765625, 69.12109375)
+2021-11-17 05:51:25,059 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:26,060 menu           INFO  (1056.6484375, 78.60546875)
+2021-11-17 05:51:26,483 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:27,485 menu           INFO  (1275.75, 103.26171875)
+2021-11-17 05:51:27,913 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:28,915 menu           INFO  (1275.65234375, 103.26171875)
+2021-11-17 05:51:29,359 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:30,360 menu           INFO  (1208.140625, 698.1171875)
+2021-11-17 05:51:30,787 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:31,789 menu           INFO  (994.13671875, 350.7734375)
+2021-11-17 05:51:32,211 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:33,213 menu           INFO  (-10.51953125, -25.109375)
+2021-11-17 05:51:33,511 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:51:34,512 menu           INFO  (18.375, 809.11328125)
+2021-11-17 05:51:34,949 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:35,951 menu           INFO  (1314.60546875, 193.65234375)
+2021-11-17 05:51:36,389 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:37,390 menu           INFO  (1342.62890625, 336.765625)
+2021-11-17 05:51:37,823 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:38,825 menu           INFO  (448.42578125, 263.0390625)
+2021-11-17 05:51:39,256 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:40,257 menu           INFO  (443.6640625, 425.75390625)
+2021-11-17 05:51:40,677 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:41,678 menu           INFO  (726.14453125, 205.62109375)
+2021-11-17 05:51:42,113 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:43,114 menu           INFO  (639.4765625, 188.89453125)
+2021-11-17 05:51:43,558 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:44,559 menu           INFO  (915.58984375, 194.984375)
+2021-11-17 05:51:44,982 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:45,983 menu           INFO  (1165.96875, 381.359375)
+2021-11-17 05:51:46,411 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:47,412 menu           INFO  (770.67578125, 437.30078125)
+2021-11-17 05:51:47,832 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:48,833 menu           INFO  (893.12109375, 541.31640625)
+2021-11-17 05:51:49,257 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:50,258 menu           INFO  (901.75, 585.6015625)
+2021-11-17 05:51:50,678 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:51,679 menu           INFO  (691.21484375, 447.984375)
+2021-11-17 05:51:52,113 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:53,114 menu           INFO  (676.15625, 460.91015625)
+2021-11-17 05:51:53,546 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:54,548 menu           INFO  (676.15625, 460.91015625)
+2021-11-17 05:51:54,982 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:55,983 menu           INFO  (893.1171875, 297.34765625)
+2021-11-17 05:51:56,403 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:57,404 menu           INFO  (889.1796875, 310.22265625)
+2021-11-17 05:51:57,839 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:51:58,840 menu           INFO  (898.8203125, 332.3125)
+2021-11-17 05:51:59,277 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:52:00,279 menu           INFO  (1015.125, 327.171875)
+2021-11-17 05:52:00,702 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:52:01,704 menu           INFO  (1004.34765625, 354.10546875)
+2021-11-17 05:52:02,137 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:52:03,137 menu           INFO  (799.84375, 347.00390625)
+2021-11-17 05:52:03,565 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:52:04,566 menu           INFO  (801.89453125, 343.1953125)
+2021-11-17 05:52:04,894 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:05,896 menu           INFO  (921.734375, 421.15625)
+2021-11-17 05:52:06,364 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:52:07,365 menu           INFO  (1144.24609375, 588.07421875)
+2021-11-17 05:52:07,806 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:52:08,807 menu           INFO  (1017.765625, 824.953125)
+2021-11-17 05:52:09,238 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:52:10,239 menu           INFO  (664.19140625, 332.1015625)
+2021-11-17 05:52:10,517 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:11,518 menu           INFO  (593.66796875, 250.1796875)
+2021-11-17 05:52:11,805 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:12,806 menu           INFO  (485.21875, 291.28125)
+2021-11-17 05:52:13,085 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:14,086 menu           INFO  (827.2109375, 284.2890625)
+2021-11-17 05:52:14,360 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:15,362 menu           INFO  (853.5859375, 290.27734375)
+2021-11-17 05:52:15,640 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:16,641 menu           INFO  (546.4765625, 282.66015625)
+2021-11-17 05:52:16,918 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:17,919 menu           INFO  (998.48046875, 290.703125)
+2021-11-17 05:52:18,204 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:19,205 menu           INFO  (441.03125, 287.94921875)
+2021-11-17 05:52:19,518 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:20,518 menu           INFO  (484.29296875, 314.078125)
+2021-11-17 05:52:20,797 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:21,798 menu           INFO  (867.0546875, 309.5390625)
+2021-11-17 05:52:22,084 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:23,085 menu           INFO  (864.9609375, 312.1171875)
+2021-11-17 05:52:23,377 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:24,378 menu           INFO  (1100.09765625, 770.42578125)
+2021-11-17 05:52:24,653 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:25,654 menu           INFO  (821.07421875, 643.5625)
+2021-11-17 05:52:25,945 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:26,946 menu           INFO  (709.0859375, 364.85546875)
+2021-11-17 05:52:27,231 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:28,232 menu           INFO  (721.2578125, 342.76171875)
+2021-11-17 05:52:28,524 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:29,526 menu           INFO  (703.76953125, 342.140625)
+2021-11-17 05:52:29,824 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:30,825 menu           INFO  (703.76953125, 342.140625)
+2021-11-17 05:52:31,146 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:32,147 menu           INFO  (522.75, 363.0859375)
+2021-11-17 05:52:32,431 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:33,432 menu           INFO  (871.20703125, 336.8984375)
+2021-11-17 05:52:33,738 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:34,740 menu           INFO  (593.484375, 230.4296875)
+2021-11-17 05:52:35,042 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:36,043 menu           INFO  (699.43359375, 222.90234375)
+2021-11-17 05:52:36,343 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:37,344 menu           INFO  (724.6171875, 341.0859375)
+2021-11-17 05:52:37,639 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:38,640 menu           INFO  (841.7265625, 170.38671875)
+2021-11-17 05:52:38,948 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:39,949 menu           INFO  (670.59375, 176.03515625)
+2021-11-17 05:52:40,241 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:41,242 menu           INFO  (869.56640625, 178.77734375)
+2021-11-17 05:52:41,535 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:42,536 menu           INFO  (786.95703125, 247.234375)
+2021-11-17 05:52:42,811 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:43,812 menu           INFO  (623.62890625, 252.69921875)
+2021-11-17 05:52:44,086 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:45,088 menu           INFO  (787.87890625, 199.7578125)
+2021-11-17 05:52:45,369 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:46,370 menu           INFO  (787.87890625, 199.7578125)
+2021-11-17 05:52:46,659 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:47,660 menu           INFO  (673.81640625, 302.6484375)
+2021-11-17 05:52:47,928 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:48,930 menu           INFO  (841.49609375, 377.28515625)
+2021-11-17 05:52:49,224 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:50,226 menu           INFO  (662.0390625, 232.2890625)
+2021-11-17 05:52:50,510 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:51,510 menu           INFO  (599.234375, 325.32421875)
+2021-11-17 05:52:51,793 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:52,794 menu           INFO  (604.65234375, 319.73046875)
+2021-11-17 05:52:53,072 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:54,073 menu           INFO  (604.65234375, 319.73046875)
+2021-11-17 05:52:54,361 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:55,363 menu           INFO  (650.265625, 321.7109375)
+2021-11-17 05:52:55,669 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:56,670 menu           INFO  (693.36328125, 316.59765625)
+2021-11-17 05:52:56,954 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:57,955 menu           INFO  (755.99609375, 324.17578125)
+2021-11-17 05:52:58,224 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:52:59,225 menu           INFO  (756.5390625, 321.33984375)
+2021-11-17 05:52:59,514 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:00,515 menu           INFO  (712.13671875, 353.77734375)
+2021-11-17 05:53:00,812 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:01,813 menu           INFO  (749.21484375, 362.1640625)
+2021-11-17 05:53:02,127 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:03,128 menu           INFO  (730.328125, 402.7890625)
+2021-11-17 05:53:03,407 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:04,408 menu           INFO  (713.5078125, 425.80078125)
+2021-11-17 05:53:04,731 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:05,733 menu           INFO  (648.84765625, 365.94140625)
+2021-11-17 05:53:06,009 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:07,011 menu           INFO  (633.80859375, 416.72265625)
+2021-11-17 05:53:07,334 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:08,335 menu           INFO  (624.62890625, 397.41796875)
+2021-11-17 05:53:08,636 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:09,637 menu           INFO  (563.82421875, 183.73046875)
+2021-11-17 05:53:09,914 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:10,915 menu           INFO  (500.953125, 167.65234375)
+2021-11-17 05:53:11,215 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:12,217 menu           INFO  (512.5625, 256.6328125)
+2021-11-17 05:53:12,495 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:13,497 menu           INFO  (1194.03515625, 12.35546875)
+2021-11-17 05:53:13,812 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:17,513 menu           INFO  (993.51171875, 307.80859375)
+2021-11-17 05:53:17,901 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:18,903 menu           INFO  (883.5546875, 899.98046875)
+2021-11-17 05:53:19,234 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:20,235 menu           INFO  (903.0, 557.69140625)
+2021-11-17 05:53:20,687 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:21,688 menu           INFO  (728.52734375, 312.67578125)
+2021-11-17 05:53:22,153 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:23,154 menu           INFO  (985.8671875, 104.1015625)
+2021-11-17 05:53:23,577 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:24,579 menu           INFO  (985.8671875, 104.1015625)
+2021-11-17 05:53:25,006 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:26,007 menu           INFO  (999.76953125, 102.1484375)
+2021-11-17 05:53:26,424 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:27,424 menu           INFO  (723.83203125, 315.13671875)
+2021-11-17 05:53:27,853 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:28,855 menu           INFO  (657.66796875, -338.671875)
+2021-11-17 05:53:29,303 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:30,304 menu           INFO  (983.96484375, 139.15625)
+2021-11-17 05:53:30,744 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:31,746 menu           INFO  (648.7734375, 737.81640625)
+2021-11-17 05:53:32,053 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:33,055 menu           INFO  (648.7734375, 737.81640625)
+2021-11-17 05:53:33,365 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:34,367 menu           INFO  (884.08984375, 868.74609375)
+2021-11-17 05:53:34,695 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:35,697 menu           INFO  (895.671875, 850.8828125)
+2021-11-17 05:53:36,010 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:37,011 menu           INFO  (998.46484375, 124.8828125)
+2021-11-17 05:53:37,427 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:38,428 menu           INFO  (822.43359375, 761.8359375)
+2021-11-17 05:53:38,742 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:39,743 menu           INFO  (900.78125, 850.19921875)
+2021-11-17 05:53:40,053 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:41,054 menu           INFO  (678.703125, 721.95703125)
+2021-11-17 05:53:41,502 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:42,503 menu           INFO  (587.81640625, 689.47265625)
+2021-11-17 05:53:42,946 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:43,947 menu           INFO  (474.546875, 681.921875)
+2021-11-17 05:53:44,375 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:45,376 menu           INFO  (437.51171875, 676.36328125)
+2021-11-17 05:53:45,790 menu          DEBUG  Current menu state: IN_QUEUE
+2021-11-17 05:53:46,791 menu           INFO  (501.90625, 693.8671875)
+2021-11-17 05:53:47,224 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:48,225 menu           INFO  (543.0625, 750.609375)
+2021-11-17 05:53:48,544 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:49,545 menu           INFO  (543.0625, 750.609375)
+2021-11-17 05:53:49,858 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:50,860 menu           INFO  (543.0625, 750.609375)
+2021-11-17 05:53:51,174 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:52,176 menu           INFO  (572.29296875, 869.55859375)
+2021-11-17 05:53:52,484 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:53:53,486 menu           INFO  (890.078125, 825.3359375)
+2021-11-17 05:53:53,897 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:54,898 menu           INFO  (1009.39453125, 115.09765625)
+2021-11-17 05:53:55,320 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:53:56,321 menu           INFO  (471.91796875, 683.41796875)
+2021-11-17 05:53:56,754 menu          DEBUG  Current menu state: IN_QUEUE
+2021-11-17 05:53:57,755 menu           INFO  (966.27734375, 453.3359375)
+2021-11-17 05:53:58,178 menu          DEBUG  Current menu state: IN_QUEUE
+2021-11-17 05:53:59,179 menu           INFO  (834.59375, 227.62109375)
+2021-11-17 05:53:59,632 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:54:00,634 menu           INFO  (998.29296875, 106.8671875)
+2021-11-17 05:54:01,057 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:54:02,059 menu           INFO  (803.1015625, 789.97265625)
+2021-11-17 05:54:02,344 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:54:03,346 menu           INFO  (803.1015625, 789.97265625)
+2021-11-17 05:54:03,664 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:54:04,666 menu           INFO  (816.09375, 869.55859375)
+2021-11-17 05:54:04,981 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:54:05,983 menu           INFO  (900.4609375, 841.75390625)
+2021-11-17 05:54:06,287 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:54:07,289 menu           INFO  (722.10546875, 278.69140625)
+2021-11-17 05:54:07,731 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:54:08,732 menu           INFO  (575.37890625, 19.359375)
+2021-11-17 05:54:09,169 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:54:10,170 menu           INFO  (222.19921875, 679.14453125)
+2021-11-17 05:54:10,582 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:54:11,583 menu           INFO  (884.35546875, 39.73828125)
+2021-11-17 05:54:11,996 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:54:12,997 menu           INFO  (685.171875, 15.5546875)
+2021-11-17 05:54:13,425 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:54:14,427 menu           INFO  (596.640625, 49.9140625)
+2021-11-17 05:54:14,871 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:54:15,873 menu           INFO  (227.91796875, 52.8359375)
+2021-11-17 05:54:16,300 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:17,301 menu           INFO  (237.46484375, 120.1875)
+2021-11-17 05:54:17,737 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:18,739 menu           INFO  (146.16796875, 90.8125)
+2021-11-17 05:54:19,186 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:20,187 menu           INFO  (259.0859375, 146.35546875)
+2021-11-17 05:54:20,640 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:21,641 menu           INFO  (259.6171875, 109.26953125)
+2021-11-17 05:54:22,094 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:23,095 menu           INFO  (364.28125, 107.28125)
+2021-11-17 05:54:23,534 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:24,535 menu           INFO  (382.04296875, 98.9609375)
+2021-11-17 05:54:24,986 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:25,988 menu           INFO  (547.53515625, 97.74609375)
+2021-11-17 05:54:26,438 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:27,439 menu           INFO  (552.1796875, 397.1796875)
+2021-11-17 05:54:27,868 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:28,869 menu           INFO  (421.39453125, 239.29296875)
+2021-11-17 05:54:29,320 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:30,321 menu           INFO  (257.51171875, 35.23046875)
+2021-11-17 05:54:30,754 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:54:31,756 menu           INFO  (356.14453125, 21.734375)
+2021-11-17 05:54:32,195 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:54:33,196 menu           INFO  (125.328125, 37.22265625)
+2021-11-17 05:54:33,620 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:54:34,621 menu           INFO  (471.80859375, 762.94140625)
+2021-11-17 05:54:35,045 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:36,046 menu           INFO  (464.09375, 764.828125)
+2021-11-17 05:54:36,368 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:54:37,369 menu           INFO  (464.09375, 764.828125)
+2021-11-17 05:54:37,681 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:54:38,682 menu           INFO  (615.1796875, 748.00390625)
+2021-11-17 05:54:38,995 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:54:39,996 menu           INFO  (629.984375, 759.125)
+2021-11-17 05:54:40,301 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:54:41,302 menu           INFO  (934.546875, 838.484375)
+2021-11-17 05:54:41,743 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:42,744 menu           INFO  (880.83203125, 844.03125)
+2021-11-17 05:54:43,194 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:44,196 menu           INFO  (889.90625, 765.35546875)
+2021-11-17 05:54:44,511 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:54:45,512 menu           INFO  (876.88671875, 867.55859375)
+2021-11-17 05:54:45,834 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:54:46,835 menu           INFO  (861.046875, 627.84765625)
+2021-11-17 05:54:47,256 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:48,257 menu           INFO  (822.4921875, 520.51953125)
+2021-11-17 05:54:48,700 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:49,701 menu           INFO  (822.4921875, 520.51953125)
+2021-11-17 05:54:50,137 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:51,139 menu           INFO  (822.4921875, 520.51953125)
+2021-11-17 05:54:51,579 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:52,580 menu           INFO  (822.4921875, 520.51953125)
+2021-11-17 05:54:53,009 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:54,011 menu           INFO  (670.578125, 365.19921875)
+2021-11-17 05:54:54,443 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:55,444 menu           INFO  (259.12109375, 98.3828125)
+2021-11-17 05:54:55,862 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:54:56,863 menu           INFO  (169.640625, 32.71875)
+2021-11-17 05:54:57,295 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:54:58,296 menu           INFO  (205.7421875, 67.5234375)
+2021-11-17 05:54:58,733 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:54:59,734 menu           INFO  (205.7421875, 67.5234375)
+2021-11-17 05:55:00,171 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:01,172 menu           INFO  (159.54296875, 115.34375)
+2021-11-17 05:55:01,621 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:02,623 menu           INFO  (226.85546875, 98.2109375)
+2021-11-17 05:55:03,063 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:55:04,064 menu           INFO  (372.8046875, 104.68359375)
+2021-11-17 05:55:04,507 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:55:05,508 menu           INFO  (460.12109375, 92.30078125)
+2021-11-17 05:55:05,959 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:55:06,960 menu           INFO  (283.06640625, 28.05078125)
+2021-11-17 05:55:07,388 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:55:08,389 menu           INFO  (148.9765625, 39.453125)
+2021-11-17 05:55:08,810 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:09,812 menu           INFO  (532.20703125, 530.390625)
+2021-11-17 05:55:10,248 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:11,249 menu           INFO  (449.3828125, 679.9140625)
+2021-11-17 05:55:11,678 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:55:12,679 menu           INFO  (464.640625, 521.12890625)
+2021-11-17 05:55:13,128 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:55:14,130 menu           INFO  (70.6796875, -34.421875)
+2021-11-17 05:55:14,547 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:55:15,548 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:15,962 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:16,963 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:17,406 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:18,407 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:18,845 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:19,846 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:20,293 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:21,295 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:21,743 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:22,745 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:23,188 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:24,189 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:24,640 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:25,641 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:26,089 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:27,091 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:27,535 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:28,536 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:28,992 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:29,994 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:30,428 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:31,429 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:31,880 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:32,882 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:33,334 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:34,335 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:34,783 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:35,785 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:36,228 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:37,229 menu           INFO  (94.953125, 42.8515625)
+2021-11-17 05:55:37,679 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:38,680 menu           INFO  (386.44921875, 573.140625)
+2021-11-17 05:55:39,134 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:40,135 menu           INFO  (525.71875, 683.36328125)
+2021-11-17 05:55:40,569 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:55:41,570 menu           INFO  (441.8515625, 679.1953125)
+2021-11-17 05:55:41,985 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:55:42,986 menu           INFO  (165.01171875, 58.30078125)
+2021-11-17 05:55:43,407 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:55:44,408 menu           INFO  (173.81640625, 71.3671875)
+2021-11-17 05:55:44,824 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:45,826 menu           INFO  (197.77734375, 105.390625)
+2021-11-17 05:55:46,256 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:47,258 menu           INFO  (237.94921875, 96.828125)
+2021-11-17 05:55:47,704 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:48,706 menu           INFO  (247.5546875, 89.77734375)
+2021-11-17 05:55:49,149 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:50,150 menu           INFO  (257.640625, 89.9453125)
+2021-11-17 05:55:50,591 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:51,592 menu           INFO  (54.19921875, 89.41796875)
+2021-11-17 05:55:52,011 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:53,012 menu           INFO  (540.9609375, 684.95703125)
+2021-11-17 05:55:53,459 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:55:54,460 menu           INFO  (438.375, 677.8359375)
+2021-11-17 05:55:54,868 menu          DEBUG  Current menu state: PARTY
+2021-11-17 05:55:55,869 menu           INFO  (438.37109375, 683.46875)
+2021-11-17 05:55:56,324 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:55:57,326 menu           INFO  (156.171875, 39.92578125)
+2021-11-17 05:55:57,756 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:55:58,757 menu           INFO  (268.9765625, 116.9609375)
+2021-11-17 05:55:59,182 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:00,183 menu           INFO  (410.33984375, 96.64453125)
+2021-11-17 05:56:00,612 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:01,613 menu           INFO  (245.76953125, 94.6953125)
+2021-11-17 05:56:02,056 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:03,058 menu           INFO  (82.96484375, 93.48828125)
+2021-11-17 05:56:03,501 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:04,502 menu           INFO  (79.9921875, 94.43359375)
+2021-11-17 05:56:04,960 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:05,962 menu           INFO  (175.6953125, 92.02734375)
+2021-11-17 05:56:06,400 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:07,402 menu           INFO  (548.79296875, 95.19921875)
+2021-11-17 05:56:07,858 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:08,860 menu           INFO  (64.89453125, 100.26171875)
+2021-11-17 05:56:09,292 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:10,293 menu           INFO  (544.62109375, 98.62109375)
+2021-11-17 05:56:10,728 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:11,730 menu           INFO  (249.5078125, 96.84375)
+2021-11-17 05:56:12,196 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:13,197 menu           INFO  (303.4453125, 100.53125)
+2021-11-17 05:56:13,637 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:14,639 menu           INFO  (95.203125, 100.5390625)
+2021-11-17 05:56:15,087 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:16,089 menu           INFO  (812.375, 865.55859375)
+2021-11-17 05:56:16,538 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:17,539 menu           INFO  (795.16015625, 749.00390625)
+2021-11-17 05:56:17,987 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:18,988 menu           INFO  (795.16015625, 749.00390625)
+2021-11-17 05:56:19,292 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:20,293 menu           INFO  (795.16015625, 749.00390625)
+2021-11-17 05:56:20,594 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:21,596 menu           INFO  (795.16015625, 747.046875)
+2021-11-17 05:56:21,919 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:22,921 menu           INFO  (795.16015625, 747.046875)
+2021-11-17 05:56:23,226 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:24,227 menu           INFO  (795.16015625, 747.046875)
+2021-11-17 05:56:24,525 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:25,527 menu           INFO  (994.5390625, 840.33984375)
+2021-11-17 05:56:25,846 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:26,848 menu           INFO  (185.09375, 139.953125)
+2021-11-17 05:56:27,302 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:56:28,304 menu           INFO  (596.125, 713.9453125)
+2021-11-17 05:56:28,730 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:56:29,731 menu           INFO  (590.59375, 716.421875)
+2021-11-17 05:56:30,030 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:31,032 menu           INFO  (1348.3203125, 778.85546875)
+2021-11-17 05:56:31,348 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:32,350 menu           INFO  (1338.9140625, 865.31640625)
+2021-11-17 05:56:32,661 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:33,662 menu           INFO  (1001.75390625, 710.05859375)
+2021-11-17 05:56:33,988 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:34,989 menu           INFO  (1001.75390625, 710.05859375)
+2021-11-17 05:56:35,307 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:36,308 menu           INFO  (1010.9296875, 833.18359375)
+2021-11-17 05:56:36,630 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:37,631 menu           INFO  (968.44140625, 769.8515625)
+2021-11-17 05:56:38,074 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:56:39,075 menu           INFO  (919.2265625, 739.01953125)
+2021-11-17 05:56:39,387 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:40,389 menu           INFO  (919.2265625, 739.01953125)
+2021-11-17 05:56:40,711 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:41,713 menu           INFO  (919.2265625, 739.01953125)
+2021-11-17 05:56:42,012 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:43,014 menu           INFO  (767.66796875, 265.1171875)
+2021-11-17 05:56:43,316 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:44,317 menu           INFO  (404.9765625, 60.44921875)
+2021-11-17 05:56:44,602 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:45,603 menu           INFO  (462.140625, 61.578125)
+2021-11-17 05:56:45,880 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:46,882 menu           INFO  (524.20703125, 251.87890625)
+2021-11-17 05:56:47,193 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:48,195 menu           INFO  (524.20703125, 251.87890625)
+2021-11-17 05:56:48,501 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:49,502 menu           INFO  (516.15625, 247.3359375)
+2021-11-17 05:56:49,788 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:50,789 menu           INFO  (516.15625, 247.3359375)
+2021-11-17 05:56:51,093 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:52,094 menu           INFO  (726.984375, 265.23046875)
+2021-11-17 05:56:52,417 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:53,419 menu           INFO  (726.984375, 265.23046875)
+2021-11-17 05:56:53,727 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:54,728 menu           INFO  (932.609375, 137.73046875)
+2021-11-17 05:56:55,037 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:56,038 menu           INFO  (932.609375, 115.96875)
+2021-11-17 05:56:56,346 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:57,348 menu           INFO  (932.609375, 115.96875)
+2021-11-17 05:56:57,629 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:58,631 menu           INFO  (932.609375, 115.96875)
+2021-11-17 05:56:58,923 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:56:59,924 menu           INFO  (932.609375, 115.96875)
+2021-11-17 05:57:00,214 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:01,215 menu           INFO  (1078.2109375, 37.73046875)
+2021-11-17 05:57:01,526 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:05,362 menu           INFO  (1164.26953125, 899.98046875)
+2021-11-17 05:57:05,775 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:06,777 menu           INFO  (1030.09375, 883.57421875)
+2021-11-17 05:57:07,100 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:08,101 menu           INFO  (495.53125, 209.578125)
+2021-11-17 05:57:08,565 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:57:09,566 menu           INFO  (356.0859375, 65.80078125)
+2021-11-17 05:57:10,016 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:57:11,017 menu           INFO  (354.35546875, 37.7578125)
+2021-11-17 05:57:11,444 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:12,446 menu           INFO  (448.171875, 37.39453125)
+2021-11-17 05:57:12,878 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:13,879 menu           INFO  (448.171875, 37.39453125)
+2021-11-17 05:57:14,323 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:15,325 menu           INFO  (680.296875, 729.1796875)
+2021-11-17 05:57:15,736 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:16,738 menu           INFO  (676.12890625, 698.7421875)
+2021-11-17 05:57:17,025 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:18,027 menu           INFO  (816.8359375, 827.55859375)
+2021-11-17 05:57:18,311 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:19,312 menu           INFO  (963.10546875, 791.7265625)
+2021-11-17 05:57:19,616 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:20,617 menu           INFO  (751.37109375, 30.765625)
+2021-11-17 05:57:21,043 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:22,044 menu           INFO  (791.83984375, 39.41015625)
+2021-11-17 05:57:22,463 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:23,465 menu           INFO  (729.76171875, 762.3125)
+2021-11-17 05:57:23,766 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:24,767 menu           INFO  (943.25, 784.9609375)
+2021-11-17 05:57:25,070 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:26,071 menu           INFO  (926.21875, 735.265625)
+2021-11-17 05:57:26,500 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:27,501 menu           INFO  (913.98046875, 721.55859375)
+2021-11-17 05:57:27,805 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:28,806 menu           INFO  (962.06640625, 827.55859375)
+2021-11-17 05:57:29,118 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:30,119 menu           INFO  (468.5078125, 12.23046875)
+2021-11-17 05:57:30,552 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:31,552 menu           INFO  (789.75390625, 34.71484375)
+2021-11-17 05:57:31,966 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:32,968 menu           INFO  (966.43359375, 746.44921875)
+2021-11-17 05:57:33,412 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:34,412 menu           INFO  (966.43359375, 746.44921875)
+2021-11-17 05:57:34,867 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:35,868 menu           INFO  (952.79296875, 750.0859375)
+2021-11-17 05:57:36,171 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:37,173 menu           INFO  (952.79296875, 750.0859375)
+2021-11-17 05:57:37,461 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:38,463 menu           INFO  (985.66015625, 797.7421875)
+2021-11-17 05:57:38,779 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:39,779 menu           INFO  (869.43359375, 27.1328125)
+2021-11-17 05:57:40,216 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:41,218 menu           INFO  (892.02734375, 38.12890625)
+2021-11-17 05:57:41,668 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:42,669 menu           INFO  (892.2578125, 37.89453125)
+2021-11-17 05:57:43,083 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:44,084 menu           INFO  (804.0546875, 682.64453125)
+2021-11-17 05:57:44,507 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:45,508 menu           INFO  (804.96484375, 718.97265625)
+2021-11-17 05:57:45,967 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:46,968 menu           INFO  (800.76953125, 735.5625)
+2021-11-17 05:57:47,414 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:48,415 menu           INFO  (800.76953125, 735.5625)
+2021-11-17 05:57:48,731 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:49,733 menu           INFO  (847.50390625, 827.55859375)
+2021-11-17 05:57:50,013 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:51,013 menu           INFO  (980.48828125, 787.75)
+2021-11-17 05:57:51,427 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:52,428 menu           INFO  (917.015625, 91.18359375)
+2021-11-17 05:57:52,874 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:53,876 menu           INFO  (312.6796875, 34.84375)
+2021-11-17 05:57:54,315 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:57:55,317 menu           INFO  (141.1015625, 36.828125)
+2021-11-17 05:57:55,731 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:57:56,733 menu           INFO  (685.703125, 730.796875)
+2021-11-17 05:57:57,155 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:57:58,156 menu           INFO  (685.38671875, 733.71484375)
+2021-11-17 05:57:58,460 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:57:59,461 menu           INFO  (685.38671875, 733.71484375)
+2021-11-17 05:57:59,757 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:00,759 menu           INFO  (685.38671875, 733.71484375)
+2021-11-17 05:58:01,058 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:02,060 menu           INFO  (1022.0625, 816.1796875)
+2021-11-17 05:58:02,384 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:03,385 menu           INFO  (462.2890625, 102.69140625)
+2021-11-17 05:58:03,829 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:58:04,829 menu           INFO  (320.96484375, 47.30078125)
+2021-11-17 05:58:05,247 menu          DEBUG  Current menu state: HOME
+2021-11-17 05:58:06,248 menu           INFO  (294.79296875, 82.7890625)
+2021-11-17 05:58:06,663 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:58:07,664 menu           INFO  (382.0078125, 138.6875)
+2021-11-17 05:58:08,107 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:58:09,108 menu           INFO  (397.21875, 130.11328125)
+2021-11-17 05:58:09,548 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 05:58:10,549 menu           INFO  (516.453125, 692.21875)
+2021-11-17 05:58:10,970 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:58:11,971 menu           INFO  (594.25, 759.65234375)
+2021-11-17 05:58:12,279 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:13,280 menu           INFO  (594.25, 759.65234375)
+2021-11-17 05:58:13,596 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:14,598 menu           INFO  (594.25, 759.65234375)
+2021-11-17 05:58:14,913 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:15,915 menu           INFO  (594.25, 759.65234375)
+2021-11-17 05:58:16,225 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:17,226 menu           INFO  (594.25, 759.65234375)
+2021-11-17 05:58:17,539 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:18,540 menu           INFO  (594.25, 759.65234375)
+2021-11-17 05:58:18,868 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:19,869 menu           INFO  (594.25, 759.421875)
+2021-11-17 05:58:20,169 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:21,170 menu           INFO  (594.25, 759.421875)
+2021-11-17 05:58:21,486 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:22,488 menu           INFO  (594.25, 759.421875)
+2021-11-17 05:58:22,795 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:23,796 menu           INFO  (594.25, 759.421875)
+2021-11-17 05:58:24,110 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:25,112 menu           INFO  (1022.203125, 819.2578125)
+2021-11-17 05:58:25,421 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:26,422 menu           INFO  (704.23046875, 16.82421875)
+2021-11-17 05:58:26,843 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:58:27,845 menu           INFO  (1043.69921875, 289.46875)
+2021-11-17 05:58:28,160 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:29,162 menu           INFO  (796.3203125, 608.171875)
+2021-11-17 05:58:29,447 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:30,448 menu           INFO  (796.3203125, 608.171875)
+2021-11-17 05:58:30,759 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:31,760 menu           INFO  (1036.48046875, 827.55859375)
+2021-11-17 05:58:32,070 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:33,071 menu           INFO  (781.7421875, 198.7109375)
+2021-11-17 05:58:33,367 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:34,368 menu           INFO  (315.49609375, 268.36328125)
+2021-11-17 05:58:34,808 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:58:35,809 menu           INFO  (545.8671875, -20.7265625)
+2021-11-17 05:58:36,249 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:58:37,250 menu           INFO  (859.296875, 97.78515625)
+2021-11-17 05:58:37,678 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:58:38,679 menu           INFO  (969.203125, -389.98828125)
+2021-11-17 05:58:39,119 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:58:40,121 menu           INFO  (978.21875, -89.0625)
+2021-11-17 05:58:40,538 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:58:41,539 menu           INFO  (969.1953125, -86.8359375)
+2021-11-17 05:58:41,848 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:42,849 menu           INFO  (969.1953125, -86.8359375)
+2021-11-17 05:58:43,174 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:44,176 menu           INFO  (969.1953125, -86.8359375)
+2021-11-17 05:58:44,493 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:45,494 menu           INFO  (969.1953125, -86.8359375)
+2021-11-17 05:58:45,804 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:46,806 menu           INFO  (969.1953125, -86.8359375)
+2021-11-17 05:58:47,124 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:48,125 menu           INFO  (969.1953125, -86.8359375)
+2021-11-17 05:58:48,439 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:49,438 menu           INFO  (969.1953125, -86.8359375)
+2021-11-17 05:58:49,758 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:50,757 menu           INFO  (1330.1953125, 339.55859375)
+2021-11-17 05:58:51,066 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:52,064 menu           INFO  (1028.421875, 265.21875)
+2021-11-17 05:58:52,377 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:53,377 menu           INFO  (1010.6171875, 332.28515625)
+2021-11-17 05:58:53,677 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 05:58:54,676 menu           INFO  (864.140625, 290.21484375)
+2021-11-17 05:58:55,115 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:58:56,114 menu           INFO  (922.36328125, 312.78125)
+2021-11-17 05:58:56,556 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:58:57,555 menu           INFO  (630.5703125, -308.82421875)
+2021-11-17 05:58:58,004 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:58:59,004 menu           INFO  (668.48828125, 124.39453125)
+2021-11-17 05:58:59,457 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:00,457 menu           INFO  (373.2734375, -308.7734375)
+2021-11-17 05:59:00,886 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:01,886 menu           INFO  (358.2890625, -98.859375)
+2021-11-17 05:59:02,327 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:03,327 menu           INFO  (546.40234375, -480.125)
+2021-11-17 05:59:03,763 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:04,763 menu           INFO  (560.8359375, -470.7109375)
+2021-11-17 05:59:05,219 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:06,219 menu           INFO  (612.91796875, -506.0)
+2021-11-17 05:59:06,704 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:07,704 menu           INFO  (486.89453125, -390.16015625)
+2021-11-17 05:59:08,145 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:09,145 menu           INFO  (486.89453125, -390.16015625)
+2021-11-17 05:59:09,623 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:10,624 menu           INFO  (422.5625, -209.2734375)
+2021-11-17 05:59:11,075 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:12,076 menu           INFO  (411.6171875, -199.22265625)
+2021-11-17 05:59:12,545 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:13,546 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:14,009 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:15,010 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:15,464 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:16,464 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:16,888 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:17,889 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:18,334 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:19,335 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:19,787 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:20,788 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:21,241 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:22,241 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:22,683 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:23,684 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:24,111 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:25,111 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:25,556 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:26,557 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:27,005 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:28,006 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:28,446 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:29,447 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:29,880 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:30,881 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:31,328 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:32,330 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:32,781 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:33,782 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:34,224 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:35,225 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:35,674 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:36,675 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:37,126 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:38,127 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:38,576 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:39,578 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:40,023 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:41,024 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:41,469 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:42,470 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:42,916 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:43,917 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:44,352 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:45,354 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:45,793 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:46,794 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:47,261 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:48,263 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:48,696 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:49,697 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:50,134 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:51,135 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:51,580 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:52,582 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:53,021 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:54,022 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:54,460 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:55,461 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:55,909 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:56,911 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:57,361 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:58,361 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 05:59:58,807 menu          DEBUG  Current menu state: OTHER
+2021-11-17 05:59:59,808 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:00,250 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:01,252 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:01,694 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:02,696 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:03,134 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:04,135 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:04,583 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:05,584 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:06,038 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:07,040 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:07,473 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:08,474 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:08,922 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:09,924 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:10,367 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:11,368 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:11,809 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:12,811 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:13,252 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:14,254 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:14,704 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:15,705 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:16,142 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:17,143 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:17,605 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:18,606 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:19,066 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:20,067 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:20,516 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:21,518 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:21,958 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:22,960 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:23,403 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:24,404 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:24,841 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:25,842 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:26,302 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:27,303 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:27,750 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:28,751 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:29,204 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:30,205 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:30,651 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:31,652 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:32,096 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:33,097 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:33,547 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:34,548 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:34,987 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:35,989 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:36,432 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:37,432 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:37,879 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:38,880 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:39,325 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:40,327 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:40,767 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:41,769 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:42,207 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:43,208 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:43,648 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:44,650 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:45,088 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:46,089 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:46,571 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:47,572 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:48,033 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:49,034 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:49,468 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:50,469 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:50,914 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:51,915 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:52,361 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:53,362 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:53,816 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:54,817 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:55,258 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:56,260 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:56,740 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:57,741 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:58,199 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:00:59,200 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:00:59,640 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:00,641 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:01,082 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:02,082 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:02,522 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:03,523 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:03,961 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:04,963 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:05,417 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:06,418 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:06,861 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:07,862 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:08,305 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:09,306 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:09,745 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:10,746 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:11,195 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:12,197 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:12,642 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:13,643 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:14,079 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:15,080 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:15,523 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:16,524 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:16,974 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:17,975 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:18,423 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:19,425 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:19,868 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:20,869 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:21,320 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:22,321 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:22,764 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:23,765 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:24,210 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:25,212 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:25,651 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:26,652 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:27,102 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:28,103 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:28,540 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:29,542 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:29,981 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:30,982 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:31,435 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:32,436 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:32,903 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:33,904 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:34,350 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:35,351 menu           INFO  (380.3671875, 38.98046875)
+2021-11-17 06:01:35,797 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:36,799 menu           INFO  (438.40234375, -516.88671875)
+2021-11-17 06:01:37,235 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:38,237 menu           INFO  (543.01953125, -509.7734375)
+2021-11-17 06:01:38,665 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:39,666 menu           INFO  (586.8125, 13.32421875)
+2021-11-17 06:01:40,098 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:41,099 menu           INFO  (634.74609375, 58.64453125)
+2021-11-17 06:01:41,552 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:42,553 menu           INFO  (781.40234375, -418.53125)
+2021-11-17 06:01:43,022 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:44,023 menu           INFO  (679.46484375, -428.8203125)
+2021-11-17 06:01:44,331 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 06:01:45,332 menu           INFO  (542.37890625, 309.578125)
+2021-11-17 06:01:45,783 menu          DEBUG  Current menu state: OTHER
+2021-11-17 06:01:46,784 menu           INFO  (1230.3203125, 29.125)
+2021-11-17 06:01:47,229 menu          DEBUG  Current menu state: HOME
+2021-11-17 06:01:48,230 menu           INFO  (576.3984375, 397.19140625)
+2021-11-17 06:01:48,671 menu          DEBUG  Current menu state: HOME
+2021-11-17 06:01:49,672 menu           INFO  (1126.53125, -131.78515625)
+2021-11-17 09:04:37,191 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 09:04:40,443 menu          DEBUG  Current menu state: HOME
+2021-11-17 09:04:40,443 menu          DEBUG  Navigating to home
+2021-11-17 09:04:40,580 menu          DEBUG  Current menu state: HOME
+2021-11-17 09:04:40,716 menu          DEBUG  Current menu state: HOME
+2021-11-17 09:04:40,716 menu          DEBUG  Navigating to mode select
+2021-11-17 09:04:40,860 menu          DEBUG  Current menu state: HOME
+2021-11-17 09:04:42,454 menu          DEBUG  Current menu state: OTHER
+2021-11-17 09:04:43,872 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 09:04:44,005 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 09:04:44,005 menu          DEBUG  Navigating to tutorial
+2021-11-17 09:04:47,116 menu          DEBUG  Selecting the right tutorial part
+2021-11-17 09:04:49,180 menu          DEBUG  Launching the game
+2021-11-17 14:17:48,367 menu          DEBUG  Current menu state: OTHER
+2021-11-17 14:17:48,367 menu          DEBUG  Navigating to home
+2021-11-17 14:17:48,519 menu          DEBUG  Current menu state: OTHER
+2021-11-17 14:17:50,643 menu          DEBUG  Current menu state: HOME
+2021-11-17 14:17:50,775 menu          DEBUG  Current menu state: HOME
+2021-11-17 14:17:50,775 menu          DEBUG  Navigating to mode select
+2021-11-17 14:17:50,906 menu          DEBUG  Current menu state: HOME
+2021-11-17 14:17:52,403 menu          DEBUG  Current menu state: HOME
+2021-11-17 14:17:53,900 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 14:17:54,040 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 14:17:54,040 menu          DEBUG  Navigating to tutorial
+2021-11-17 14:17:57,377 menu          DEBUG  Selecting the right tutorial part
+2021-11-17 14:17:59,424 menu          DEBUG  Launching the game
+2021-11-17 15:09:55,334 menu          DEBUG  Current menu state: NOT_VISIBLE
+2021-11-17 15:09:58,532 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:09:58,532 menu          DEBUG  Navigating to home
+2021-11-17 15:09:58,662 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:09:58,791 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:09:58,791 menu          DEBUG  Navigating to mode select
+2021-11-17 15:09:58,919 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:10:00,728 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:10:02,372 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:10:03,992 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 15:10:03,992 menu          DEBUG  Navigating to tutorial
+2021-11-17 15:10:07,704 menu          DEBUG  Selecting the right tutorial part
+2021-11-17 15:10:10,259 menu          DEBUG  Launching the game
+2021-11-17 15:10:59,552 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 15:10:59,553 menu          DEBUG  Navigating to home
+2021-11-17 15:10:59,684 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 15:11:02,196 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:11:02,324 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:11:02,324 menu          DEBUG  Navigating to mode select
+2021-11-17 15:11:02,453 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:11:04,093 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 15:11:04,225 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 15:11:04,225 menu          DEBUG  Navigating to tutorial
+2021-11-17 15:11:08,020 menu          DEBUG  Selecting the right tutorial part
+2021-11-17 15:11:10,683 menu          DEBUG  Launching the game
+2021-11-17 15:13:31,805 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:13:31,805 menu          DEBUG  Navigating to home
+2021-11-17 15:13:31,935 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:13:32,066 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:13:32,066 menu          DEBUG  Navigating to mode select
+2021-11-17 15:13:32,197 menu          DEBUG  Current menu state: HOME
+2021-11-17 15:13:33,953 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 15:13:34,089 menu          DEBUG  Current menu state: MODE_SELECT
+2021-11-17 15:13:34,089 menu          DEBUG  Navigating to tutorial
+2021-11-17 15:13:37,872 menu          DEBUG  Selecting the right tutorial part
+2021-11-17 15:13:40,489 menu          DEBUG  Launching the game

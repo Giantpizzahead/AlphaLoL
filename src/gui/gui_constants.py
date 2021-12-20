@@ -41,6 +41,20 @@ class MenuOffsets():
     CANCEL_BUTTON_BOTTOM = (557.78125, 678.7760416666666)
 
 
+class GameState(Enum):
+    """
+    Current state of the game.
+    """
+    ALIVE, DEAD, END, OTHER, NOT_VISIBLE = range(5)
+
+
+class GameOffsets():
+    """
+    Locations (relative to the top-left corner) of objects in the game.
+    """
+    ANCHOR = (0, 0)
+
+
 class GameTypes(Enum):
     """
     Types of games that the bot can play.

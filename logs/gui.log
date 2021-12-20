@@ -72,3 +72,66 @@
 2021-11-17 05:22:49,832 gui            INFO  Client is already on
 2021-11-17 05:22:49,833 gui           DEBUG  Current GUI state: GAME
 2021-11-17 05:22:49,833 gui           ERROR  Unable to start game: Another game is currently in progress
+2021-11-17 05:38:45,672 gui            INFO  Starting game of type TUTORIAL_2
+2021-11-17 05:38:45,676 gui           DEBUG  Current GUI state: MENU
+2021-11-17 05:38:45,676 gui            INFO  Client is already on
+2021-11-17 05:38:45,677 gui           DEBUG  Current GUI state: MENU
+2021-11-17 05:39:37,237 gui            INFO  Starting game of type TUTORIAL_2
+2021-11-17 05:39:37,239 gui           DEBUG  Current GUI state: MENU
+2021-11-17 05:39:37,239 gui            INFO  Client is already on
+2021-11-17 05:39:37,241 gui           DEBUG  Current GUI state: MENU
+2021-11-17 05:48:22,266 gui            INFO  Starting game of type TUTORIAL_2
+2021-11-17 05:48:22,269 gui           DEBUG  Current GUI state: MENU
+2021-11-17 05:48:22,270 gui            INFO  Client is already on
+2021-11-17 05:48:22,270 gui           DEBUG  Current GUI state: MENU
+2021-11-17 09:04:16,206 gui            INFO  Starting game of type TUTORIAL_2
+2021-11-17 09:04:16,208 gui           DEBUG  Current GUI state: CLOSED
+2021-11-17 09:04:16,209 gui            INFO  Opening the League of Legends client...
+2021-11-17 09:04:16,380 gui           DEBUG  Current GUI state: CLOSED
+2021-11-17 09:04:21,595 gui           DEBUG  Current GUI state: CLOSED
+2021-11-17 09:04:26,452 gui           DEBUG  Current GUI state: MENU
+2021-11-17 09:04:36,799 gui           DEBUG  Current GUI state: MENU
+2021-11-17 09:04:36,799 gui            INFO  Client opened!
+2021-11-17 09:04:36,800 gui           DEBUG  Current GUI state: MENU
+2021-11-17 14:17:22,413 gui            INFO  Starting game of type TUTORIAL_2
+2021-11-17 14:17:22,414 gui           DEBUG  Current GUI state: CLOSED
+2021-11-17 14:17:22,414 gui            INFO  Opening the League of Legends client...
+2021-11-17 14:17:22,509 gui           DEBUG  Current GUI state: CLOSED
+2021-11-17 14:17:27,661 gui           DEBUG  Current GUI state: CLOSED
+2021-11-17 14:17:32,810 gui           DEBUG  Current GUI state: CLOSED
+2021-11-17 14:17:37,490 gui           DEBUG  Current GUI state: MENU
+2021-11-17 14:17:47,828 gui           DEBUG  Current GUI state: MENU
+2021-11-17 14:17:47,829 gui            INFO  Client opened!
+2021-11-17 14:17:47,829 gui           DEBUG  Current GUI state: MENU
+2021-11-17 14:28:44,398 gui            INFO  Starting game of type TUTORIAL_2
+2021-11-17 14:28:44,399 gui           DEBUG  Current GUI state: GAME
+2021-11-17 14:28:44,399 gui            INFO  Client is already on
+2021-11-17 14:28:44,400 gui           DEBUG  Current GUI state: GAME
+2021-11-17 14:28:44,400 gui           ERROR  Unable to start game: Another game is currently in progress
+2021-11-17 14:33:26,561 gui            INFO  Starting game of type TUTORIAL_2
+2021-11-17 14:33:26,562 gui           DEBUG  Current GUI state: GAME
+2021-11-17 14:33:26,562 gui            INFO  Client is already on
+2021-11-17 14:33:26,564 gui           DEBUG  Current GUI state: GAME
+2021-11-17 14:33:26,564 gui           ERROR  Unable to start game: Another game is currently in progress
+2021-11-17 15:09:35,334 gui            INFO  Starting game of type TUTORIAL_2
+2021-11-17 15:09:35,336 gui           DEBUG  Current GUI state: CLOSED
+2021-11-17 15:09:35,337 gui            INFO  Opening the League of Legends client...
+2021-11-17 15:09:35,439 gui           DEBUG  Current GUI state: CLOSED
+2021-11-17 15:09:40,558 gui           DEBUG  Current GUI state: CLOSED
+2021-11-17 15:09:45,537 gui           DEBUG  Current GUI state: MENU
+2021-11-17 15:09:54,989 gui           DEBUG  Current GUI state: MENU
+2021-11-17 15:09:54,989 gui            INFO  Client opened!
+2021-11-17 15:09:54,990 gui           DEBUG  Current GUI state: MENU
+2021-11-17 15:10:59,077 gui            INFO  Starting game of type TUTORIAL_2
+2021-11-17 15:10:59,081 gui           DEBUG  Current GUI state: MENU
+2021-11-17 15:10:59,081 gui            INFO  Client is already on
+2021-11-17 15:10:59,082 gui           DEBUG  Current GUI state: MENU
+2021-11-17 15:12:20,720 gui            INFO  Starting game of type TUTORIAL_2
+2021-11-17 15:12:20,722 gui           DEBUG  Current GUI state: GAME
+2021-11-17 15:12:20,722 gui            INFO  Client is already on
+2021-11-17 15:12:20,723 gui           DEBUG  Current GUI state: GAME
+2021-11-17 15:12:20,724 gui           ERROR  Unable to start game: Another game is currently in progress
+2021-11-17 15:13:31,335 gui            INFO  Starting game of type TUTORIAL_2
+2021-11-17 15:13:31,337 gui           DEBUG  Current GUI state: MENU
+2021-11-17 15:13:31,337 gui            INFO  Client is already on
+2021-11-17 15:13:31,338 gui           DEBUG  Current GUI state: MENU
