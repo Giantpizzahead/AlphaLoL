@@ -9,7 +9,6 @@ import pynput
 
 from gui import key_listener
 from gui import menu
-from gui import game
 from gui import os_helper
 from gui.gui_constants import GUIState, GameTypes
 from misc import color_logging

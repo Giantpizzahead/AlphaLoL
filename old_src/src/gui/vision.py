@@ -10,7 +10,6 @@ import os
 import time
 
 import cv2.cv2 as cv
-import pytesseract
 import numpy as np
 from mss import mss, screenshot
 

@@ -2,8 +2,6 @@
 Game-specific (fullscreen client) GUI code.
 """
 
-from pynput.keyboard import Key
-
 import cv2.cv2 as cv
 from gui import input_handler
 from gui import vision

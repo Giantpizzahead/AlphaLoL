@@ -1,0 +1,26 @@
+Locations of various things in the menu
+
+1280 x 720 window
+anchor: (1202.5, 41.5)
+top-left: (0.06640625, 30.921875)
+
+play button: (120.54296875, 66.7734375)
+home button: (292.52734375, 69.8046875)
+
+pvp top: (63.03125, 123.06640625)
+
+coop vs ai top: (149.109375, 124.28515625)
+coop vs ai intro: (458.12890625, 522.3359375)
+coop vs ai beg: (467.4609375, 551.7890625)
+coop vs ai int: (485.33984375, 581.73046875)
+
+training top: (253.8046875, 124.26171875)
+
+tutorial: (377.6328125, 297.92578125)
+left arrow: (48.25390625, 386.8828125)
+right arrow: (1231.51953125, 383.98828125)
+start button: (655.41015625, 711.25390625)
+
+practice tool: (625.37109375, 306.07421875)
+
+confirm button: (540.68359375, 711.05859375)
