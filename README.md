@@ -16,9 +16,8 @@ pip install colorlog
 pip install pynput
 pip install numpy
 pip install matplotlib
-pip install opencv-contrib-python
-(Needs some manual setup)
-
+pip install opencv-python
+pip install mss
 ```
 
 ## Todo
