@@ -9,7 +9,7 @@ from controllers.mouse.mouse import *
 from misc import color_logging
 from misc.rng import rsleep
 
-logger = color_logging.getLogger('controls', level=color_logging.DEBUG)
+logger = color_logging.getLogger('controller', level=color_logging.DEBUG)
 
 
 def use_action(key: Union[str, Key]) -> None:

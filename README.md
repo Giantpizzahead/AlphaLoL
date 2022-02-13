@@ -10,6 +10,17 @@ Version 0.0.0
 
 Um... yeah. Good luck with that one.
 
+Dependencies:
+```shell
+pip install colorlog
+pip install pynput
+pip install numpy
+pip install matplotlib
+pip install opencv-contrib-python
+(Needs some manual setup)
+
+```
+
 ## Todo
 
 - [X] Create basic controllers

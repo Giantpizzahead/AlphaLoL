@@ -9,7 +9,7 @@ Multiple monitors?
 import os
 import time
 
-import cv2.cv2 as cv
+import cv2 as cv
 import numpy as np
 from mss import mss, screenshot
 

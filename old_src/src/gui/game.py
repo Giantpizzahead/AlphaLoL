@@ -2,7 +2,7 @@
 Game-specific (fullscreen client) GUI code.
 """
 
-import cv2.cv2 as cv
+import cv2 as cv
 from gui import input_handler
 from gui import vision
 from gui.gui_constants import GameState, GameOffsets
