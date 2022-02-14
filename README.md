@@ -18,7 +18,6 @@ pip install colorlog
 pip install pynput
 pip install numpy
 pip install matplotlib
-pip install opencv-python
 pip install mss
 
 # Windows specific
@@ -31,6 +30,8 @@ pip install --upgrade torchvision==0.10.0
 
 # All systems
 pip install easyocr
+pip uninstall opencv-python-headless
+pip install opencv-python==4.5.4.60
 ```
 
 ## Todo

@@ -12,7 +12,7 @@ import mss.tools
 def grab(queue):
     # type: (Queue) -> None
 
-    rect = {"top": 0, "left": 0, "width": 2560, "height": 1440}
+    rect = {"top": 0, "left": 0, "width": 2880, "height": 1800}
 
     # Record at given FPS
     FPS = 0.23

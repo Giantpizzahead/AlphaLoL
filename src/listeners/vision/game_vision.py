@@ -30,11 +30,12 @@ class Minion:
     health: float
 
 
-def find_minions(img: np.ndarray) -> List[Minion]:
+def find_minions(img: np.ndarray, scale=1.0) -> List[Minion]:
     """
     Find all minions in the given screenshot.
     Note: This function cannot tell the difference between the different types of minions.
     :param img: The screenshot to search in.
+    :param scale: The amount to scale the images by. Lower values will be faster, but less accurate.
     :return: A list of all minions in the screenshot.
     """
 
@@ -43,10 +44,12 @@ def find_minions(img: np.ndarray) -> List[Minion]:
     lower_edge = np.array([80, 0, 10])
     upper_edge = np.array([140, 255, 23])
     template = minion_template
-    all_matches = template_match.find_outline_matches(img, template, lower_edge, upper_edge)
+    all_matches = template_match.find_outline_matches(img, template, lower_edge, upper_edge, scale)
 
     # Eliminate duplicate matches
     matches = []
+    all_matches = all_matches[:2000]
+    logger.debug(f"Found {len(all_matches)} matches with duplicates")
     for m1 in all_matches:
         for m2 in matches:
             # Check if these are the same health bars
@@ -56,6 +59,7 @@ def find_minions(img: np.ndarray) -> List[Minion]:
         else:
             # No intersections
             matches.append(m1)
+    logger.debug(f"Found {len(matches)} unique matches")
 
     # Determine minion side and health
     img = cv.cvtColor(img, cv.COLOR_BGR2HSV)
@@ -116,11 +120,12 @@ class Player:
     level: int
 
 
-def find_players(img: np.ndarray) -> List[Player]:
+def find_players(img: np.ndarray, scale=1.0) -> List[Player]:
     """
     Find all players in the given screenshot.
     Note: This function cannot tell who the player actually is.
     :param img: The screenshot to search in.
+    :param scale: The amount to scale the images by. Lower values will be faster, but less accurate.
     :return: A list of all players in the screenshot. Level will be -1 if it can't be parsed.
     """
 
@@ -130,7 +135,9 @@ def find_players(img: np.ndarray) -> List[Player]:
     lower_edge = np.array([0, 0, 62])
     upper_edge = np.array([179, 33, 121])
     template = player_template
-    all_matches = template_match.find_outline_matches(img, template, lower_edge, upper_edge)
+    all_matches = template_match.find_outline_matches(img, template, lower_edge, upper_edge, scale)
+    all_matches = all_matches[:2000]
+    logger.debug(f"Found {len(all_matches)} matches with duplicates")
 
     # Eliminate duplicate matches
     matches = []
@@ -143,6 +150,7 @@ def find_players(img: np.ndarray) -> List[Player]:
         else:
             # No intersections
             matches.append(m1)
+    logger.debug(f"Found {len(matches)} unique matches")
 
     hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
     lower_green = np.array([53, 190, 131])
@@ -200,10 +208,10 @@ def find_players(img: np.ndarray) -> List[Player]:
         x2 = x1 + 16
         y2 = y1 + 12
         img_level = img[y1:y2, x1:x2]
-        disp = template_match.scale_image(img_level, 4)
-        cv.imshow("level", disp)
+        # disp = template_match.scale_image(img_level, 4)
+        # cv.imshow("level", disp)
         level = ocr_reader.recognize(img_level, allowlist="0123456789", detail=0, paragraph=True)
-        print(level)
+        logger.debug(f"Level OCR: \"{' '.join(level)}\"")
         if not level:
             level = -1
         else:

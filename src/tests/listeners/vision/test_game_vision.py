@@ -32,7 +32,7 @@ def test_find_minions(testpath: str, scale=1.0, display_scale=1.0, is_test=False
     for file in filepaths:
         img = template_match.load_image(file)
         start_time = time.time()
-        result = game_vision.find_minions(img)
+        result = game_vision.find_minions(img, scale)
         end_time = time.time()
 
         # Display matches
@@ -91,7 +91,7 @@ def test_find_players(testpath: str, scale=1.0, display_scale=1.0, is_test=False
     filepaths = []
     for subdir, dirs, files in os.walk(testpath):
         for file in files:
-            if file.endswith('.png') and 'ingame' in subdir:
+            if file.endswith('.png'): # and 'ingame' in subdir:
                 filepaths.append(os.path.join(subdir, file))
     random.seed(time.time())
     random.shuffle(filepaths)
@@ -104,7 +104,7 @@ def test_find_players(testpath: str, scale=1.0, display_scale=1.0, is_test=False
     for file in filepaths:
         img = template_match.load_image(file)
         start_time = time.time()
-        result = game_vision.find_players(img)
+        result = game_vision.find_players(img, scale)
         end_time = time.time()
 
         # Display matches
@@ -163,7 +163,7 @@ def test_all(testpath: str, scale=1.0, display_scale=1.0) -> None:
     filepaths = []
     for subdir, dirs, files in os.walk(testpath):
         for file in files:
-            if file.endswith('.png') and 'ingame' in subdir:
+            if file.endswith('.png'): # and 'ingame' in subdir:
                 filepaths.append(os.path.join(subdir, file))
     random.seed(time.time())
     random.shuffle(filepaths)
@@ -173,8 +173,8 @@ def test_all(testpath: str, scale=1.0, display_scale=1.0) -> None:
     for file in filepaths:
         img = template_match.load_image(file)
         start_time = time.time()
-        minions = game_vision.find_minions(img)
-        players = game_vision.find_players(img)
+        minions = game_vision.find_minions(img, scale)
+        players = game_vision.find_players(img, scale)
         end_time = time.time()
 
         # Display minion matches
@@ -212,7 +212,7 @@ def test_all(testpath: str, scale=1.0, display_scale=1.0) -> None:
 
 
 if __name__ == '__main__':
-    test_all(os.path.join(ROOT_DIR, "..", "img", "minion_match"), display_scale=0.7)
+    test_all(os.path.join(ROOT_DIR, "..", "..", "temp"), scale=1, display_scale=0.5)
     # test_all(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)
     # test_find_players(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)
     # test_find_minions(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)
