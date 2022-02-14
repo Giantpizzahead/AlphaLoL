@@ -1,8 +1,11 @@
+"""
+https://www.analyticsvidhya.com/blog/2019/10/detailed-guide-powerful-sift-technique-image-matching-python/
+"""
+
 import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plt
 
-# https://www.analyticsvidhya.com/blog/2019/10/detailed-guide-powerful-sift-technique-image-matching-python/
 MIN_MATCH_COUNT = 10
 img1 = cv.imread('vision/img/client_match/client1.png', 0)          # queryImage
 img2 = cv.imread('vision/img/client_match/screen4.png', 0) # trainImage
