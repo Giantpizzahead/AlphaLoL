@@ -15,7 +15,8 @@ def rnum(n: float, s=0.047, a=False) -> float:
     :param a: Whether the spread should be absolute or relative (default = relative).
     :return: The randomized number.
     """
-    if not a: s = n * s
+    if not a:
+        s = n * s
     return np.random.normal(n, s)
 
 

@@ -10,6 +10,8 @@ Version 0.0.0
 
 Um... yeah. Good luck with that one.
 
+Use a virtual environment with Python 3.9 or below. Python 3.10 will not work!
+
 Dependencies:
 ```shell
 pip install colorlog
@@ -19,8 +21,15 @@ pip install matplotlib
 pip install opencv-python
 pip install mss
 
-pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio===0.10.2+cu113 -f https://download.pyto
-rch.org/whl/cu113/torch_stable.html
+# Windows specific
+pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio===0.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+
+# Mac specific (DOES NOT WORK RIGHT NOW)
+pip install torchaudio
+pip install --upgrade torch==1.9.0
+pip install --upgrade torchvision==0.10.0
+
+# All systems
 pip install easyocr
 ```
 

@@ -45,16 +45,17 @@ def test_find_minions(testpath: str, scale=1.0, display_scale=1.0, is_test=False
         # Display minion health as text
         for r in result:
             color = (255, 150, 0) if r.allied else (0, 0, 255)
-            cv.putText(res, str(f"{round(r.health*100)}%"), (round(r.x1*display_scale), round((r.y1-6)*display_scale)),
-                       cv.FONT_HERSHEY_SIMPLEX, 0.8*display_scale, color, 2)
+            cv.putText(res, str(f"{round(r.health * 100)}%"),
+                       (round(r.x1 * display_scale), round((r.y1 - 6) * display_scale)),
+                       cv.FONT_HERSHEY_SIMPLEX, 0.8 * display_scale, color, 2)
 
         # Show result
-        print(f"{file}: {len(result)} minions, {end_time-start_time:.3f}s")
+        print(f"{file}: {len(result)} minions, {end_time - start_time:.3f}s")
         cv.imshow(f"{file}", res)
         while True:
-           cv.waitKey(50)
-           if cv.getWindowProperty(f"{file}", cv.WND_PROP_VISIBLE) < 1:
-               break
+            cv.waitKey(50)
+            if cv.getWindowProperty(f"{file}", cv.WND_PROP_VISIBLE) < 1:
+                break
 
         if is_test:
             is_correct = input("Correct? (Leave blank for yes): ")
@@ -78,8 +79,8 @@ def test_find_minions(testpath: str, scale=1.0, display_scale=1.0, is_test=False
         print(f"True positives: {true_positives}")
         print(f"False positives: {false_positives}")
         print(f"False negatives: {false_negatives}")
-        print(f"Precision: {precision*100:.2f}%")
-        print(f"Recall: {recall*100:.2f}%")
+        print(f"Precision: {precision * 100:.2f}%")
+        print(f"Recall: {recall * 100:.2f}%")
 
 
 def test_find_players(testpath: str, scale=1.0, display_scale=1.0, is_test=False) -> None:
@@ -116,17 +117,17 @@ def test_find_players(testpath: str, scale=1.0, display_scale=1.0, is_test=False
         # Display player health as text
         for r in result:
             color = (100, 255, 100) if r.controllable else (255, 150, 0) if r.allied else (0, 0, 255)
-            info = f"L{r.level} H{round(r.health*100)} M{round(r.mana*100)}"
-            cv.putText(res, info, (round(r.x1*display_scale), round((r.y1-6)*display_scale)),
-                       cv.FONT_HERSHEY_SIMPLEX, 0.8*display_scale, color, 2)
+            info = f"L{r.level} H{round(r.health * 100)} M{round(r.mana * 100)}"
+            cv.putText(res, info, (round(r.x1 * display_scale), round((r.y1 - 6) * display_scale)),
+                       cv.FONT_HERSHEY_SIMPLEX, 0.8 * display_scale, color, 2)
 
         # Show result
-        print(f"{file}: {len(result)} players, {end_time-start_time:.3f}s")
+        print(f"{file}: {len(result)} players, {end_time - start_time:.3f}s")
         cv.imshow(f"{file}", res)
         while True:
-           cv.waitKey(50)
-           if cv.getWindowProperty(f"{file}", cv.WND_PROP_VISIBLE) < 1:
-               break
+            cv.waitKey(50)
+            if cv.getWindowProperty(f"{file}", cv.WND_PROP_VISIBLE) < 1:
+                break
 
         if is_test:
             is_correct = input("Correct? (Leave blank for yes): ")
@@ -150,9 +151,8 @@ def test_find_players(testpath: str, scale=1.0, display_scale=1.0, is_test=False
         print(f"True positives: {true_positives}")
         print(f"False positives: {false_positives}")
         print(f"False negatives: {false_negatives}")
-        print(f"Precision: {precision*100:.2f}%")
-        print(f"Recall: {recall*100:.2f}%")
-
+        print(f"Precision: {precision * 100:.2f}%")
+        print(f"Recall: {recall * 100:.2f}%")
 
 
 def test_all(testpath: str, scale=1.0, display_scale=1.0) -> None:
@@ -167,8 +167,8 @@ def test_all(testpath: str, scale=1.0, display_scale=1.0) -> None:
                 filepaths.append(os.path.join(subdir, file))
     random.seed(time.time())
     random.shuffle(filepaths)
-    filepaths.insert(0, os.path.join(testpath, "beginnerbot/ingame/frame_553.png"))
-    filepaths.insert(0, os.path.join(testpath, "blindpick/ingame/frame_131.png"))
+    # filepaths.insert(0, os.path.join(testpath, "beginnerbot/ingame/frame_553.png"))
+    # filepaths.insert(0, os.path.join(testpath, "blindpick/ingame/frame_131.png"))
 
     for file in filepaths:
         img = template_match.load_image(file)
@@ -192,26 +192,27 @@ def test_all(testpath: str, scale=1.0, display_scale=1.0) -> None:
         # Display minion health as text
         for r in minions:
             color = (255, 150, 0) if r.allied else (0, 0, 255)
-            cv.putText(res, str(f"{round(r.health*100)}%"),
-                       (round(r.x1 * display_scale), round((r.y1-6)*display_scale)),
-                       cv.FONT_HERSHEY_SIMPLEX, 0.8*display_scale, color, 2)
+            cv.putText(res, str(f"{round(r.health * 100)}%"),
+                       (round(r.x1 * display_scale), round((r.y1 - 6) * display_scale)),
+                       cv.FONT_HERSHEY_SIMPLEX, 0.8 * display_scale, color, 2)
         # Display player health as text
         for r in players:
             color = (100, 255, 100) if r.controllable else (255, 150, 0) if r.allied else (0, 0, 255)
-            info = f"L{r.level} H{round(r.health*100)} M{round(r.mana*100)}"
-            cv.putText(res, info, (round(r.x1*display_scale), round((r.y1-6)*display_scale)),
-                       cv.FONT_HERSHEY_SIMPLEX, 0.8*display_scale, color, 2)
+            info = f"L{r.level} H{round(r.health * 100)} M{round(r.mana * 100)}"
+            cv.putText(res, info, (round(r.x1 * display_scale), round((r.y1 - 6) * display_scale)),
+                       cv.FONT_HERSHEY_SIMPLEX, 0.8 * display_scale, color, 2)
 
         # Show result
-        print(f"{file}: {len(players)} players, {len(minions)} minions, {end_time-start_time:.3f}s")
+        print(f"{file}: {len(players)} players, {len(minions)} minions, {end_time - start_time:.3f}s")
         cv.imshow(f"{file}", res)
         while True:
-           cv.waitKey(50)
-           if cv.getWindowProperty(f"{file}", cv.WND_PROP_VISIBLE) < 1:
-               break
+            cv.waitKey(50)
+            if cv.getWindowProperty(f"{file}", cv.WND_PROP_VISIBLE) < 1:
+                break
 
 
 if __name__ == '__main__':
-    test_all(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)
+    test_all(os.path.join(ROOT_DIR, "..", "img", "minion_match"), display_scale=0.7)
+    # test_all(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)
     # test_find_players(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)
     # test_find_minions(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)

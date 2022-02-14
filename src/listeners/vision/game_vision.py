@@ -3,6 +3,7 @@ Contains helper functions for parsing info about the current game state.
 """
 
 from dataclasses import dataclass
+from typing import List
 
 import numpy as np
 import cv2 as cv
@@ -29,7 +30,7 @@ class Minion:
     health: float
 
 
-def find_minions(img: np.ndarray) -> list[Minion]:
+def find_minions(img: np.ndarray) -> List[Minion]:
     """
     Find all minions in the given screenshot.
     Note: This function cannot tell the difference between the different types of minions.
@@ -49,7 +50,8 @@ def find_minions(img: np.ndarray) -> list[Minion]:
     for m1 in all_matches:
         for m2 in matches:
             # Check if these are the same health bars
-            if m1.x1+10 < m2.x2-10 and m1.x2-10 > m2.x1+10 and abs(m1.y1 - m2.y1) <= 2 and abs(m1.y2 - m2.y2) <= 2:
+            if m1.x1 + 10 < m2.x2 - 10 and m1.x2 - 10 > m2.x1 + 10 and abs(m1.y1 - m2.y1) <= 2 and abs(
+                    m1.y2 - m2.y2) <= 2:
                 break
         else:
             # No intersections
@@ -64,7 +66,7 @@ def find_minions(img: np.ndarray) -> list[Minion]:
     minions = []
     for m in matches:
         # Rightmost pixel with a visible health bar color
-        width = template.shape[1]-2
+        width = template.shape[1] - 2
         y = (m.y1 + m.y2) // 2
         low = 0
         high = width
@@ -96,7 +98,7 @@ def find_minions(img: np.ndarray) -> list[Minion]:
     return minions
 
 
-ocr_reader = easyocr.Reader(['en'], gpu = True)
+ocr_reader = easyocr.Reader(['en'], gpu=True)
 player_template = cv.imread(os.path.join(ROOT_DIR, "..", "img", "player.png"))
 ocr_reader.readtext(player_template)
 
@@ -114,7 +116,7 @@ class Player:
     level: int
 
 
-def find_players(img: np.ndarray) -> list[Player]:
+def find_players(img: np.ndarray) -> List[Player]:
     """
     Find all players in the given screenshot.
     Note: This function cannot tell who the player actually is.
@@ -135,7 +137,8 @@ def find_players(img: np.ndarray) -> list[Player]:
     for m1 in all_matches:
         for m2 in matches:
             # Check if these are the same health bars
-            if m1.x1+30 < m2.x2-30 and m1.x2-30 > m2.x1+30 and abs(m1.y1 - m2.y1) <= 3 and abs(m1.y2 - m2.y2) <= 3:
+            if m1.x1 + 30 < m2.x2 - 30 and m1.x2 - 30 > m2.x1 + 30 and abs(m1.y1 - m2.y1) <= 3 and abs(
+                    m1.y2 - m2.y2) <= 3:
                 break
         else:
             # No intersections
@@ -192,10 +195,10 @@ def find_players(img: np.ndarray) -> list[Player]:
             mana = 0
         # Attempt to parse level
         # 1920 x 1080
-        x1 = m.x1+6
-        y1 = m.y1+8
-        x2 = x1+16
-        y2 = y1+12
+        x1 = m.x1 + 6
+        y1 = m.y1 + 8
+        x2 = x1 + 16
+        y2 = y1 + 12
         img_level = img[y1:y2, x1:x2]
         disp = template_match.scale_image(img_level, 4)
         cv.imshow("level", disp)
@@ -211,7 +214,8 @@ def find_players(img: np.ndarray) -> list[Player]:
                 level = int(level)
                 if level < 1 or level > 18:
                     level = -1
-        player = Player(m.x1+20, m.y1+55, m.x2-20, m.y2+130, player_type != 2, player_type == 0, health, mana, level)
+        player = Player(m.x1 + 20, m.y1 + 55, m.x2 - 20, m.y2 + 130, player_type != 2, player_type == 0, health, mana,
+                        level)
         players.append(player)
     logger.debug(f"Found {len(players)} players")
     return players

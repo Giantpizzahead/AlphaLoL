@@ -7,6 +7,7 @@ from dataclasses import dataclass
 
 import cv2 as cv
 import numpy as np
+from typing import List
 
 from misc import color_logging
 
@@ -29,6 +30,7 @@ def load_image(filename: str, scale=1) -> np.ndarray:
     """
     Loads and scales an image from a file. If the image is cached, returns that instead.
     :param filename: The image file.
+    :param scale: The factor to scale by.
     :return: The scaled image.
     """
     if (filename, scale) not in img_cache:
@@ -46,7 +48,7 @@ class Match:
     score: float
 
 
-def find_exact_matches(img: np.ndarray, template: np.ndarray, scale=1, threshold=0.75) -> list[Match]:
+def find_exact_matches(img: np.ndarray, template: np.ndarray, scale=1, threshold=0.75) -> List[Match]:
     """
     Finds the locations where a given template is present on the image, without scaling or rotation.
     :param img: The image to search in.
@@ -73,7 +75,8 @@ def find_exact_matches(img: np.ndarray, template: np.ndarray, scale=1, threshold
     # Return matches
     matches = []
     for pt in points:
-        matches.append(Match(x1=pt[0], y1=pt[1], x2=pt[0]+template.shape[1]-1, y2=pt[1]+template.shape[0]-1, score=res[pt[1]][pt[0]]))
+        matches.append(Match(x1=pt[0], y1=pt[1], x2=pt[0]+template.shape[1]-1, y2=pt[1]+template.shape[0]-1,
+                             score=res[pt[1]][pt[0]]))
     # Upscale coordinates
     if scale != 1:
         for m in matches:
@@ -85,7 +88,8 @@ def find_exact_matches(img: np.ndarray, template: np.ndarray, scale=1, threshold
     return matches
 
 
-def find_outline_matches(img: np.ndarray, template: np.ndarray, lower_mask: np.ndarray, upper_mask: np.ndarray, scale=1, threshold=0.75) -> list[Match]:
+def find_outline_matches(img: np.ndarray, template: np.ndarray, lower_mask: np.ndarray, upper_mask: np.ndarray,
+                         scale=1, threshold=0.75) -> List[Match]:
     """
     Finds the locations where a given template's outline is present on the image, without scaling or rotation.
     This turns the images into binary images depending on whether the colors are in [lower_mask, upper_mask], then looks
@@ -140,7 +144,7 @@ def find_outline_matches(img: np.ndarray, template: np.ndarray, lower_mask: np.n
     return matches
 
 
-def find_exact_scaled_matches(img: np.ndarray, template: np.ndarray, scale=1, threshold=0.75) -> list[Match]:
+def find_exact_scaled_matches(img: np.ndarray, template: np.ndarray, scale=1, threshold=0.75) -> List[Match]:
     """
     Finds the locations where a given template is present on the image, with scaling but without rotation.
     :param img: The image to search in.
@@ -162,7 +166,7 @@ def find_exact_scaled_matches(img: np.ndarray, template: np.ndarray, scale=1, th
     scores = []
     for s in scales:
         # s = Amount to scale the template by to find the image
-        matches: list[Match]
+        matches: List[Match]
         if s <= 1:
             new_template = scale_image(template, s)
             matches = find_exact_matches(img, new_template, threshold=threshold)

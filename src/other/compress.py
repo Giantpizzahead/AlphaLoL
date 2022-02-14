@@ -7,11 +7,12 @@ https://stackoverflow.com/questions/273192/how-can-i-safely-create-a-nested-dire
 """
 
 import os
-from PIL import Image, ImageChops
+from PIL import Image
 from pathlib import Path
 
 total_uncompressed = 0
 total_compressed = 0
+
 
 # Compress PNG file named "filename" using Pillow's image compression
 def compress_png(file1, file2):
@@ -21,8 +22,9 @@ def compress_png(file1, file2):
     size2 = os.path.getsize(file2)
     return size1, size2
 
+
 # Directory containing screenshots to compress
-rootdir = "../../../screenshots"
+# rootdir = "../../../screenshots"
 rootdir = "FAKE DIRECTORY"
 for subdir, dirs, files in os.walk(rootdir):
     for file in files:

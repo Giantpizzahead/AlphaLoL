@@ -2,8 +2,6 @@
 Contains helper functions to do common actions in League of Legends.
 """
 
-from typing import Union
-
 from controllers.keyboard.keyboard import *
 from controllers.mouse.mouse import *
 from misc import color_logging

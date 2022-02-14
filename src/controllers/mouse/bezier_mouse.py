@@ -14,6 +14,7 @@ from misc.rng import rnum
 # Makes time.sleep() more accurate
 # https://stackoverflow.com/questions/40594587/why-time-sleep-is-so-slow-in-windows
 from ctypes import windll
+
 timeBeginPeriod = windll.winmm.timeBeginPeriod
 timeBeginPeriod(1)
 
@@ -80,14 +81,16 @@ def mouse_bez(init_pos, fin_pos, deviation, speed):
 
     # bezier centre control points between (deviation / 2) and (deviaion) of travel distance, plus or minus at random
     control_1 = (
-    init_pos[0] + choice((-1, 1)) * abs(ceil(fin_pos[0]) - ceil(init_pos[0])) * 0.01 * randint(deviation / 2,
-                                                                                               deviation),
-    init_pos[1] + choice((-1, 1)) * abs(ceil(fin_pos[1]) - ceil(init_pos[1])) * 0.01 * randint(deviation / 2, deviation)
+        init_pos[0] + choice((-1, 1)) * abs(ceil(fin_pos[0]) - ceil(init_pos[0])) * 0.01 * randint(deviation / 2,
+                                                                                                   deviation),
+        init_pos[1] + choice((-1, 1)) * abs(ceil(fin_pos[1]) - ceil(init_pos[1])) * 0.01 * randint(deviation / 2,
+                                                                                                   deviation)
     )
     control_2 = (
-    init_pos[0] + choice((-1, 1)) * abs(ceil(fin_pos[0]) - ceil(init_pos[0])) * 0.01 * randint(deviation / 2,
-                                                                                               deviation),
-    init_pos[1] + choice((-1, 1)) * abs(ceil(fin_pos[1]) - ceil(init_pos[1])) * 0.01 * randint(deviation / 2, deviation)
+        init_pos[0] + choice((-1, 1)) * abs(ceil(fin_pos[0]) - ceil(init_pos[0])) * 0.01 * randint(deviation / 2,
+                                                                                                   deviation),
+        init_pos[1] + choice((-1, 1)) * abs(ceil(fin_pos[1]) - ceil(init_pos[1])) * 0.01 * randint(deviation / 2,
+                                                                                                   deviation)
     )
 
     xys = [init_pos, control_1, control_2, fin_pos]
