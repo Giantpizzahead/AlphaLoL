@@ -1,0 +1,40 @@
+Final test, using 100 random images from ingame
+True positives: 363
+False positives: 0
+False negatives: 19
+Precision: 100.00%
+Recall: 95.03%
+
+-----------------------------------------------------------------------------------------------------------------------
+
+General strategy to detect the health bar:
+Create a binary image depending on whether pixel color is near minion's health bar edge color.
+Then, use template matching to find the health bars (1 on outline, 0 inside).
+Finally, manually check pixel colors using binary search to figure out the minion's side and health.
+
+Minion health bar is reused for the honeyfruit, with different health color
+Blast cone also reuses the same health bar, with differnet health color
+Control ward health bar is the same size, gets detected incorrectly
+Same as above for stealth ward
+Health bars are partially reused for jungle monsters, different sizes maybe, get detected wrongly
+Health bars also appear to be reused for stuff like turrets, Shaco boxes, etc.
+
+False positive on the top part of the Q ability box
+False positive all along the bottom gui display
+False positive between the "2" and "3" in the gui display
+False positives along edge when pressing tab
+False positives all over the client GUI
+False positive in the death recap
+False positive along bottom of turret health bar
+False positive along top of player health bar
+False positive on ability description tooltip
+False positive on ability chargeup display
+So basically GUI causes a ton of false positives with 0% health (no inside color detected), maybe filter those out?
+
+Now filtering out the above false positives:
+
+FALSE NEGATIVE - \screenshots\blindpick\ingame\frame_291.png
+FALSE NEGATIVE - \screenshots\beginnerbot\ingame\frame_617.png
+FALSE NEGATIVE - \screenshots\beginnerbot\ingame\frame_545.png
+
+False negatives are caused by the program thinking that the inside right hand part is the same color as edge of health bar

@@ -6,6 +6,7 @@ https://stackoverflow.com/questions/1548704/delete-multiple-files-matching-a-pat
 import os, re
 
 dir = "../../screenshots/ingame"
+dir = "FAKE DIRECTORY"
 for f in os.listdir(dir):
     pattern = "frame_(.*).png"
     a = int(re.search(pattern, f).group(1))

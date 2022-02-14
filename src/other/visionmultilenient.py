@@ -1,5 +1,6 @@
 """
 https://www.analyticsvidhya.com/blog/2019/10/detailed-guide-powerful-sift-technique-image-matching-python/
+This doesn't seem to work that well, at least not without preprocessing
 """
 
 import numpy as np
@@ -7,8 +8,8 @@ import cv2 as cv
 from matplotlib import pyplot as plt
 
 MIN_MATCH_COUNT = 10
-img1 = cv.imread('vision/img/client_match/client1.png', 0)          # queryImage
-img2 = cv.imread('vision/img/client_match/screen4.png', 0) # trainImage
+img1 = cv.imread('../listeners/vision/img/client.png', 0)          # queryImage
+img2 = cv.imread('../../screenshots/client/frame_29.png', 0) # trainImage
 # Initiate SIFT detector
 sift = cv.SIFT_create()
 # find the keypoints and descriptors with SIFT

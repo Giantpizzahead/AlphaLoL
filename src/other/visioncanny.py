@@ -7,7 +7,7 @@ import cv2
 from matplotlib import pyplot as plt
 
 # load the image, convert it to grayscale, and blur it slightly
-image = cv2.imread('vision/img/minion_match/test2.png')
+image = cv2.imread('../tests/listeners/vision/img/minion_match/test2.png')
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 blurred = gray # cv2.GaussianBlur(gray, (5, 5), 0)
 

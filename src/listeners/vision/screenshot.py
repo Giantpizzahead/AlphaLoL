@@ -1,5 +1,5 @@
 """
-Helper functions for taking screenshots of various portions of the screen.
+Contains helper functions for taking screenshots of various portions of the screen.
 """
 
 import cv2 as cv

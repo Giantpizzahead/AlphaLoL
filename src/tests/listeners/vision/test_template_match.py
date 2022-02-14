@@ -1,9 +1,11 @@
+import os
 from typing import Callable
 
 import cv2 as cv
 import numpy as np
 
 import listeners.vision.template_match as template_match
+from misc.definitions import ROOT_DIR
 
 
 def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], list[template_match.Match]],
@@ -47,6 +49,7 @@ def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], list[te
                 if cv.getWindowProperty(f"Test {i}, template {j}", cv.WND_PROP_VISIBLE) < 1:
                     break
 
-
+2
 if __name__ == '__main__':
-    test_matches(template_match.find_exact_matches, "img/minion_match", 2, 2, 1, 1.5)
+    test_matches(template_match.find_exact_matches,
+                 os.path.join(ROOT_DIR, "img", "minion_match"), 5, 1, 1, 1.2)

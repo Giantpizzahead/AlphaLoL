@@ -1,4 +1,4 @@
-from controllers.controller import *
+from controllers.game_controller import *
 
 from misc.rng import rsleep
 

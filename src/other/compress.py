@@ -21,7 +21,9 @@ def compress_png(file1, file2):
     size2 = os.path.getsize(file2)
     return size1, size2
 
+# Directory containing screenshots to compress
 rootdir = "../../../screenshots"
+rootdir = "FAKE DIRECTORY"
 for subdir, dirs, files in os.walk(rootdir):
     for file in files:
         file1 = os.path.join(subdir, file)
