@@ -6,6 +6,22 @@ This bot makes no attempt to stay undetected, because it's meant as a learning p
 
 Version 0.1.0
 
+## Demo
+
+Parsing the game state (minions, players, and turrets):
+
+![Vision Demo 2](img/demo/vision_demo2.jpg)
+
+![Vision Demo 4](img/demo/vision_demo4.jpg)
+
+![Vision Demo 5](img/demo/vision_demo5.jpg)
+
+Playing the game using the parsed info:
+
+![Manual AI Demo 1](img/demo/manual_ai_demo1.jpg)
+
+![Manual AI Demo 2](img/demo/manual_ai_demo2.jpg)
+
 ## Setup
 
 Um... yeah. Good luck with that one.
