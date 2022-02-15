@@ -10,7 +10,7 @@ Version 0.1.0
 
 Parsing the game state (minions, players, and turrets):
 
-![Vision Demo 2](img/demo/vision_demo2.jpg)
+![Vision Demo 3](img/demo/vision_demo3.jpg)
 
 ![Vision Demo 4](img/demo/vision_demo4.jpg)
 
