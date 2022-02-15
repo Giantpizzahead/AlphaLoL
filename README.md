@@ -77,7 +77,7 @@ pip install opencv-python==4.5.4.60
 
   - [ ] Win an intro Coop vs AI game with a positive KDA & at least 3 kills
   - [ ] Win a beginner Coop vs AI game with a positive KDA & at least 3 kills
-  - [ ] Win a 1v1 against me in a custom game (first turret), but I have to play Yuumi mid
+  - [ ] Win a 1v1 against me in a custom game (first turret), but I have to play Yuumi mid cause why not
 
 ### Milestones: Hybrid AI
 
