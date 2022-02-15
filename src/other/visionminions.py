@@ -1,10 +1,10 @@
 import cv2 as cv
 import numpy as np
 
-#read the image
-img = cv.imread("vision/img/minion_match/test5.png")
+# read the image
+img = cv.imread("../tests/listeners/vision/img/minion_match/test3.png")
 
-#convert the BGR image to HSV colour space
+# convert the BGR image to HSV colour space
 hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
 
 # Masks for blue/red minion health bars and the edges
@@ -20,16 +20,16 @@ lower_edge = np.array([0, 0, 10])
 upper_edge = np.array([255, 255, 22])
 mask_edge = cv.inRange(hsv, lower_edge, upper_edge)
 
-#perform bitwise and on the original image arrays using the mask
+# perform bitwise and on the original image arrays using the mask
 mask = cv.bitwise_or(cv.bitwise_or(mask_red, mask_blue), mask_edge)
 res = cv.bitwise_and(img, img, mask=mask)
 
-#create resizable windows for displaying the images
+# create resizable windows for displaying the images
 cv.namedWindow("orig")
 cv.namedWindow("res")
 cv.namedWindow("mask")
 
-#display the images
+# display the images
 cv.imshow("orig", img)
 cv.imshow("mask", mask)
 cv.imshow("res", res)

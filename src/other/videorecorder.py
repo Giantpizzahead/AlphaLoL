@@ -25,14 +25,14 @@ def grab(queue):
             time.sleep(t - elapsed_time)
 
     # Tell the other worker to stop
-    queue.put(None)
+    # queue.put(None)
 
 
 def save(queue):
     # type: (Queue) -> None
 
     number = 1
-    output = "../../screenshots/frame_{}.png"
+    output = "../../../temp/frame_{}.png"
     to_png = mss.tools.to_png
 
     while "there are screenshots":

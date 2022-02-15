@@ -1,12 +1,14 @@
-from typing import Callable
+import os
+from typing import Callable, List
 
 import cv2 as cv
 import numpy as np
 
 import listeners.vision.template_match as template_match
+from misc.definitions import ROOT_DIR
 
 
-def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], list[template_match.Match]],
+def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], List[template_match.Match]],
                  testpath: str, n: int, m: int, scale=1.0, display_scale=1.0) -> None:
     """
     Test the given template matching function with sets of templates and images.
@@ -49,4 +51,5 @@ def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], list[te
 
 
 if __name__ == '__main__':
-    test_matches(template_match.find_exact_matches, "img/minion_match", 2, 2, 1, 1.5)
+    test_matches(template_match.find_exact_matches,
+                 os.path.join(ROOT_DIR, "..", "img", "minion_match"), 5, 1, 1, 1.2)

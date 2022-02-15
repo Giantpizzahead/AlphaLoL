@@ -11,7 +11,6 @@ from misc import color_logging
 from misc.rng import rsleep
 
 logger = color_logging.getLogger('keyboard', level=color_logging.INFO)
-mouse = pynput.mouse.Controller()
 keyboard = pynput.keyboard.Controller()
 
 
@@ -28,4 +27,16 @@ def press_key(key: Union[str, Key]) -> None:
     rsleep(0.032)
     keyboard.press(key)
     rsleep(0.032)
+    keyboard.release(key)
+
+
+def press_key_with_modifier(key: Union[str, Key], modifier: Union[str, Key]) -> None:
+    logger.debug(f"{key} key pressed with {modifier} modifier")
+    rsleep(0.032)
+    keyboard.press(modifier)
+    rsleep(0.017)
+    keyboard.press(key)
+    rsleep(0.024)
+    keyboard.release(modifier)
+    rsleep(0.006)
     keyboard.release(key)

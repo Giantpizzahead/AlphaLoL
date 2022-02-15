@@ -15,7 +15,8 @@ def rnum(n: float, s=0.047, a=False) -> float:
     :param a: Whether the spread should be absolute or relative (default = relative).
     :return: The randomized number.
     """
-    if not a: s = n * s
+    if not a:
+        s = n * s
     return np.random.normal(n, s)
 
 
@@ -26,4 +27,4 @@ def rsleep(n: float, s=0.047, a=False) -> None:
     :param s: The spread around the duration.
     :param a: Whether the spread should be absolute or relative (default = relative).
     """
-    time.sleep(rnum(n, s, a))
+    time.sleep(max(rnum(n, s, a), 0))
