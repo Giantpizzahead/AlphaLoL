@@ -10,8 +10,9 @@ import numpy as np
 from typing import List
 
 from misc import color_logging
+from misc.definitions import MAX_MATCHES
 
-logger = color_logging.getLogger('vision', level=color_logging.DEBUG)
+logger = color_logging.getLogger('template_match', level=color_logging.INFO)
 # TODO: may cause issues with relative paths
 img_cache = {}
 
@@ -77,6 +78,8 @@ def find_exact_matches(img: np.ndarray, template: np.ndarray, scale=1, threshold
     for pt in points:
         matches.append(Match(x1=pt[0], y1=pt[1], x2=pt[0]+template.shape[1]-1, y2=pt[1]+template.shape[0]-1,
                              score=res[pt[1]][pt[0]]))
+        if len(matches) >= MAX_MATCHES:
+            break
     # Upscale coordinates
     if scale != 1:
         for m in matches:

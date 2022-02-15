@@ -1,0 +1,15 @@
+Minions:
+lower_blue = np.array([101, 156, 117])
+upper_blue = np.array([105, 163, 212])
+lower_red = np.array([0, 135, 118])
+upper_red = np.array([4, 143, 212])
+
+Players:
+lower_blue = np.array([97, 219, 192])
+upper_blue = np.array([103, 227, 215])
+lower_red = np.array([0, 209, 143])
+upper_red = np.array([5, 217, 152])
+
+Overall:
+lower_blue = np.array([90, 140, 95])
+upper_blue = np.array([112, 240, 230])

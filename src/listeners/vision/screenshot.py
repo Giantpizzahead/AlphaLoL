@@ -8,7 +8,7 @@ from mss import mss, screenshot
 
 from misc import color_logging
 
-logger = color_logging.getLogger('vision', level=color_logging.DEBUG)
+logger = color_logging.getLogger('screenshot', level=color_logging.INFO)
 sct = mss()
 scr: screenshot.ScreenShot
 screen_res = (sct.monitors[0]['width'], sct.monitors[0]['height'])
@@ -24,7 +24,7 @@ def take_screenshot(x1=0, y1=0, x2=screen_res[0], y2=screen_res[1], scale=1.0) -
     :param scale: Amount to scale the returned image by (<1 = smaller, >1 = larger).
     :return: The requested OpenCV image, in BGR format.
     """
-    sct_img = sct.grab({'top': x1, 'left': y1, 'width': x2-x1, 'height': y2-y1})
+    sct_img = sct.grab({'top': y1, 'left': x1, 'width': x2-x1, 'height': y2-y1})
     # noinspection PyTypeChecker
     scr = np.array(sct_img)[:, :, :3]
     scr = cv.resize(scr, (int(scr.shape[1] * scale), int(scr.shape[0] * scale)), interpolation=cv.INTER_AREA)

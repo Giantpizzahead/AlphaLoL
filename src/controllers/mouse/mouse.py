@@ -35,7 +35,8 @@ def release_right() -> None:
 
 def move_mouse(x: float, y: float) -> None:
     logger.debug(f"Move mouse to ({x:.2f}, {y:.2f})")
-    bezier_mouse.move_mouse(rnum(x, 1.5, True), rnum(y, 1.5, True))
+    cx, cy = bezier_mouse.mouse.position
+    bezier_mouse.move_mouse(rnum(x, abs(cx-x)/40+5, True), rnum(y, abs(cy-y)/40+5, True))
     rsleep(0.01, s=0.3)
 
 
