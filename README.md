@@ -1,6 +1,8 @@
 # lol-bot
 
-LoL bot. Will boost you to Iron IV
+(More original name TBD)
+
+This is a bot that tries to play League of Legends automatically.
 
 This bot makes no attempt to stay undetected, because it's meant as a learning project. Use at your own risk.
 
