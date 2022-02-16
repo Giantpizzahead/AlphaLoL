@@ -12,7 +12,7 @@ from typing import List
 from misc import color_logging
 from misc.definitions import MAX_MATCHES
 
-logger = color_logging.getLogger('template_match', level=color_logging.INFO)
+logger = color_logging.getLogger('image_handler', level=color_logging.INFO)
 # TODO: may cause issues with relative paths
 img_cache = {}
 
@@ -69,7 +69,8 @@ def find_exact_matches(img: np.ndarray, template: np.ndarray, scale=1, threshold
         template = scale_image(template, scale)
 
     # Locate template in original image
-    res = cv.matchTemplate(img, template, cv.TM_CCOEFF_NORMED)
+    res = cv.matchTemplate(img, template, cv.TM_CCORR_NORMED)
+    # Invert all values of the 2D res array
     loc = np.where(res >= threshold)
     points = list(zip(*loc[::-1]))
 

@@ -5,6 +5,7 @@ TODO: This code is Windows-specific
 
 from typing import Tuple, Optional
 
+import numpy as np
 import win32gui
 from listeners.vision import screenshot
 
@@ -45,43 +46,43 @@ def set_window_props(hwnd, x, y, w, h) -> None:
     win32gui.MoveWindow(hwnd, x-7, y, w, h, True)
 
 
-def get_client_res() -> Optional[Tuple[int, int]]:
+def get_client_res() -> Tuple[Optional[float], Optional[float]]:
     """
     Returns the resolution of the League of Legends client window.
     :return: A tuple (w, h), or None if the client window is not found.
     """
     update_handles()
-    return get_window_res(client) if client else None
+    return get_window_res(client) if client else (None, None)
 
 
-def get_game_res() -> Optional[Tuple[int, int]]:
+def get_game_res() -> Tuple[Optional[float], Optional[float]]:
     """
     Returns the resolution of the League of Legends game window.
     :return: A tuple (w, h), or None if the game window is not found.
     """
     update_handles()
-    return get_window_res(game) if game else None
+    return get_window_res(game) if game else (None, None)
 
 
-def get_client_pos() -> Optional[Tuple[int, int]]:
+def get_client_pos() -> Tuple[Optional[float], Optional[float]]:
     """
     Returns the position of the League of Legends client window.
     :return: A tuple for the top-left position (x, y), or None if the client window is not found.
     """
     update_handles()
-    return get_window_pos(client) if client else None
+    return get_window_pos(client) if client else (None, None)
 
 
-def get_game_pos() -> Optional[Tuple[int, int]]:
+def get_game_pos() -> Tuple[Optional[float], Optional[float]]:
     """
     Returns the position of the League of Legends game window.
     :return: A tuple for the top-left position (x, y), or None if the game window is not found.
     """
     update_handles()
-    return get_window_pos(game) if game else None
+    return get_window_pos(game) if game else (None, None)
 
 
-def offset_client_pos(x: float, y: float) -> Optional[Tuple[float, float]]:
+def offset_client_pos(x: float, y: float) -> Tuple[Optional[float], Optional[float]]:
     """
     Converts coordinates relative to the client into absolute positions.
     :param x: The relative x-coordinate.
@@ -93,10 +94,10 @@ def offset_client_pos(x: float, y: float) -> Optional[Tuple[float, float]]:
         pos = get_window_pos(client)
         return pos[0] + x, pos[1] + y
     else:
-        return None
+        return None, None
 
 
-def offset_game_pos(x: float, y: float) -> Optional[Tuple[float, float]]:
+def offset_game_pos(x: float, y: float) -> Tuple[Optional[float], Optional[float]]:
     """
     Converts coordinates relative to the game into absolute positions.
     :param x: The relative x-coordinate.
@@ -108,7 +109,7 @@ def offset_game_pos(x: float, y: float) -> Optional[Tuple[float, float]]:
         pos = get_window_pos(game)
         return pos[0] + x, pos[1] + y
     else:
-        return None
+        return None, None
 
 
 def set_client_props(x, y, w, h) -> None:
@@ -154,3 +155,27 @@ def update_handles() -> None:
             global game
             game = hwnd
     win32gui.EnumWindows(callback, None)
+
+
+def take_client_screenshot() -> np.ndarray:
+    """
+    Takes a screenshot of the League of Legends client.
+    :return: An image of the client.
+    """
+    x, y = get_client_pos()
+    w, h = get_client_res()
+    if x is None:
+        raise Exception("Client isn't open")
+    return screenshot.take_screenshot(x, y, x + w, y + h)
+
+
+def take_game_screenshot() -> np.ndarray:
+    """
+    Takes a screenshot of the League of Legends game window.
+    :return: An image of the game.
+    """
+    x, y = get_game_pos()
+    w, h = get_game_res()
+    if x is None:
+        raise Exception("Game isn't open")
+    return screenshot.take_screenshot(x, y, x + w, y + h)

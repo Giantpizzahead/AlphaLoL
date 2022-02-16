@@ -30,25 +30,34 @@ def on_shift_h() -> None:
     """
     logger.info("""
     Shift-H: Display help menu
-    Shift-Q: Quit the program
-    Shift-T: Toggles the bot's mouse and keyboard control
+    Shift-T: Toggle the entire bot
+    Shift-C: Toggle the bot's ability to control the mouse and keyboard
+    Shift-0: Quit the program
     """)
-
-
-def on_shift_q() -> None:
-    """
-    Quit the application.
-    """
-    logger.info("Exiting the application...")
-    queue.put("quit")
 
 
 def on_shift_t() -> None:
     """
-    Toggles the bot.
+    Toggles the bot's AI functions.
     """
-    logger.info("Toggling bot...")
+    logger.debug("Toggling bot...")
     queue.put("toggle_bot")
+
+
+def on_shift_c() -> None:
+    """
+    Toggles the bot's mouse and keyboard control.
+    """
+    logger.debug("Toggling mouse and keyboard control...")
+    queue.put("toggle_dry_run")
+
+
+def on_shift_0() -> None:
+    """
+    Quit the application.
+    """
+    logger.debug("Exiting the application...")
+    queue.put("quit")
 
 
 def on_press(key) -> None:
@@ -86,7 +95,8 @@ def on_release(key) -> None:
 # Initialize the hotkeys and the listener
 hotkeys = [
     HotKey(HotKey.parse('<shift>+h'), on_shift_h),
-    HotKey(HotKey.parse('<shift>+q'), on_shift_q),
-    HotKey(HotKey.parse('<shift>+t'), on_shift_t)
+    HotKey(HotKey.parse('<shift>+t'), on_shift_t),
+    HotKey(HotKey.parse('<shift>+c'), on_shift_c),
+    HotKey(HotKey.parse('<shift>+0'), on_shift_0),
 ]
 listener = pynput.keyboard.Listener(on_press=on_press, on_release=on_release)

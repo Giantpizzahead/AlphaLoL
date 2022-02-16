@@ -12,8 +12,8 @@ INFO = logging.INFO
 WARNING = logging.WARNING
 ERROR = logging.ERROR
 CRITICAL = logging.CRITICAL
-LOG_FORMAT = "%(asctime)s %(name)-9.9s %(levelname)+9.9s  %(message)s"
-# LOG_FORMAT = "%(name)-9.9s %(message)s"
+# LOG_FORMAT = "%(asctime)s %(name)-9.9s %(levelname)+9.9s  %(message)s"
+LOG_FORMAT = "%(name)-9.9s %(message)s"
 basicFormatter = logging.Formatter(LOG_FORMAT)
 colorFormatter = colorlog.ColoredFormatter("%(log_color)s" + LOG_FORMAT)
 

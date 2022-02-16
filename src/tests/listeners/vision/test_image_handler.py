@@ -4,11 +4,11 @@ from typing import Callable, List
 import cv2 as cv
 import numpy as np
 
-import listeners.vision.template_match as template_match
+import listeners.vision.image_handler as image_handler
 from misc.definitions import ROOT_DIR
 
 
-def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], List[template_match.Match]],
+def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], List[image_handler.Match]],
                  testpath: str, n: int, m: int, scale=1.0, display_scale=1.0) -> None:
     """
     Test the given template matching function with sets of templates and images.
@@ -20,10 +20,10 @@ def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], List[te
 
     images = []
     for i in range(1, n+1):
-        images.append(template_match.load_image(f"{testpath}/test{i}.png"))
+        images.append(image_handler.load_image(f"{testpath}/test{i}.png"))
     templates = []
     for i in range(1, m+1):
-        templates.append(template_match.load_image(f"{testpath}/template{i}.png"))
+        templates.append(image_handler.load_image(f"{testpath}/template{i}.png"))
 
     for i in range(n):
         for j in range(m):
@@ -39,7 +39,7 @@ def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], List[te
             disp = np.zeros((max(h1, h2), w1 + w2, 3), np.uint8)
             disp[:h1, :w1, :3] = templates[j]
             disp[:h2, w1:w1 + w2, :3] = res
-            disp = template_match.scale_image(disp, display_scale)
+            disp = image_handler.scale_image(disp, display_scale)
             print(
                 f"Test {i}, template {j}: {len(result)} matches, max score = {max([0.0] + [x.score for x in result])},"
                 f"raw = {result}")
@@ -51,5 +51,5 @@ def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], List[te
 
 
 if __name__ == '__main__':
-    test_matches(template_match.find_exact_matches,
+    test_matches(image_handler.find_exact_matches,
                  os.path.join(ROOT_DIR, "..", "img", "minion_match"), 5, 1, 1, 1.2)

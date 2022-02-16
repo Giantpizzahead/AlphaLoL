@@ -2,6 +2,7 @@
 Realistic mouse movements. Modified version of the below library:
 https://github.com/vincentbavitz/bezmouse/blob/master/mouse.py
 """
+import threading
 
 import pynput
 import time
@@ -130,7 +131,7 @@ def move_mouse_list(coord_list, deviation=30, speed=-1):
     Moves the mouse through the specified points.
     """
     if speed == -1:
-        speed = rnum(3000, s=0.1)
+        speed = rnum(3500, s=0.1)
     all_coords = connected_bez(coord_list, deviation, speed)
     # print(f"Total points: {len(all_coords)}")
     # start_time = time.time()
