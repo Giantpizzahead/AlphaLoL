@@ -6,7 +6,7 @@ import math
 import random
 import time
 import cv2 as cv
-from Levenshtein import distance
+import editdistance
 
 import numpy as np
 
@@ -36,7 +36,7 @@ def close_match(s1: str, s2: str) -> bool:
     if len(s1) < 3 or len(s2) < 3:
         return s1 == s2
     acceptable = min(len(s1), len(s2)) // 5 + 1
-    return distance(s1, s2) <= acceptable
+    return editdistance.eval(s1, s2) <= acceptable
 
 
 def switch_status(s: str) -> None:
