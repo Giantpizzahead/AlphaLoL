@@ -1,6 +1,6 @@
-# lol-bot
+# AlphaLoL (lol-bot)
 
-(More original name TBD)
+100% original name
 
 This is a bot that tries to play League of Legends automatically.
 
@@ -10,7 +10,7 @@ Version 0.1.1
 
 ## Demo
 
-[Intro Bot Game](#) (KDA: 23/2/2)
+[Intro Bot Game](https://www.youtube.com/watch?v=1myX82e-rvc&list=PLMhnlK6gpgE8hznQT_UEJ6PEKKHFgOIqW&index=4) (KDA: 23/2/2) 
 
 Parsing the game state (minions, players, and turrets):
 
