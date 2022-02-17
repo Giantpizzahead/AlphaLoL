@@ -13,7 +13,7 @@ from pynput.keyboard import Key
 from misc import color_logging
 from misc.rng import rsleep
 
-logger = color_logging.getLogger('keyboard', level=color_logging.INFO)
+logger = color_logging.getLogger('controls', level=color_logging.INFO)
 keyboard = pynput.keyboard.Controller()
 
 

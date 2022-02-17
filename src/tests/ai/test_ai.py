@@ -11,7 +11,7 @@ from listeners.vision import image_handler
 from misc import color_logging
 from misc.definitions import ROOT_DIR
 
-logger = color_logging.getLogger('vision', level=color_logging.DEBUG)
+logger = color_logging.getLogger('test', level=color_logging.DEBUG)
 
 
 def test_ai(testpath: str, display_scale=1.0) -> None:
@@ -37,7 +37,7 @@ def test_ai(testpath: str, display_scale=1.0) -> None:
         start_time = time.time()
         basic_ai.process(img)
         end_time = time.time()
-        print(f"{file}: {end_time - start_time:.3f}s")
+        logger.info(f"{file}: {end_time - start_time:.3f}s")
         disp = image_handler.scale_image(img, display_scale)
         cv.imshow(f"{file}", disp)
         while True:

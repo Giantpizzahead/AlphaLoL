@@ -8,7 +8,7 @@ from queue import Queue
 
 from misc import color_logging
 
-logger = color_logging.getLogger('key_listener', level=color_logging.INFO)
+logger = color_logging.getLogger('listener', level=color_logging.INFO)
 queue = Queue()
 
 

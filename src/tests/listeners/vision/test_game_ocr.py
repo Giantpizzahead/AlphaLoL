@@ -9,7 +9,7 @@ from listeners.vision import image_handler
 from misc import color_logging
 from misc.definitions import ROOT_DIR
 
-logger = color_logging.getLogger('vision', level=color_logging.DEBUG)
+logger = color_logging.getLogger('test', level=color_logging.DEBUG)
 
 
 def test_find_text(testpath: str, scale=1.0, display_scale=1.0) -> None:
@@ -38,7 +38,6 @@ def test_find_text(testpath: str, scale=1.0, display_scale=1.0) -> None:
         # Display text boxes
         res = img.copy()
         for r in text:
-            print(r)
             cv.rectangle(res, (r.x1, r.y1), (r.x2, r.y2), (100, 255, 100), 1)
 
         res = image_handler.scale_image(res, display_scale)
@@ -50,7 +49,7 @@ def test_find_text(testpath: str, scale=1.0, display_scale=1.0) -> None:
                        cv.FONT_HERSHEY_SIMPLEX, 0.6 * display_scale, (100, 255, 100), 1)
 
         # Show result
-        print(f"{file}: {len(text)} text boxes, {end_time - start_time:.3f}s")
+        logger.info(f"{file}: {len(text)} text boxes, {end_time - start_time:.3f}s")
         cv.imshow(f"{file}", res)
         while True:
             cv.waitKey(50)

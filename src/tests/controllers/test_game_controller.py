@@ -2,6 +2,8 @@ from controllers.game_controller import *
 
 from misc.rng import rsleep
 
+logger = color_logging.getLogger('test', level=color_logging.DEBUG)
+
 
 def test_annie_combo(x: float, y: float) -> None:
     right_click(x, y)
@@ -21,7 +23,7 @@ def test_annie_combo(x: float, y: float) -> None:
 if __name__ == '__main__':
     x = int(input("X coordinate of combo: "))
     y = int(input("Y coordinate of combo: "))
-    print("Performing combo in 3 seconds...")
+    logger.info("Performing combo in 3 seconds...")
     rsleep(3, s=0)
-    print("TIBBERS! :)")
+    logger.info("TIBBERS! :)")
     test_annie_combo(x, y)

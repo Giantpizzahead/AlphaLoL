@@ -12,7 +12,7 @@ from controllers.mouse import bezier_mouse
 from misc import color_logging
 from misc.rng import rnum, rsleep
 
-logger = color_logging.getLogger('mouse', level=color_logging.INFO)
+logger = color_logging.getLogger('controls', level=color_logging.INFO)
 mouse = pynput.mouse.Controller()
 
 

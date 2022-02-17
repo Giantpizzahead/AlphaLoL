@@ -5,7 +5,10 @@ import cv2 as cv
 import numpy as np
 
 import listeners.vision.image_handler as image_handler
+from misc import color_logging
 from misc.definitions import ROOT_DIR
+
+logger = color_logging.getLogger('test', level=color_logging.DEBUG)
 
 
 def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], List[image_handler.Match]],
@@ -40,7 +43,7 @@ def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], List[im
             disp[:h1, :w1, :3] = templates[j]
             disp[:h2, w1:w1 + w2, :3] = res
             disp = image_handler.scale_image(disp, display_scale)
-            print(
+            logger.info(
                 f"Test {i}, template {j}: {len(result)} matches, max score = {max([0.0] + [x.score for x in result])},"
                 f"raw = {result}")
             cv.imshow(f"Test {i}, template {j}", disp)

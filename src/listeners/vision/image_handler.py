@@ -12,7 +12,7 @@ from typing import List
 from misc import color_logging
 from misc.definitions import MAX_MATCHES
 
-logger = color_logging.getLogger('image_handler', level=color_logging.INFO)
+logger = color_logging.getLogger('vision', level=color_logging.INFO)
 # TODO: may cause issues with relative paths
 img_cache = {}
 

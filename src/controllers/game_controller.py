@@ -10,7 +10,7 @@ import controllers.mouse.mouse as mouse
 from misc import color_logging
 from listeners.vision import window_tracker
 
-logger = color_logging.getLogger('game_controller', level=color_logging.INFO)
+logger = color_logging.getLogger('controls', level=color_logging.INFO)
 dry_run = False
 
 

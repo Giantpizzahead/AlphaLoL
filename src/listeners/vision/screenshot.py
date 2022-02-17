@@ -8,7 +8,7 @@ from mss import mss, screenshot
 
 from misc import color_logging
 
-logger = color_logging.getLogger('screenshot', level=color_logging.INFO)
+logger = color_logging.getLogger('vision', level=color_logging.INFO)
 sct = mss()
 scr: screenshot.ScreenShot
 screen_res = (sct.monitors[0]['width'], sct.monitors[0]['height'])
