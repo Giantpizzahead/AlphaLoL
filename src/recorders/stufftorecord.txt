@@ -1,0 +1,20 @@
+Supervised learning
+Champion being played is always Annie (mid)
+
+Inputs:
+Current game time
+0-5 visible allied champion data
+0-20 visible allied minion data
+0-5 visible enemy champion data
+0-20 visible enemy minion data
+0-3 visible allied objective data
+0-3 visible enemy objective data
+Mouse locations for the previous 0.5 seconds (including current)
+Previous 5 mouse events
+Previous 5 keyboard events
+Previous 2 frames of game data
+
+Outputs:
+Mouse locations for the next 0.5 seconds
+Next 5 mouse events within the next 0.5 seconds
+Next 5 keyboard events within the next 0.5 seconds

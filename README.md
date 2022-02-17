@@ -82,6 +82,7 @@ python main.py
 - [ ] Create a simple GUI to visualize the AI's actions
 - [ ] Cleanup the AI to make it perform better
 - [ ] Do some serious code cleanup and organizing so we don't hit a brick wall later on
+- [ ] Begin to explore machine learning to create a better, more human-like AI
 
 Nice-to-have but not as important things
 - [ ] Add support for various resolutions
