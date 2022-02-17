@@ -2,8 +2,6 @@
 
 100% original name
 
-Bot that tries to play League of Legends automatically.
-
 This is an applied machine learning project.
 
 Version 0.1.1
