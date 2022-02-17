@@ -1,10 +1,10 @@
-# AlphaLoL (lol-bot)
+# AlphaLoL
 
 100% original name
 
-This is a bot that tries to play League of Legends automatically.
+Bot that tries to play League of Legends automatically.
 
-This bot makes no attempt to stay undetected, because it's meant as a learning project. Use at your own risk.
+This is an applied machine learning project.
 
 Version 0.1.1
 
@@ -16,15 +16,11 @@ Parsing the game state (minions, players, and turrets):
 
 ![Vision Demo 3](img/demo/vision_demo3.jpg)
 
-![Vision Demo 4](img/demo/vision_demo4.jpg)
-
 ![Vision Demo 5](img/demo/vision_demo5.jpg)
 
 Playing the game using the parsed info:
 
 ![Manual AI Demo 1](img/demo/manual_ai_demo1.jpg)
-
-![Manual AI Demo 2](img/demo/manual_ai_demo2.jpg)
 
 ## Results
 
@@ -34,14 +30,24 @@ However, it's not able to do this versus Beginner bots. Sometimes humans confuse
 
 Current FPS of the bot hovers from 4 to 5 depending on how much stuff is on the screen.
 
+## Usage
+
+If you want to play around with the bot yourself, PLEASE be responsible. Stick to AI or Custom games. **Don't ruin the game for real players.**
+
+If you do go into an actual match, be ready to take over when the bot does something dumb. Don't let the bot feed.
+
+To prevent usage as a leveling bot, games cannot be started automatically. You'll need to manually go through champion select, and activate the bot once the game starts.
+
 ## Setup
 
 Um... yeah. Good luck with that one.
 
 Use a virtual environment with Python 3.9. Python 3.10 will not work! Other versions have not been tested.
 
-Dependencies (make sure to run the uninstall command shown below also!):
+Windows setup:
+Clone the respoitory, activate your virtual environment, navigate to the `src` directory, and run the below commands.
 ```shell
+# All systems
 pip install colorlog
 pip install pynput
 pip install numpy
@@ -53,15 +59,13 @@ pip install editdistance
 pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio===0.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 pip install pywin32
 
-# Mac specific (DOES NOT WORK RIGHT NOW)
-pip install torchaudio
-pip install --upgrade torch==1.9.0
-pip install --upgrade torchvision==0.10.0
-
 # All systems
 pip install easyocr
 pip uninstall opencv-python-headless
 pip install opencv-python==4.5.4.60
+
+# Start the bot
+python main.py
 ```
 
 ## Todo
