@@ -12,8 +12,6 @@ Version 0.2.0
 
 [Intro Bot Game](https://www.youtube.com/watch?v=1myX82e-rvc&list=PLMhnlK6gpgE8hznQT_UEJ6PEKKHFgOIqW&index=4) (KDA: 23/2/2)
 
-[1v1 vs Yuumi Mid](#) (KDA: 1/0/0)
-
 Parsing the game state (minions, players, and turrets):
 
 ![Vision Demo 3](img/demo/vision_demo3.jpg)
