@@ -20,10 +20,6 @@ Parsing the game state (minions, players, and turrets):
 
 ![Vision Demo 5](img/demo/vision_demo5.jpg)
 
-Playing the game using the parsed info:
-
-![Manual AI Demo 1](img/demo/manual_ai_demo1.jpg)
-
 ## Results
 
 The bot can beat all tutorial parts consistently. It's also able to get an early lead and snowball it in Intro.
