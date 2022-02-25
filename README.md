@@ -66,7 +66,9 @@ python main.py
 
 ## Todo: Hybrid AI
 
-TBD
+AI that uses a combination of manual logic and machine learning (as opposed to using deep learning for everything).
+
+- [X] Begin to explore machine learning to create a better, more human-like AI
 
 ### Milestones
 
@@ -76,7 +78,9 @@ TBD
 
 TBD
 
-## Todo: Manual AI
+## Todo: Manual AI (COMPLETE)
+
+AI without machine learning - The "standard" way of doing it.
 
 - [X] Create basic controllers
   - [X] Basic mouse movements, semi-realistic
@@ -93,7 +97,6 @@ TBD
 - [X] Cleanup the AI to make it perform better
 - [ ] Fix a bug where the AI can't detect health bars of players shielded by Banshee's Veil
 - [ ] Do some serious code cleanup and organizing so we don't hit a brick wall later on
-- [X] Begin to explore machine learning to create a better, more human-like AI
 
 Nice-to-have but not as important things
 - [ ] Add support for various resolutions
