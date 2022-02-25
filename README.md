@@ -4,11 +4,15 @@
 
 This is an applied machine learning project.
 
-Version 0.1.1
+Version 0.2.0
 
 ## Demo
 
-[Intro Bot Game](https://www.youtube.com/watch?v=1myX82e-rvc&list=PLMhnlK6gpgE8hznQT_UEJ6PEKKHFgOIqW&index=4) (KDA: 23/2/2) 
+[Beginner Bot Game](#) (KDA: 5/0/3)
+
+[Intro Bot Game](https://www.youtube.com/watch?v=1myX82e-rvc&list=PLMhnlK6gpgE8hznQT_UEJ6PEKKHFgOIqW&index=4) (KDA: 23/2/2)
+
+[1v1 vs Yuumi Mid](#) (KDA: 1/0/0)
 
 Parsing the game state (minions, players, and turrets):
 
