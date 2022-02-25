@@ -79,16 +79,17 @@ python main.py
 - [X] Create an AI with simple, hardcoded logic by combining vision and controllers
 - [X] Optimize image processing so the frame rate is at least manageable
 - [X] Use vision to help the AI buy recommended items from the shop
-- [ ] Create a simple GUI to visualize the AI's actions
-- [ ] Cleanup the AI to make it perform better
+- [X] Create a simple GUI to visualize the AI's actions
+- [X] Cleanup the AI to make it perform better
+- [ ] Fix a bug where the AI can't detect health bars of players shielded by Banshee's Veil
 - [ ] Do some serious code cleanup and organizing so we don't hit a brick wall later on
-- [ ] Begin to explore machine learning to create a better, more human-like AI
+- [X] Begin to explore machine learning to create a better, more human-like AI
 
 Nice-to-have but not as important things
 - [ ] Add support for various resolutions
   - Do this by adding a relative scaled coordinate thing in window_tracker, and updating bounding boxes for vision (resolutions scale based on vertical size, horizontal only affects FOV)
 - [ ] Try (and fail) to support Mac
-- [ ] Add error resiliency (handle infinite loops / exceptions gracefully)
+- [X] Add error resiliency (handle infinite loops / exceptions gracefully)
 
 ### Milestones: Manual AI
 
@@ -101,8 +102,8 @@ Nice-to-have but not as important things
 ### Capstones: Manual AI
 
   - [X] Win an intro Coop vs AI game with a positive KDA & at least 3 kills (2/15/22, KDA: 23/2/2)
-  - [ ] Win a beginner Coop vs AI game with a positive KDA & at least 3 kills
-  - [ ] Win a 1v1 against me in a custom game (first turret), but I have to play Yuumi mid cause why not
+  - [X] Win a beginner Coop vs AI game with a positive KDA & at least 3 kills (2/24/22, KDA: 5/0/3)
+  - [X] Win a 1v1 against me in a custom game (first turret), but I have to play Yuumi mid using a trackpad cause why not (2/24/22, KDA: 1/0/0)
 
 ### Milestones: Hybrid AI
 

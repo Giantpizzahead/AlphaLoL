@@ -4,6 +4,7 @@ Contains helper functions for using the mouse.
 
 import threading
 from queue import Queue
+from typing import Union
 
 import pynput
 from pynput.mouse import Button
@@ -96,7 +97,7 @@ def right_click(x: float, y: float) -> None:
     queue.put((_right_click, x, y))
 
 
-def call_function(func: callable, *args: tuple) -> None:
+def call_function(func: callable, *args: Union[str, tuple]) -> None:
     queue.put((func, *args))
 
 

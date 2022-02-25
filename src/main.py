@@ -6,7 +6,7 @@ import time
 import traceback
 
 from queue import Queue
-from ai import basic_ai
+from ai import manual_ai
 from controllers import game_controller
 from listeners.vision import screenshot, game_vision, window_tracker, game_ocr
 from listeners.keyboard import key_listener
@@ -50,8 +50,8 @@ def main():
                 logger.warning(f"Unknown event found in keyboard listener queue: {e}")
         if bot_active:
             try:
-                basic_ai.is_debug = True
-                basic_ai.process(window_tracker.take_game_screenshot())
+                manual_ai.is_debug = True
+                manual_ai.process(window_tracker.take_game_screenshot())
             except Exception:
                 logger.error(f"Unknown error: {traceback.format_exc()}")
                 time.sleep(0.5)

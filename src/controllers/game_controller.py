@@ -58,8 +58,7 @@ def attack_move(x: float, y: float) -> None:
         return
     x, y = calc_position(x, y)
     mouse.move_mouse(x, y)
-    keyboard.press_key('a')
-    mouse.left_click(x, y)
+    mouse.call_function(keyboard.press_key, 'a')
 
 
 def level_ability(key: Union[str, Key]) -> None:
