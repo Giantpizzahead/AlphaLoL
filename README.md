@@ -4,11 +4,13 @@
 
 This is an applied machine learning project.
 
-Version 0.1.1
+Version 0.2.0
 
 ## Demo
 
-[Intro Bot Game](https://www.youtube.com/watch?v=1myX82e-rvc&list=PLMhnlK6gpgE8hznQT_UEJ6PEKKHFgOIqW&index=4) (KDA: 23/2/2) 
+[Beginner Bot Game](https://www.youtube.com/watch?v=KWuxXuVBSl4&list=PLMhnlK6gpgE8hznQT_UEJ6PEKKHFgOIqW&index=5) (KDA: 5/0/3)
+
+[Intro Bot Game](https://www.youtube.com/watch?v=1myX82e-rvc&list=PLMhnlK6gpgE8hznQT_UEJ6PEKKHFgOIqW&index=4) (KDA: 23/2/2)
 
 Parsing the game state (minions, players, and turrets):
 
@@ -16,15 +18,11 @@ Parsing the game state (minions, players, and turrets):
 
 ![Vision Demo 5](img/demo/vision_demo5.jpg)
 
-Playing the game using the parsed info:
-
-![Manual AI Demo 1](img/demo/manual_ai_demo1.jpg)
-
 ## Results
 
 The bot can beat all tutorial parts consistently. It's also able to get an early lead and snowball it in Intro.
 
-However, it's not able to do this versus Beginner bots. Sometimes humans confuse the bot (guide it towards jungle monsters, go in under turret). Sometimes the bot is just dumb (executed by tower, run into the center of 4 enemies).
+Versus Beginner bots, the bot does quite well in the early laning phase, and is able to identify some all in opportunities for kills. However, the bot tends to get confused when it sees other players, and it can end up doing some pretty dumb things, like standing still in a 2 versus 3 fight. Despite all this, it's able to maintain a solid KDA.
 
 Current FPS of the bot hovers from 4 to 5 depending on how much stuff is on the screen.
 
@@ -66,7 +64,23 @@ pip install opencv-python==4.5.4.60
 python main.py
 ```
 
-## Todo
+## Todo: Hybrid AI
+
+AI that uses a combination of manual logic and machine learning (as opposed to using deep learning for everything).
+
+- [X] Begin to explore machine learning to create a better, more human-like AI
+
+### Milestones
+
+TBD
+
+### Capstones
+
+TBD
+
+## Todo: Manual AI (COMPLETE)
+
+AI without machine learning - The "standard" way of doing it.
 
 - [X] Create basic controllers
   - [X] Basic mouse movements, semi-realistic
@@ -83,7 +97,6 @@ python main.py
 - [X] Cleanup the AI to make it perform better
 - [ ] Fix a bug where the AI can't detect health bars of players shielded by Banshee's Veil
 - [ ] Do some serious code cleanup and organizing so we don't hit a brick wall later on
-- [X] Begin to explore machine learning to create a better, more human-like AI
 
 Nice-to-have but not as important things
 - [ ] Add support for various resolutions
@@ -91,7 +104,7 @@ Nice-to-have but not as important things
 - [ ] Try (and fail) to support Mac
 - [X] Add error resiliency (handle infinite loops / exceptions gracefully)
 
-### Milestones: Manual AI
+### Milestones
 
   - [X] Perform a fixed coordinate combo (2/11/22)
   - [X] Perform a combo aimed at a champion (2/14/22)
@@ -99,12 +112,8 @@ Nice-to-have but not as important things
   - [X] Beat Tutorial Part 2 with a positive KDA & at least 1 kill (2/14/22)
   - [X] Beat Tutorial Part 3 with a positive KDA & at least 3 kills (2/15/22)
 
-### Capstones: Manual AI
+### Capstones
 
   - [X] Win an intro Coop vs AI game with a positive KDA & at least 3 kills (2/15/22, KDA: 23/2/2)
   - [X] Win a beginner Coop vs AI game with a positive KDA & at least 3 kills (2/24/22, KDA: 5/0/3)
   - [X] Win a 1v1 against me in a custom game (first turret), but I have to play Yuumi mid using a trackpad cause why not (2/24/22, KDA: 1/0/0)
-
-### Milestones: Hybrid AI
-
-TBD
