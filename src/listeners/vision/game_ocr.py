@@ -46,7 +46,7 @@ class Text:
         return (self.y1 + self.y2) / 2
 
 
-def find_text(img: np.ndarray, x1=-1, y1=-1, x2=-1, y2=-1, scale=1.0) -> List[Text]:
+def find_text(img: np.ndarray, x1=-1, y1=-1, x2=-1, y2=-1, scale=1.0, lower=True) -> List[Text]:
     """
     Find any text within the given region in the screenshot.
     :param img: The screenshot to search in.
@@ -55,6 +55,7 @@ def find_text(img: np.ndarray, x1=-1, y1=-1, x2=-1, y2=-1, scale=1.0) -> List[Te
     :param x2: The right x coordinate of the region.
     :param y2: The bottom y coordinate of the region.
     :param scale: The amount to scale the images by. Lower values will be faster, but less accurate.
+    :param lower: Whether to lowercase the text.
     :return: A list of all the text in the screenshot, along with their locations.
     """
     if x1 != -1:
@@ -75,5 +76,5 @@ def find_text(img: np.ndarray, x1=-1, y1=-1, x2=-1, y2=-1, scale=1.0) -> List[Te
         nx2 = round(math.ceil(max(r[0][1][0], r[0][2][0])) / scale + x1)
         ny1 = round(math.floor(min(r[0][0][1], r[0][1][1])) / scale + y1)
         ny2 = round(math.ceil(max(r[0][2][1], r[0][3][1])) / scale + y1)
-        text.append(Text(nx1, ny1, nx2, ny2, r[1].lower(), r[2]))
+        text.append(Text(nx1, ny1, nx2, ny2, (r[1].lower() if lower else r[1]), r[2]))
     return text
