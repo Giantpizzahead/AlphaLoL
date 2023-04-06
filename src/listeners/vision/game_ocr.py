@@ -15,7 +15,7 @@ from misc import color_logging
 from misc.definitions import ROOT_DIR
 from listeners.vision import image_handler
 
-logger = color_logging.getLogger('vision', level=color_logging.INFO)
+logger = color_logging.getLogger('vision', level=color_logging.DEBUG)
 
 ocr_reader: easyocr.Reader
 dummy_img = cv.imread(os.path.join(ROOT_DIR, "..", "img", "minion.png"))
