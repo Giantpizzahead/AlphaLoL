@@ -59,4 +59,4 @@ def test_find_text(testpath: str, scale=1.0, display_scale=1.0) -> None:
 
 if __name__ == '__main__':
     game_ocr.init_ocr()
-    test_find_text(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)
+    test_find_text(os.path.join(ROOT_DIR, "screenshots"), display_scale=0.7)

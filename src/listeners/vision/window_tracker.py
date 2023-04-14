@@ -177,5 +177,5 @@ def take_game_screenshot() -> np.ndarray:
     x, y = get_game_pos()
     w, h = get_game_res()
     if x is None:
-        raise Exception("Game isn't open")
+        raise RuntimeWarning("Game isn't open")
     return screenshot.take_screenshot(x, y, x + w, y + h)

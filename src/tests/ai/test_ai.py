@@ -5,7 +5,7 @@ import time
 import cv2 as cv
 
 import listeners.vision.game_vision as game_vision
-from ai import basic_ai
+from ai import basic_ai_old
 from controllers import game_controller
 from listeners.vision import image_handler
 from misc import color_logging
@@ -48,5 +48,5 @@ def test_ai(testpath: str, display_scale=1.0) -> None:
 
 if __name__ == '__main__':
     game_vision.init_vision()
-    test_ai(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)
+    test_ai(os.path.join(ROOT_DIR, "screenshots"), display_scale=0.7)
     game_vision.close()

@@ -13,7 +13,7 @@ from misc.definitions import ROOT_DIR
 
 # get the dataset
 def load_data(name):
-    return np.load(os.path.join(ROOT_DIR, "..", "data", name))
+    return np.load(os.path.join(ROOT_DIR, "data", name))
 
 
 # get the model

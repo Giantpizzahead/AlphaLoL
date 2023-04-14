@@ -33,8 +33,8 @@ def save_batch():
     curr_batch += 1
     # Data comes before answers
     num_to_save = len(all_answers)
-    np.save(os.path.join(ROOT_DIR, "..", "..", "mldata", f"batch{save_index}_in.npy"), all_data[:num_to_save])
-    np.save(os.path.join(ROOT_DIR, "..", "..", "mldata", f"batch{save_index}_out.npy"), all_answers)
+    np.save(os.path.join(ROOT_DIR, "..", "mldata", f"batch{save_index}_in.npy"), all_data[:num_to_save])
+    np.save(os.path.join(ROOT_DIR, "..", "mldata", f"batch{save_index}_out.npy"), all_answers)
     logger.info(f"Saved batch {save_index}")
     list_lock.acquire()
     all_data = all_data[num_to_save:]
@@ -264,7 +264,7 @@ def save_screenshot(queue):
     # type: (Queue) -> None
 
     number = 0
-    output = os.path.join(ROOT_DIR, "..", "..", "mldata", "images", "frame_{}.png")
+    output = os.path.join(ROOT_DIR, "..", "mldata", "images", "frame_{}.png")
 
     while "there are screenshots":
         img = queue.get()

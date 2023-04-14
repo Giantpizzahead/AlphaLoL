@@ -8,7 +8,8 @@ from dataclasses import dataclass
 from typing import List
 
 import cv2 as cv
-import easyocr
+import pytesseract
+from pytesseract import Output
 import numpy as np
 
 from misc import color_logging
@@ -17,16 +18,15 @@ from listeners.vision import image_handler
 
 logger = color_logging.getLogger('vision', level=color_logging.DEBUG)
 
-ocr_reader: easyocr.Reader
-dummy_img = cv.imread(os.path.join(ROOT_DIR, "..", "img", "minion.png"))
+dummy_img = cv.imread(os.path.join(ROOT_DIR, "img", "minion.png"))
 
 
 def init_ocr():
     logger.info("Initializing OCR module...")
-    global ocr_reader
-    ocr_reader = easyocr.Reader(['en'], gpu=True)
-    ocr_reader.detect(dummy_img)
-    ocr_reader.recognize(dummy_img)
+    # global ocr_reader
+    # ocr_reader = easyocr.Reader(['en'], gpu=True)
+    # ocr_reader.detect(dummy_img)
+    # ocr_reader.recognize(dummy_img)
     logger.info("OCR modules loaded!")
 
 
@@ -67,14 +67,23 @@ def find_text(img: np.ndarray, x1=-1, y1=-1, x2=-1, y2=-1, scale=1.0, lower=True
     # Read text from image
     if scale != 1:
         img = image_handler.scale_image(img, scale)
-    raw_text = ocr_reader.readtext(img, text_threshold=0.5)
+
+    # Invert and grayscale image
+    img = cv.bitwise_not(img)
+    img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+    data = pytesseract.image_to_data(img, config="--psm 12", output_type=Output.DICT)
+
+    # Only keep boxes with level 5 that aren't only spaces and have confidence > 50
     text = []
-    for r in raw_text:
-        if r[2] < 0.4:
-            continue
-        nx1 = round(math.floor(min(r[0][0][0], r[0][3][0])) / scale + x1)
-        nx2 = round(math.ceil(max(r[0][1][0], r[0][2][0])) / scale + x1)
-        ny1 = round(math.floor(min(r[0][0][1], r[0][1][1])) / scale + y1)
-        ny2 = round(math.ceil(max(r[0][2][1], r[0][3][1])) / scale + y1)
-        text.append(Text(nx1, ny1, nx2, ny2, (r[1].lower() if lower else r[1]), r[2]))
+    for i in range(len(data["level"])):
+        # Remove non-english characters
+        data["text"][i] = "".join([c for c in data["text"][i] if ord(c) < 128]).strip()
+        if data["level"][i] == 5 and data["text"][i] != "" and data["conf"][i] > 50:
+            nx1 = round(data["left"][i] / scale + x1)
+            nx2 = round(data["left"][i] + data["width"][i] / scale + x1)
+            ny1 = round(data["top"][i] / scale + y1)
+            ny2 = round(data["top"][i] + data["height"][i] / scale + y1)
+            text.append(Text(nx1, ny1, nx2, ny2,
+                             (data["text"][i].lower() if lower else data["text"][i]),
+                             data["conf"][i] / 100))
     return text

@@ -119,7 +119,7 @@ def do_end() -> None:
         print(f"{timedelta(seconds=t[0])} | {t[1]}")
     print()
     print("Your chat log:")
-    username = "krownetic"
+    username = "your username here"
     for t in chat_log:
         for i in range(0, len(t[1]) - len(username)):
             if close_match(t[1][i:i+len(username)].lower(), username.lower()):

@@ -1,6 +1,16 @@
 """
 TODO: Don't crash if bot is on when game isn't open
 """
+# Torch patch for PyInstaller
+# https://github.com/pytorch/vision/issues/1899
+def script_method(fn, _rcb=None):
+    return fn
+def script(obj, optimize=True, _frames_up=0, _rcb=None):
+    return obj
+import torch.jit
+torch.jit.script_method = script_method
+torch.jit.script = script
+
 import os
 import time
 import traceback
@@ -8,14 +18,10 @@ import traceback
 from queue import Queue
 
 from ai import manual_ai
-from ai.recorders.chat import chat_recorder
 from controllers import game_controller
-from listeners.vision import screenshot, game_vision, window_tracker, game_ocr
+from listeners.vision import game_vision, window_tracker, game_ocr
 from listeners.keyboard import key_listener
 from misc import color_logging
-from misc import rng
-from misc.definitions import ROOT_DIR
-from tests.listeners.vision.test_game_vision import test_all
 
 logger = color_logging.getLogger('main', level=color_logging.DEBUG)
 q = Queue()
@@ -54,8 +60,11 @@ def main():
             try:
                 # chat_recorder.is_debug = True
                 # chat_recorder.process(window_tracker.take_game_screenshot())
-                # manual_ai.is_debug = True
+                manual_ai.is_debug = True
                 manual_ai.process(window_tracker.take_game_screenshot())
+            except RuntimeWarning:
+                logger.warning(f"Could not take screenshot, is the game open?")
+                time.sleep(1)
             except Exception:
                 logger.error(f"Unknown error: {traceback.format_exc()}")
                 time.sleep(0.5)
@@ -70,4 +79,4 @@ if __name__ == '__main__':
     # import cProfile
     # cProfile.run('main()', sort='time')
     # game_vision.init_vision()
-    # cProfile.run('test_all(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)', sort='time')
+    # cProfile.run('test_all(os.path.join(ROOT_DIR, "screenshots"), display_scale=0.7)', sort='time')

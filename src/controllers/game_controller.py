@@ -95,6 +95,22 @@ def right_click(x: float, y: float) -> None:
     mouse.right_click(x, y)
 
 
+def left_click_only() -> None:
+    logger.debug("Left click")
+    if dry_run:
+        return
+    mouse.press_left()
+    mouse.release_left()
+
+
+def right_click_only() -> None:
+    logger.debug("Right click")
+    if dry_run:
+        return
+    mouse.press_right()
+    mouse.release_right()
+
+
 def move_mouse(x: float, y: float) -> None:
     logger.debug(f"Move mouse to ({x:.2f}, {y:.2f})")
     if dry_run:

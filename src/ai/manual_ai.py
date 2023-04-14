@@ -4,13 +4,21 @@ Combines controllers and listeners to play League of Legends.
 This AI is manually coded, to serve as a baseline for the more advanced AIs.
 It can only play Annie mid.
 
-To use:
-Use Flash on D and Heal on F for summoner spells.
-Set a good rune page for Annie. Make sure to include Electrocute.
-Create a custom item page containing all the components and items at https://app.mobalytics.gg/lol/champions/annie/build.
-If done correctly, you should be able to right click on each item once in order to get the full build.
-Enable locked camera.
-Start the bot once you load into a game.
+To use (IMPORTANT: Every step here must be followed, otherwise the bot will *not* work!):
+- Play on 1920 x 1080 resolution.
+- Enable locked camera (press Y).
+- Create a custom item page containing a good Annie build, see https://app.mobalytics.gg/lol/champions/annie/build.
+  There should only be one section. Name it "Optimal" (case-sensitive, the bot uses this to find the shop!).
+  Put all items, including components, in order. The bot will simply right-click on each item in the given order
+  whenever it can buy the next one. If done correctly, the bot should be able to just naively click one after the other
+  and get a full build. (Remember to keep the 6 item inventory limit in mind!)
+
+Optional but highly recommended:
+- Use Flash on D and Heal on F for summoner spells.
+- Set a good rune page for Annie. Make sure to include Electrocute.
+
+The item set I use (you can import it into the game client):
+{"title":"Annie","associatedMaps":[11,12],"associatedChampions":[1],"blocks":[{"items":[{"id":"3070","count":1},{"id":"1052","count":1},{"id":"1027","count":1},{"id":"1052","count":1},{"id":"3802","count":1},{"id":"1001","count":1},{"id":"3020","count":1},{"id":"1026","count":1},{"id":"6655","count":1},{"id":"1052","count":1},{"id":"1028","count":1},{"id":"3145","count":1},{"id":"1058","count":1},{"id":"4645","count":1},{"id":"1058","count":1},{"id":"1058","count":1},{"id":"3089","count":1},{"id":"1052","count":1},{"id":"4630","count":1},{"id":"3135","count":1},{"id":"3003","count":1},{"id":"2139","count":1},{"id":"2139","count":1},{"id":"2139","count":1},{"id":"2139","count":1},{"id":"2139","count":1},{"id":"2139","count":1}],"type":"Optimal"}]}
 """
 
 import math
@@ -32,7 +40,7 @@ from misc import color_logging
 from misc.rng import rnum, rsleep
 from listeners.vision.game_vision import Minion, Player, Objective
 
-logger = color_logging.getLogger('ai', level=color_logging.INFO)
+logger = color_logging.getLogger('ai', level=color_logging.DEBUG)
 is_debug = False
 curr_time = time.time()
 prev_time = time.time()
@@ -50,7 +58,7 @@ BASIC_RANGE = 350
 # Range of Flash-R combo
 ALL_IN_RANGE = 450
 # Turret aggro range
-TURRET_RANGE = 700
+TURRET_RANGE = 650
 # Enemy champion risk range
 RISK_RANGE = 600
 # Horizontal screen stretch
@@ -446,8 +454,9 @@ def do_laning(img: np.ndarray, player: Player,
                 switch_status("base", "shopping")
         else:
             # Run away
-            logger.info("Backing off from enemies")
-            switch_status("laning", "backing")
+            if sub_status != "backing":
+                logger.info("Backing off from enemies")
+                switch_status("laning", "backing")
             use_ability(2)
             right_click_direction(player, 300, -135)
     else:
@@ -487,6 +496,13 @@ def do_base(img: np.ndarray, player: Player,
     last_base = time.time()
 
     if sub_status == "shopping":
+        # If shopping takes too long, uncomment these lines to skip it
+        # exit_shop()
+        # return
+
+        # Note: For some reason, the OCR module seems to miss items occasionally.
+        # I'm just gonna say it's a feature that makes the bot more human-like. :)
+
         # Locate certain pieces of text in the shop
         if optimal is None:
             text = ocr.find_text(img)
@@ -496,32 +512,23 @@ def do_base(img: np.ndarray, player: Player,
         if is_debug:
             draw_results_text(img, text, display_scale=0.35)
         optimal = None
-        undo = None
         game_end = None
         game_end_continue = None
         for t in text:
             if close_match(t.text, "optimal"):
                 optimal = t
-            elif close_match(t.text, "undo"):
-                undo = t
             elif close_match(t.text, "victory") or close_match(t.text, "defeat"):
                 game_end = t
             elif close_match(t.text, "continue"):
                 game_end_continue = t
+
+        # Check if the game is over
         if game_end is not None and game_end_continue is not None:
-            # Game is over
             if close_match(game_end.text, "victory"):
                 logger.info("Match result: Victory!")
             else:
                 logger.info("Match result: Defeat")
             switch_status("end")
-            return
-        if optimal is None:
-            # Shop isn't open yet
-            logger.info("Opening the shop")
-            controller.move_mouse(1400, 700)
-            controller.press_key('p')
-            rsleep(0.5)
             return
 
         # Time bailout
@@ -530,16 +537,26 @@ def do_base(img: np.ndarray, player: Player,
             exit_shop()
             return
 
+        # Open the shop if it isn't open yet
+        if optimal is None:
+            logger.info("Opening the shop")
+            controller.move_mouse(1400, 700)
+            controller.press_key('p')
+            rsleep(0.5)
+            return
+
         # Locate gold amount and items to buy
         gold = None
         items = []
         for t in text:
             if not t.text.isdigit():
                 continue
-            if abs(t.get_y() - undo.get_y()) < 20:
+            comp_y = optimal.y1 + 540
+            if comp_y and abs(t.get_y() - comp_y) < 25:
                 # Gold amount
-                gold = int(t.text)
-            elif optimal.x1 - 30 <= t.x1 <= optimal.x1 + 600 and optimal.y1 - 30 <= t.y1 <= optimal.y1 + 350:
+                curr_gold = int(t.text)
+                gold = curr_gold if gold is None else max(gold, curr_gold)
+            elif optimal.x1 - 30 <= t.x1 <= optimal.x1 + 600 and optimal.y1 + 30 <= t.y1 <= optimal.y1 + 350:
                 # Items to buy
                 t.row = (t.y1 - optimal.y1 + 35) // 75
                 t.col = (t.x1 - optimal.x1 + 20) // 57
@@ -563,17 +580,18 @@ def do_base(img: np.ndarray, player: Player,
         # Buy as many items as possible
         bought_item = False
         if items:
-            t = items[0]
-            cost = int(t.text)
-            if int(cost) <= gold:
-                logger.info(f"Buying item at row {t.row} column {t.col} with cost {cost}")
-                controller.move_mouse_precise(t.get_x(), t.get_y() - 35)
-                controller.right_click(t.get_x(), t.get_y() - 35)
-                controller.move_mouse_precise(optimal.x1 + 250, optimal.y1 - 40)
-                gold -= cost
-                used_items.add((t.row, t.col))
-                rsleep(0.9)
-                bought_item = True
+            for t in items:
+                cost = int(t.text)
+                if int(cost) <= gold:
+                    logger.info(f"Buying item at row {t.row} column {t.col} with cost {cost}")
+                    controller.move_mouse_precise(t.get_x(), t.get_y() - 35)
+                    controller.right_click_only()
+                    gold -= cost
+                    used_items.add((t.row, t.col))
+                    rsleep(0.4)
+                    bought_item = True
+                else:
+                    break
 
         if not bought_item:
             # Exit the shop
@@ -611,10 +629,10 @@ def do_base(img: np.ndarray, player: Player,
         # Walk towards the lane
         if random.random() < 0.75:
             right_click_direction(player, 500, 45)
-        # Switch to laning once big allied turret or enemy is visible
+        # Switch to laning once big enemy turret is visible
         # Filter to only big objectives
         big_objectives = [o for o in ally_objectives if o.type == "big"]
-        if enemy_minions or enemy_players or enemy_objectives or (level < 6 and big_objectives):
+        if enemy_minions or enemy_players or enemy_objectives:
             logger.info(f"Switching to laning: {enemy_minions}, {enemy_players}, {enemy_objectives}, {big_objectives}")
             switch_status("laning", "passive")
     else:
@@ -769,11 +787,12 @@ def process(img: np.ndarray) -> None:
     for i in range(len(cooldowns)):
         cooldowns[i] -= time.time() - prev_time
         cooldowns[i] = max(0, cooldowns[i])
-    # logger.debug(f"New frame, FPS: {1 / (time.time() - prev_time):.1f}")
+    if random.random() < (time.time() - prev_time) / 5:
+        logger.debug(f"FPS: {1 / (time.time() - prev_time):.1f}")
     prev_time = time.time()
 
     # Get all game information
-    raw_minions, raw_players, raw_objectives = vision.find_all(img)
+    raw_minions, raw_players, raw_objectives = vision.find_all(img, scale=1)
     if is_debug:
         draw_results(img, raw_minions, raw_players, raw_objectives, display_scale=0.35)
 

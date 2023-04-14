@@ -216,9 +216,9 @@ def test_all(testpath: str, scale=1.0, display_scale=1.0) -> None:
 
 if __name__ == '__main__':
     game_vision.init_vision()
-    test_all(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)
-    # test_all(os.path.join(ROOT_DIR, "..", "..", "temp"), scale=1, display_scale=0.5)
-    # test_find_players(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)
-    # test_find_objectives(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)
-    # test_find_minions(os.path.join(ROOT_DIR, "..", "screenshots"), display_scale=0.7)
+    test_all(os.path.join(ROOT_DIR, "screenshots"), display_scale=0.7)
+    # test_all(os.path.join(ROOT_DIR, "..", "temp"), scale=1, display_scale=0.5)
+    # test_find_players(os.path.join(ROOT_DIR, "screenshots"), display_scale=0.7)
+    # test_find_objectives(os.path.join(ROOT_DIR, "screenshots"), display_scale=0.7)
+    # test_find_minions(os.path.join(ROOT_DIR, "screenshots"), display_scale=0.7)
     game_vision.close()

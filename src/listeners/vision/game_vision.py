@@ -2,8 +2,8 @@
 Contains helper functions for parsing info about the current game state.
 TODO: Lots of code reuse here, could probably be boiled down a LOT.
 """
-import math
 import multiprocessing as mp
+
 from dataclasses import dataclass
 from typing import List, Tuple
 
@@ -18,7 +18,7 @@ from listeners.vision import image_handler
 
 logger = color_logging.getLogger('vision', level=color_logging.DEBUG)
 
-dummy_img = cv.imread(os.path.join(ROOT_DIR, "..", "img", "minion.png"))
+dummy_img = cv.imread(os.path.join(ROOT_DIR, "img", "minion.png"))
 minion_template: np.ndarray
 player_template: np.ndarray
 big_objective_template: np.ndarray
@@ -39,16 +39,16 @@ pool_find_big_objectives: mp.Pool
 
 def init_pool_find_minions():
     global minion_template
-    minion_template = cv.imread(os.path.join(ROOT_DIR, "..", "img", "minion.png"))
+    minion_template = cv.imread(os.path.join(ROOT_DIR, "img", "minion.png"))
     logger.debug("Minions module loaded")
 
 
 def init_pool_find_players():
     global player_template
-    player_template = cv.imread(os.path.join(ROOT_DIR, "..", "img", "player.png"))
+    player_template = cv.imread(os.path.join(ROOT_DIR, "img", "player.png"))
     # OCR setup and warmup
     global ocr_reader
-    ocr_reader = easyocr.Reader(['en'], gpu=True)
+    ocr_reader = easyocr.Reader(['en'], gpu=True, verbose=False)
     ocr_reader.detect(dummy_img)
     ocr_reader.recognize(dummy_img)
     logger.debug("Players module loaded")
@@ -56,13 +56,13 @@ def init_pool_find_players():
 
 def init_pool_find_small_objectives():
     global small_objective_template
-    small_objective_template = cv.imread(os.path.join(ROOT_DIR, "..", "img", "small_objective.png"))
+    small_objective_template = cv.imread(os.path.join(ROOT_DIR, "img", "small_objective.png"))
     logger.debug("Small objective module loaded")
 
 
 def init_pool_find_big_objectives():
     global big_objective_template
-    big_objective_template = cv.imread(os.path.join(ROOT_DIR, "..", "img", "big_objective.png"))
+    big_objective_template = cv.imread(os.path.join(ROOT_DIR, "img", "big_objective.png"))
     logger.debug("Big objective module loaded")
 
 
@@ -467,3 +467,8 @@ def close() -> None:
     pool_find_small_objectives.join()
     pool_find_big_objectives.close()
     pool_find_big_objectives.join()
+
+
+# Fix for PyInstaller multiprocessing issues
+# https://github.com/pyinstaller/pyinstaller/issues/4865
+mp.freeze_support()

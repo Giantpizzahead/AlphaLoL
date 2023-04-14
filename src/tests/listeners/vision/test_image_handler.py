@@ -55,4 +55,4 @@ def test_matches(match_function: Callable[[np.ndarray, np.ndarray, ...], List[im
 
 if __name__ == '__main__':
     test_matches(image_handler.find_exact_matches,
-                 os.path.join(ROOT_DIR, "..", "img", "minion_match"), 5, 1, 1, 1.2)
+                 os.path.join(ROOT_DIR, "img", "minion_match"), 5, 1, 1, 1.2)
