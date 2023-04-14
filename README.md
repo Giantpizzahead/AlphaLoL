@@ -41,7 +41,7 @@ To prevent usage as a leveling bot, **games cannot be started automatically.** Y
 These instructions only work for Windows.
 
 1. Install Tesseract OCR and add it to your PATH. See this [installation guide](https://linuxhint.com/install-tesseract-windows/).
-2. Download and run the AlphaLoL installer from the [releases page]().
+2. Download and run the AlphaLoL installer from the [latest release](https://github.com/Giantpizzahead/AlphaLoL/releases/latest).
 
 When launching the bot, you might get some warnings related to Torch and Torchvision. You can safely ignore these.
 
