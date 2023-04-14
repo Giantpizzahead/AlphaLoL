@@ -1,3 +1,7 @@
+build/*
+dist/*
+logs/*
+venv/*
 private/
 screenshots/
 __pycache__/
