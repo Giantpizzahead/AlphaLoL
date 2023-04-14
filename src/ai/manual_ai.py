@@ -44,6 +44,7 @@ logger = color_logging.getLogger('ai', level=color_logging.DEBUG)
 is_debug = False
 curr_time = time.time()
 prev_time = time.time()
+last_log_time = time.time()
 
 # Game constants
 # q = Point-and-click, w = Cone, e = Shield, r = Bear!, d = Flash, f = Heal
@@ -73,12 +74,30 @@ last_seen_enemy = float('-inf')
 last_base = float('-inf')
 
 main_status = "base"
-sub_status = "shopping"
+sub_status = "loading"
 main_status_time = float('-inf')
 sub_status_time = float('-inf')
 
 
 # --- Main AI logic ---
+
+
+def reset() -> None:
+    """
+    Resets the AI.
+    """
+    global main_status, sub_status, main_status_time, sub_status_time, level, ability_levels, cooldowns, has_turret_aggro, last_seen_health, last_seen_enemy, last_base
+    main_status = "base"
+    sub_status = "loading"
+    main_status_time = float('-inf')
+    sub_status_time = float('-inf')
+    level = 0
+    ability_levels = [0, 0, 0, 0, 1, 1]
+    cooldowns = [0, 0, 0, 0, 0, 0]
+    has_turret_aggro = False
+    last_seen_health = 0
+    last_seen_enemy = float('-inf')
+    last_base = float('-inf')
 
 
 def has_stun_up(img: np.ndarray, player: Player) -> bool:
@@ -108,6 +127,7 @@ def do_laning(img: np.ndarray, player: Player,
         if sub_status_time >= 3:
             # Assume that the player died
             logger.info("Assuming that the player died")
+            rsleep(1)
             switch_status("base", "shopping")
         return
 
@@ -495,7 +515,7 @@ def do_base(img: np.ndarray, player: Player,
     global optimal, prev_gold, last_base
     last_base = time.time()
 
-    if sub_status == "shopping":
+    if sub_status == "shopping" or sub_status == "loading":
         # If shopping takes too long, uncomment these lines to skip it
         # exit_shop()
         # return
@@ -514,6 +534,9 @@ def do_base(img: np.ndarray, player: Player,
         optimal = None
         game_end = None
         game_end_continue = None
+        afk_text = None
+        leaverbuster_text = None
+        level_text = None
         for t in text:
             if close_match(t.text, "optimal"):
                 optimal = t
@@ -521,6 +544,20 @@ def do_base(img: np.ndarray, player: Player,
                 game_end = t
             elif close_match(t.text, "continue"):
                 game_end_continue = t
+            elif close_match(t.text, "afk"):
+                afk_text = t
+            elif close_match(t.text, "leaverbuster"):
+                leaverbuster_text = t
+            elif close_match(t.text, "level"):
+                level_text = t
+
+        # Check if still on loading screen
+        if sub_status == "loading":
+            if level_text is None:
+                return
+            logger.info("Loading complete")
+            switch_status("base", "shopping")
+            return
 
         # Check if the game is over
         if game_end is not None and game_end_continue is not None:
@@ -531,8 +568,27 @@ def do_base(img: np.ndarray, player: Player,
             switch_status("end")
             return
 
+        # Handle AFK warning
+        if afk_text is not None and leaverbuster_text is not None:
+            logger.warning("AFK warning detected, dismissing...")
+            # Dismiss the warning
+            click_x = (afk_text.x1 + leaverbuster_text.x1) // 2 - 16
+            for i in range(7):
+                click_y = (afk_text.y2 + leaverbuster_text.y2) // 2 + 60 + i * 40
+                controller.left_click(click_x, click_y)
+                rsleep(0.15)
+            # Move randomly
+            for i in range(7):
+                click_y = (afk_text.y2 + leaverbuster_text.y2) // 2 + 100
+                controller.right_click(click_x + rnum(0, 200, True), click_y + rnum(0, 150, True))
+                rsleep(0.4)
+            logger.warning("Dismissed, attempting to reset...")
+            # Back
+            switch_status("laning", "backing")
+            return
+
         # Time bailout
-        if main_status_time > 20:
+        if main_status_time > 10:
             logger.info("Exiting the shop (too much time)")
             exit_shop()
             return
@@ -551,8 +607,8 @@ def do_base(img: np.ndarray, player: Player,
         for t in text:
             if not t.text.isdigit():
                 continue
-            comp_y = optimal.y1 + 540
-            if comp_y and abs(t.get_y() - comp_y) < 25:
+            comp_y = optimal.y1 + 510
+            if comp_y and abs(t.get_y() - comp_y) < 60:
                 # Gold amount
                 curr_gold = int(t.text)
                 gold = curr_gold if gold is None else max(gold, curr_gold)
@@ -585,6 +641,7 @@ def do_base(img: np.ndarray, player: Player,
                 if int(cost) <= gold:
                     logger.info(f"Buying item at row {t.row} column {t.col} with cost {cost}")
                     controller.move_mouse_precise(t.get_x(), t.get_y() - 35)
+                    rsleep(0.3)
                     controller.right_click_only()
                     gold -= cost
                     used_items.add((t.row, t.col))
@@ -600,31 +657,8 @@ def do_base(img: np.ndarray, player: Player,
     elif sub_status == "going_to_lane":
         # Check if the player is visible
         if player is None:
-            # Check if the game is still on
-            logger.debug("Cannot find controllable player")
-            # Locate certain pieces of text in the shop
-            if optimal is None:
-                text = ocr.find_text(img)
-            else:
-                # Only need to search in a specific portion of the screen
-                text = ocr.find_text(img, optimal.x1 - 30, optimal.y1 - 30, optimal.x2 + 600, optimal.y2 + 575)
-            if is_debug:
-                draw_results_text(img, text, display_scale=0.35)
-            optimal = None
-            game_end = None
-            game_end_continue = None
-            for t in text:
-                if close_match(t.text, "victory") or close_match(t.text, "defeat"):
-                    game_end = t
-                elif close_match(t.text, "continue"):
-                    game_end_continue = t
-            if game_end is not None and game_end_continue is not None:
-                # Game is over
-                if close_match(game_end.text, "victory"):
-                    logger.info("Match result: Victory!")
-                else:
-                    logger.info("Match result: Defeat")
-                switch_status("end")
+            logger.info("Cannot find controllable player")
+            switch_status("laning", "unknown")
             return
         # Walk towards the lane
         if random.random() < 0.75:
@@ -778,7 +812,7 @@ def process(img: np.ndarray) -> None:
     Assumes that the AI is using locked camera.
     :param img: Screenshot of the game state.
     """
-    global curr_time, prev_time, level, main_status_time, sub_status_time
+    global curr_time, prev_time, last_log_time, level, main_status_time, sub_status_time
 
     # Parse the screenshot and update variables
     curr_time += time.time() - prev_time
@@ -787,8 +821,9 @@ def process(img: np.ndarray) -> None:
     for i in range(len(cooldowns)):
         cooldowns[i] -= time.time() - prev_time
         cooldowns[i] = max(0, cooldowns[i])
-    if random.random() < (time.time() - prev_time) / 5:
-        logger.debug(f"FPS: {1 / (time.time() - prev_time):.1f}")
+    if last_log_time + 5 < time.time():
+        logger.info(f"FPS: {1 / (time.time() - prev_time):.1f}")
+        last_log_time = time.time()
     prev_time = time.time()
 
     # Get all game information

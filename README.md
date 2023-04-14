@@ -60,7 +60,7 @@ To make the bot work, you'll need to configure some League game client options. 
 3. (Optional) Graphics = Low
 4. (Optional) Frame Rate Cap = 60 FPS
 
-Note: If the bot runs very slowly, lowering the resolution might help a lot. Try to keep a similar height though, since that's used to calculate ability ranges. Ex: Go for 1280x1024 instead of 1280x720.
+Note: If the bot runs very slowly, lowering the resolution might help a lot. Make sure to keep a similar height though (in the 1000-1100 range), since that's used to navigate the shop GUI and calculate ability ranges.
 
 **Interface**
 
@@ -78,6 +78,20 @@ Note: If the bot runs very slowly, lowering the resolution might help a lot. Try
 3. Auto attack = Checked
 
 When launching AlphaLoL, you'll see a menu displaying the hotkeys for the bot. In particular, press **Shift-T** to start and stop the bot.
+
+Also, there are some gameplay specific things you'll want to set up:
+- Enabled locked camera (press Y).
+- Create a custom item page containing a good Annie build, see https://app.mobalytics.gg/lol/champions/annie/build. 
+   There should only be one section. Name it "Optimal" (case-sensitive, the bot uses this to find the shop!).
+   Put all items, including components, in order. The bot will simply right-click on each item in the given order
+   whenever it can buy the next one. If done correctly, the bot should be able to just naively click one after the other
+   and get a full build. (Remember to keep the 6 item inventory limit in mind!)
+  - I use [this item set](https://pastebin.com/4ik52kCy), you can import it if you'd like.
+  - Whatever you do, **do not use Banshee's Veil**. It changes the health bar color, which breaks the bot.
+- Optional but highly recommended:
+- Use Flash on D and Heal on F for summoner spells.
+- Set a good rune page for Annie. Make sure to include Electrocute.
+
 
 ## Todo: Modern AI
 

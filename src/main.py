@@ -1,6 +1,5 @@
-"""
-TODO: Don't crash if bot is on when game isn't open
-"""
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 # Torch patch for PyInstaller
 # https://github.com/pytorch/vision/issues/1899
 def script_method(fn, _rcb=None):
@@ -54,6 +53,10 @@ def main():
                     logger.info("Mouse and keyboard control is now disabled.")
                 else:
                     logger.info("Mouse and keyboard control is now enabled.")
+            elif e == "reset":
+                logger.info("Resetting the bot...")
+                manual_ai.reset()
+                logger.info("Bot reset complete!")
             else:
                 logger.warning(f"Unknown event found in keyboard listener queue: {e}")
         if bot_active:
@@ -63,8 +66,8 @@ def main():
                 manual_ai.is_debug = True
                 manual_ai.process(window_tracker.take_game_screenshot())
             except RuntimeWarning:
-                logger.warning(f"Could not take screenshot, is the game open?")
-                time.sleep(1)
+                logger.info(f"Waiting for the game to load...")
+                time.sleep(10)
             except Exception:
                 logger.error(f"Unknown error: {traceback.format_exc()}")
                 time.sleep(0.5)

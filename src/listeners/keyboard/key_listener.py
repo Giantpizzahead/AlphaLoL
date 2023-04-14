@@ -32,6 +32,7 @@ def on_shift_h() -> None:
     Shift-H: Display help menu
     Shift-T: Toggle the entire bot
     Shift-C: Toggle the bot's ability to control the mouse and keyboard
+    Shift-9: Reset the bot to prepare for a new game
     Shift-0: Quit the program
     """)
 
@@ -58,6 +59,14 @@ def on_shift_0() -> None:
     """
     logger.debug("Exiting the application...")
     queue.put("quit")
+
+
+def on_shift_9() -> None:
+    """
+    Reset the bot.
+    """
+    logger.debug("Resetting the bot...")
+    queue.put("reset")
 
 
 def on_press(key) -> None:
@@ -97,6 +106,7 @@ hotkeys = [
     HotKey(HotKey.parse('<shift>+h'), on_shift_h),
     HotKey(HotKey.parse('<shift>+t'), on_shift_t),
     HotKey(HotKey.parse('<shift>+c'), on_shift_c),
+    HotKey(HotKey.parse('<shift>+9'), on_shift_9),
     HotKey(HotKey.parse('<shift>+0'), on_shift_0),
 ]
 listener = pynput.keyboard.Listener(on_press=on_press, on_release=on_release)
