@@ -60,6 +60,8 @@ To make the bot work, you'll need to configure some League game client options. 
 3. (Optional) Graphics = Low
 4. (Optional) Frame Rate Cap = 60 FPS
 
+Note: If the bot runs very slowly, lowering the resolution might help a lot. Try to keep a similar height though, since that's used to calculate ability ranges. Ex: Go for 1280x1024 instead of 1280x720.
+
 **Interface**
 
 1. HUD Scale = 15
