@@ -43,8 +43,6 @@ These instructions only work for Windows.
 1. Install Tesseract OCR and add it to your PATH. See this [installation guide](https://linuxhint.com/install-tesseract-windows/).
 2. Download and run the AlphaLoL installer from the [latest release](https://github.com/Giantpizzahead/AlphaLoL/releases/latest).
 
-When launching the bot, you might get some warnings related to Torch and Torchvision. You can safely ignore these.
-
 To make the bot work, you'll need to configure some League game client options. Note: These settings assume that you're starting out with default options. If you've changed hotkeys related to core gameplay (not pings), you might need to change those back to default.
 
 **Hotkeys**
