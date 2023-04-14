@@ -24,19 +24,19 @@ The bot can beat all tutorial parts consistently. It's also able to get an early
 
 Versus Beginner bots, the bot does quite well in the early laning phase, and is able to identify some all in opportunities for kills. However, the bot tends to get confused when it sees other players, and it can end up doing some pretty dumb things, like standing still in a 2 versus 3 fight. Despite all this, it's able to maintain a solid KDA.
 
-Current FPS of the bot hovers from 4 to 5 depending on how much stuff is on the screen.
+Current FPS of the bot ranges from 3 to 10 depending on available CPU/GPU power and how much stuff is on the screen.
 
 ## Usage
 
-If you want to play around with the bot yourself, PLEASE be responsible. Stick to AI or Custom games. **Don't ruin the game for real players.**
+If you want to play around with the bot yourself, PLEASE be responsible. Stick to AI or Custom games. **Don't ruin the game for real players.** If you do go into an actual match, be ready to take over when the bot does something dumb.
 
-If you do go into an actual match, be ready to take over when the bot does something dumb. Don't let the bot feed.
+To prevent usage as a leveling bot, **games cannot be started automatically.** You'll need to manually go through champ select, and activate the bot once the game starts.
 
-To prevent usage as a leveling bot, **games cannot be started automatically.** You'll need to manually go through champion select, and activate the bot once the game starts.
+While the bot is active, it'll give you a video window with the bot's interpretation of the game, along with a terminal window explaining the bot's logic (and other debug info).
 
 ## End User Setup
 
-**Warning:** Using a bot in an actual game is against the rules. You can get banned for it. Use at your own risk.
+*Warning: Using a bot in an actual game is against the rules. You can get banned for it. Use at your own risk.*
 
 These instructions only work for Windows.
 
@@ -76,12 +76,6 @@ To make the bot work, you'll need to configure some League game client options. 
 3. Auto attack = Checked
 
 When launching AlphaLoL, you'll see a menu displaying the hotkeys for the bot. In particular, press **Shift-T** to start and stop the bot.
-
-## Development Setup
-
-Warning: This repository is a bit of a mess. There are lots of old/unused files. Clone at your own risk :)
-
-Use a virtual environment! See `requirements.txt` for a list of dependencies.
 
 ## Todo: Modern AI
 
@@ -127,3 +121,9 @@ AI that uses a mix of manual logic and state-of-the-art deep learning to outperf
 ## Todo: Manual AI (COMPLETE)
 
 AI without machine learning - The "standard" way of doing it, with computer vision techniques (OpenCV) and hardcoded logic. I moved this list into `misc/TODO_MANUAL.md`.
+
+## Development Setup
+
+Warning: This repository is a bit of a mess. There are lots of old/unused files. Clone at your own risk :)
+
+Use a virtual environment! See `requirements.txt` for a list of dependencies.
