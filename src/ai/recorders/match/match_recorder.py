@@ -16,7 +16,7 @@ import mouse_recorder
 from listeners.vision.game_vision import Minion, Player, Objective
 from misc.definitions import ROOT_DIR
 from timer import get_game_time
-from listeners.vision import game_vision, window_tracker, game_ocr
+from listeners.vision import game_vision, window_tracker
 
 from misc import color_logging
 
@@ -234,7 +234,6 @@ def save_answer(game_time: float):
 
 def main():
     game_vision.init_vision()
-    game_ocr.init_ocr()
     logger.info("Press 0 at 5 seconds ingame time...")
     key_recorder.start_recording()
     mouse_recorder.start_recording()

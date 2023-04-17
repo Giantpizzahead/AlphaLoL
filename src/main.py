@@ -10,7 +10,6 @@ import torch.jit
 torch.jit.script_method = script_method
 torch.jit.script = script
 
-import os
 import time
 import traceback
 
@@ -18,7 +17,7 @@ from queue import Queue
 
 from ai import manual_ai
 from controllers import game_controller
-from listeners.vision import game_vision, window_tracker, game_ocr
+from listeners.vision import game_vision, window_tracker
 from listeners.keyboard import key_listener
 from misc import color_logging
 
@@ -28,8 +27,8 @@ q = Queue()
 
 def main():
     logger.info("Starting up!")
+    manual_ai.is_debug = True
     game_vision.init_vision()
-    game_ocr.init_ocr()
     key_listener.init_listener(q)
     logger.info("Ready to go! Press Shift-T to toggle the bot.")
     loop_active = True
@@ -47,6 +46,45 @@ def main():
                     logger.info("The bot is now enabled.")
                 else:
                     logger.info("The bot is now disabled.")
+            elif e == "choose_lane":
+                if bot_active:
+                    logger.warning("The bot must be disabled to choose a lane!")
+                    continue
+                logger.info("Choose a lane for the bot to play in (type in the terminal).")
+                time.sleep(0.3)
+                lane = input("Enter a lane ([t]op, [m]id, [b]ot): ")
+                if lane.lower().startswith("t"):
+                    manual_ai.assigned_lane = "top"
+                elif lane.lower().startswith("m"):
+                    manual_ai.assigned_lane = "mid"
+                elif lane.lower().startswith("b"):
+                    manual_ai.assigned_lane = "bot"
+                else:
+                    logger.warning(f"Invalid lane '{lane}'!")
+                    continue
+                logger.info(f"Bot will now play in the {manual_ai.assigned_lane} lane.")
+            elif e == "toggle_debug":
+                if bot_active:
+                    logger.warning("The bot must be disabled to toggle debug mode!")
+                    continue
+                manual_ai.is_debug = not manual_ai.is_debug
+                if manual_ai.is_debug:
+                    logger.info("Debug mode is now enabled.")
+                    logger.info("Choose a debug display scale (type in the terminal).")
+                    time.sleep(0.3)
+                    scale = input("Enter a scale relative to the game's resolution (default 0.5):")
+                    try:
+                        scale = float(scale)
+                    except ValueError:
+                        if scale != "":
+                            logger.warning(f"Invalid scale '{scale}'! Using default scale of 0.5.")
+                        else:
+                            logger.info("Using default scale of 0.5.")
+                        scale = 0.5
+                    logger.info(f"Debug mode scale set to {scale}. Toggle on the bot for changes to take effect.")
+                    manual_ai.debug_scale = scale
+                else:
+                    logger.info("Debug mode is now disabled.")
             elif e == "toggle_dry_run":
                 game_controller.dry_run = not game_controller.dry_run
                 if game_controller.dry_run:
@@ -61,9 +99,6 @@ def main():
                 logger.warning(f"Unknown event found in keyboard listener queue: {e}")
         if bot_active:
             try:
-                # chat_recorder.is_debug = True
-                # chat_recorder.process(window_tracker.take_game_screenshot())
-                manual_ai.is_debug = True
                 manual_ai.process(window_tracker.take_game_screenshot())
             except RuntimeWarning:
                 logger.info(f"Waiting for the game to load...")

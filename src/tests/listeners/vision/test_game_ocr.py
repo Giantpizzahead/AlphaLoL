@@ -4,7 +4,7 @@ import time
 
 import cv2 as cv
 
-import listeners.vision.game_ocr as game_ocr
+import listeners.vision.game_vision as game_vision
 from listeners.vision import image_handler
 from misc import color_logging
 from misc.definitions import ROOT_DIR
@@ -32,7 +32,7 @@ def test_find_text(testpath: str, scale=1.0, display_scale=1.0) -> None:
     for file in filepaths:
         img = image_handler.load_image(file)
         start_time = time.time()
-        text = game_ocr.find_text(img, scale=scale)
+        text = game_vision.find_text(img, scale=scale)
         end_time = time.time()
 
         # Display text boxes
@@ -58,5 +58,4 @@ def test_find_text(testpath: str, scale=1.0, display_scale=1.0) -> None:
 
 
 if __name__ == '__main__':
-    game_ocr.init_ocr()
     test_find_text(os.path.join(ROOT_DIR, "screenshots"), display_scale=0.7)

@@ -4,7 +4,7 @@
 
 This is an applied machine learning project.
 
-Version 0.2.2
+Version 0.2.3
 
 ## Demo
 
@@ -24,6 +24,13 @@ The bot can beat all tutorial parts consistently. It's also able to get an early
 
 Versus Beginner bots, the bot does quite well in the early laning phase, and is able to identify some all in opportunities for kills. However, the bot tends to get confused when it sees other players, and it can end up doing some pretty dumb things, like standing still in a 2 versus 3 fight. Despite all this, it's able to maintain a solid KDA.
 
+Most importantly, there are 2 key issues keeping the bot from doing well in non-1v1 situations (and some beginner bots like Lux):
+
+- Cannot see or dodge skillshots (they're too complicated and diverse to detect using manual vision)
+- Does not have object persistence (if it can't see an object, it forgets about it)
+
+These would likely need to be solved using deep learning techniques.
+
 Current FPS of the bot ranges from 3 to 10 depending on available CPU/GPU power and how much stuff is on the screen.
 
 ## Usage
@@ -38,12 +45,9 @@ While the bot is active, it'll give you a video window with the bot's interpreta
 
 *Warning: Using a bot in an actual game is against the rules. You can get banned for it. Use at your own risk.*
 
-These instructions only work for Windows.
+Download and run the AlphaLoL installer from the [latest release](https://github.com/Giantpizzahead/AlphaLoL/releases/latest).
 
-1. Install Tesseract OCR and add it to your PATH. See this [installation guide](https://linuxhint.com/install-tesseract-windows/).
-2. Download and run the AlphaLoL installer from the [latest release](https://github.com/Giantpizzahead/AlphaLoL/releases/latest).
-
-To make the bot work, you'll need to configure some League game client options. Note: These settings assume that you're starting out with default options. If you've changed hotkeys related to core gameplay (not pings), you might need to change those back to default.
+The bot only runs on Windows. Also, to make it work, you'll need to configure some League game client options. Note: These settings assume that you're starting out with default options. If you've changed hotkeys related to core gameplay (not pings), you *might* need to change those back to default.
 
 **Hotkeys**
 
@@ -53,12 +57,14 @@ To make the bot work, you'll need to configure some League game client options. 
 
 **Video**
 
-1. Resolution = 1920x1080
+1. Resolution = 1920x1080 or 1680x1050 or 1280x1024, see below
 2. (Optional) Window Mode = Windowed
 3. (Optional) Graphics = Low
 4. (Optional) Frame Rate Cap = 60 FPS
 
-Note: If the bot runs very slowly, lowering the resolution might help a lot. Make sure to keep a similar height though (in the 1000-1100 range), since that's used to navigate the shop GUI and calculate ability ranges.
+Note: If the bot runs slowly (<4 FPS when not shopping), lowering the resolution might help a lot. Make sure to keep a similar height though (in the 1000-1100 range), since that's used to navigate the shop GUI and calculate ability ranges.
+
+The bot seems to perform optimally at 4-5.5 FPS, decently at 2.5-4 FPS, and poorly below *or* above that range.
 
 **Interface**
 
@@ -86,10 +92,15 @@ Also, there are some gameplay specific things you'll want to set up:
    and get a full build. (Remember to keep the 6 item inventory limit in mind!)
   - I use [this item set](https://pastebin.com/4ik52kCy), you can import it if you'd like.
   - Whatever you do, **do not use Banshee's Veil**. It changes the health bar color, which breaks the bot.
-- Optional but highly recommended:
-- Use Flash on D and Heal on F for summoner spells.
-- Set a good rune page for Annie. Make sure to include Electrocute.
+- Manually open and move the shop page so that the item set you made is selected and the items are bunched near the
+   center of the screen. This isn't very strict, but you do need to place the *items* in the center (both horizontally
+   and vertically), not the whole shop screen itself. See the screenshot below.
+- Optional, but highly recommended for best results:
+  - Use Flash on D and Heal on F for summoner spells.
+  - Set and equip good rune page for Annie. Make sure to include Electrocute.
 
+![Demo shop screen setup](https://i.gyazo.com/a09aa37af3330434cf06ab787b75522d.jpg)
+*Example shop screen setup*
 
 ## Todo: Modern AI
 

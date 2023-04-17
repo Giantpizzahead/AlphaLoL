@@ -12,7 +12,6 @@ import numpy as np
 
 import controllers.game_controller as controller
 import listeners.vision.game_vision as vision
-import listeners.vision.game_ocr as ocr
 from listeners.vision import image_handler
 from misc import color_logging
 from misc.rng import rnum, rsleep
@@ -56,7 +55,7 @@ def buy_items(img: np.ndarray) -> None:
     global prev_gold, status
 
     # Locate certain pieces of text in the shop
-    text = ocr.find_text(img)
+    text = vision.find_text(img)
     if is_debug:
         draw_results_text(img, text, display_scale=0.35)
     builds_into = None

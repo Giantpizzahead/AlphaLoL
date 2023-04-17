@@ -10,6 +10,7 @@ from typing import List, Tuple
 import numpy as np
 import cv2 as cv
 import os
+import math
 import easyocr
 
 from misc import color_logging
@@ -19,11 +20,11 @@ from listeners.vision import image_handler
 logger = color_logging.getLogger('vision', level=color_logging.DEBUG)
 
 dummy_img = cv.imread(os.path.join(ROOT_DIR, "img", "minion.png"))
+ocr_reader: easyocr.Reader
 minion_template: np.ndarray
 player_template: np.ndarray
 big_objective_template: np.ndarray
 small_objective_template: np.ndarray
-ocr_reader: easyocr.Reader
 
 # These wider bounds detect everything, including stuff like ward health bars, which may be undesirable.
 lower_blue = np.array([90, 140, 95])
@@ -31,10 +32,36 @@ upper_blue = np.array([112, 240, 230])
 lower_red = np.array([0, 120, 100])
 upper_red = np.array([10, 230, 225])
 
+pool_find_text: mp.Pool
 pool_find_minions: mp.Pool
 pool_find_players: mp.Pool
 pool_find_small_objectives: mp.Pool
 pool_find_big_objectives: mp.Pool
+
+
+@dataclass
+class Text:
+    x1: float
+    y1: float
+    x2: float
+    y2: float
+
+    text: str
+    score: float
+
+    def get_x(self) -> float:
+        return (self.x1 + self.x2) / 2
+
+    def get_y(self) -> float:
+        return (self.y1 + self.y2) / 2
+
+
+def init_pool_find_text():
+    global ocr_reader
+    ocr_reader = easyocr.Reader(['en'], gpu=True, verbose=False)
+    ocr_reader.detect(dummy_img)
+    ocr_reader.recognize(dummy_img)
+    logger.debug("OCR module loaded")
 
 
 def init_pool_find_minions():
@@ -46,11 +73,6 @@ def init_pool_find_minions():
 def init_pool_find_players():
     global player_template
     player_template = cv.imread(os.path.join(ROOT_DIR, "img", "player.png"))
-    # OCR setup and warmup
-    global ocr_reader
-    ocr_reader = easyocr.Reader(['en'], gpu=True, verbose=False)
-    ocr_reader.detect(dummy_img)
-    ocr_reader.recognize(dummy_img)
     logger.debug("Players module loaded")
 
 
@@ -71,11 +93,13 @@ def init_vision() -> None:
     Initializes the vision module.
     """
     logger.info("Initializing vision modules (this might take a bit)...")
-    global pool_find_minions, pool_find_players, pool_find_small_objectives, pool_find_big_objectives
+    global pool_find_text, pool_find_minions, pool_find_players, pool_find_small_objectives, pool_find_big_objectives
+    pool_find_text = mp.Pool(processes=1, initializer=init_pool_find_text)
     pool_find_minions = mp.Pool(processes=1, initializer=init_pool_find_minions)
     pool_find_players = mp.Pool(processes=1, initializer=init_pool_find_players)
     pool_find_small_objectives = mp.Pool(processes=1, initializer=init_pool_find_small_objectives)
     pool_find_big_objectives = mp.Pool(processes=1, initializer=init_pool_find_big_objectives)
+    find_text(dummy_img)
     find_all(dummy_img, timeout=30)
     logger.info("Vision modules loaded!")
 
@@ -94,6 +118,65 @@ class Minion:
 
     def get_y(self) -> float:
         return (self.y1 + self.y2) / 2
+
+
+def _find_text(img: np.ndarray, x1=-1, y1=-1, x2=-1, y2=-1, scale=1.0, lower=True) -> List[Text]:
+    if x1 != -1:
+        # Crop image
+        img = img[int(y1):int(y2), int(x1):int(x2)]
+    else:
+        x1 = 0
+        y1 = 0
+    # Read text from image
+    if scale != 1:
+        img = image_handler.scale_image(img, scale)
+    raw_text = ocr_reader.readtext(img, text_threshold=0.5)
+    text = []
+    for r in raw_text:
+        # Skip text with low confidence
+        if r[2] < 0.4:
+            continue
+        nx1 = round(math.floor(min(r[0][0][0], r[0][3][0])) / scale + x1)
+        nx2 = round(math.ceil(max(r[0][1][0], r[0][2][0])) / scale + x1)
+        ny1 = round(math.floor(min(r[0][0][1], r[0][1][1])) / scale + y1)
+        ny2 = round(math.ceil(max(r[0][2][1], r[0][3][1])) / scale + y1)
+        text.append(Text(nx1, ny1, nx2, ny2, (r[1].lower() if lower else r[1]), r[2]))
+    logger.debug(f"Found {len(text)} text boxes in region ({x1}, {y1}, {x2}, {y2})")
+    return text
+
+
+def find_text(img: np.ndarray, x1=-1, y1=-1, x2=-1, y2=-1, scale=1.0, lower=True) -> List[Text]:
+    """
+    Find any text within the given region in the screenshot.
+    :param img: The screenshot to search in.
+    :param x1: The left x coordinate of the region.
+    :param y1: The top y coordinate of the region.
+    :param x2: The right x coordinate of the region.
+    :param y2: The bottom y coordinate of the region.
+    :param scale: The amount to scale the images by. Lower values will be faster, but less accurate.
+    :param lower: Whether to lowercase the text.
+    :return: A list of all the text in the screenshot, along with their locations.
+    """
+    return pool_find_text.apply(_find_text, (img, x1, y1, x2, y2, scale, lower))
+
+
+def _find_number(img: np.ndarray, scale=1.0) -> int:
+    if scale != 1:
+        img = image_handler.scale_image(img, scale)
+    result = ocr_reader.recognize(img, allowlist="0123456789", detail=0, paragraph=True)
+    logger.debug(f"Found number: {result}")
+    result = ''.join(result)
+    return int(result) if result.isdigit() else -1
+
+
+def find_number(img: np.ndarray, scale=1.0) -> int:
+    """
+    Find the (positive) number displayed in the image. There should only be 1 number in the image!
+    :param img: The image to search in.
+    :param scale: The amount to scale the image by. Lower values will be faster, but less accurate.
+    :return: The number shown in the image, or -1 if no number was found.
+    """
+    return pool_find_text.apply(_find_number, (img, scale))
 
 
 def _find_minions(img: np.ndarray, scale=1.0) -> List[Minion]:
@@ -263,29 +346,7 @@ def _find_players(img: np.ndarray, scale=1.0) -> List[Player]:
                 break
         else:
             mana = 0
-        # Attempt to parse level
-        # 1920 x 1080
-        x1 = m.x1 + 6
-        y1 = m.y1 + 8
-        x2 = x1 + 16
-        y2 = y1 + 12
-        img_level = img[y1:y2, x1:x2]
-        # disp = image_handler.scale_image(img_level, 4)
-        # cv.imshow("level", disp)
-        level = ocr_reader.recognize(img_level, allowlist="0123456789", detail=0, paragraph=True)
-        logger.debug(f"Level OCR: \"{' '.join(level)}\"")
-        if not level:
-            level = -1
-        else:
-            level = ' '.join(level)
-            if not level.isdigit():
-                level = -1
-            else:
-                level = int(level)
-                if level < 1 or level > 18:
-                    level = -1
-        player = Player(m.x1 + 20, m.y1 + 75, m.x2 - 20, m.y2 + 150, player_type != 2, player_type == 0, health, mana,
-                        level)
+        player = Player(m.x1 + 20, m.y1 + 75, m.x2 - 20, m.y2 + 150, player_type != 2, player_type == 0, health, mana, -1)
         players.append(player)
     logger.debug(f"Found {len(players)} players")
     return players
@@ -299,7 +360,21 @@ def find_players(img: np.ndarray, scale=1.0) -> List[Player]:
     :param scale: The amount to scale the images by. Lower values will be faster, but less accurate.
     :return: A list of all players in the screenshot. Level will be -1 if it can't be parsed.
     """
-    return pool_find_players.apply(_find_players, args=(img, scale))
+    players = pool_find_players.apply(_find_players, args=(img, scale))
+    # Attempt to parse player levels
+    for player in players:
+        x1 = player.x1 + 6 - 20
+        y1 = player.y1 + 8 - 75
+        x2 = x1 + 16
+        y2 = y1 + 12
+        img_level = img[y1:y2, x1:x2]
+        # disp = image_handler.scale_image(img_level, 4)
+        # cv.imshow("level", disp)
+        level = find_number(img_level)
+        if level < 1 or level > 18:
+            level = -1
+        player.level = level
+    return players
 
 
 @dataclass
@@ -442,23 +517,27 @@ def find_big_objectives(img: np.ndarray, scale=1.0) -> List[Objective]:
 def find_all(img, scale=1.0, timeout=5) -> Tuple[List[Minion], List[Player], List[Objective]]:
     """
     Finds players, turrets, and all objectives in the given screenshot.
+    Does not find text!
     :param img: The screenshot to search in.
     :param scale: The amount to scale the images by. Lower values will be faster, but less accurate.
     :param timeout: The maximum amount of time to wait for the searches to finish.
     :return: Lists of minions, players, and objectives.
     """
     raw_minions = pool_find_minions.apply_async(_find_minions, args=(img, scale))
-    raw_players = pool_find_players.apply_async(_find_players, args=(img, scale))
     raw_small_objectives = pool_find_small_objectives.apply_async(_find_small_objectives, args=(img, scale))
     raw_big_objectives = pool_find_big_objectives.apply_async(_find_big_objectives, args=(img, scale))
+    raw_players = find_players(img, scale)
+    # raw_players = pool_find_players.apply_async(_find_players, args=(img, scale))
+    # raw_players = raw_players.get(timeout=timeout)
     raw_minions = raw_minions.get(timeout=timeout)
-    raw_players = raw_players.get(timeout=timeout)
     raw_small_objectives = raw_small_objectives.get(timeout=timeout)
     raw_big_objectives = raw_big_objectives.get(timeout=timeout)
     return raw_minions, raw_players, raw_small_objectives + raw_big_objectives
 
 
 def close() -> None:
+    pool_find_text.close()
+    pool_find_text.join()
     pool_find_minions.close()
     pool_find_minions.join()
     pool_find_players.close()

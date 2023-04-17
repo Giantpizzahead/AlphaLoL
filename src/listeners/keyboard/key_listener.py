@@ -32,7 +32,9 @@ def on_shift_h() -> None:
     Shift-H: Display help menu
     Shift-T: Toggle the entire bot
     Shift-C: Toggle the bot's ability to control the mouse and keyboard
-    Shift-9: Reset the bot to prepare for a new game
+    Shift-L: Choose a lane for the bot to play in
+    Shift-8: Toggle debug mode and set debug display scale
+    Shift-9: Quick reset the bot (for a new game with *no setting changes*)
     Shift-0: Quit the program
     """)
 
@@ -51,6 +53,22 @@ def on_shift_c() -> None:
     """
     logger.debug("Toggling mouse and keyboard control...")
     queue.put("toggle_dry_run")
+
+
+def on_shift_l() -> None:
+    """
+    Prompts the user to choose a lane for the bot to play in.
+    """
+    logger.debug("Attempting to choose a lane...")
+    queue.put("choose_lane")
+
+
+def on_shift_8() -> None:
+    """
+    Toggles debug mode and sets the debug display scale.
+    """
+    logger.debug("Attempting to toggle debug mode and set debug display scale...")
+    queue.put("toggle_debug")
 
 
 def on_shift_0() -> None:
@@ -106,6 +124,8 @@ hotkeys = [
     HotKey(HotKey.parse('<shift>+h'), on_shift_h),
     HotKey(HotKey.parse('<shift>+t'), on_shift_t),
     HotKey(HotKey.parse('<shift>+c'), on_shift_c),
+    HotKey(HotKey.parse('<shift>+l'), on_shift_l),
+    HotKey(HotKey.parse('<shift>+8'), on_shift_8),
     HotKey(HotKey.parse('<shift>+9'), on_shift_9),
     HotKey(HotKey.parse('<shift>+0'), on_shift_0),
 ]

@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "AlphaLoL"
-#define MyAppVersion "0.2.2"
+#define MyAppVersion "0.2.3"
 #define MyAppPublisher "Giantpizzahead"
 #define MyAppURL "https://github.com/Giantpizzahead/AlphaLoL"
 #define MyAppExeName "AlphaLoL.exe"

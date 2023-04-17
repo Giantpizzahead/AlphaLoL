@@ -15,7 +15,7 @@ import editdistance
 
 import numpy as np
 
-import listeners.vision.game_ocr as ocr
+import listeners.vision.game_vision as game_vision
 from listeners.keyboard import key_listener
 from listeners.vision import image_handler
 from misc import color_logging
@@ -60,7 +60,7 @@ def do_loading(img: np.ndarray) -> None:
     """
 
     # Check if the loading screen text is still there
-    text = ocr.find_text(img, 200, 200, 2360, 1000, lower=False)
+    text = game_vision.find_text(img, 200, 200, 2360, 1000, lower=False)
     if len(text) <= 5:
         logger.info("Loading screen finished!")
         switch_status("ingame")
@@ -76,7 +76,7 @@ def do_ingame(img: np.ndarray) -> None:
     """
 
     # Check if the game has ended
-    end_result = ocr.find_text(img, 900, 450, 1700, 750)
+    end_result = game_vision.find_text(img, 900, 450, 1700, 750)
     for t in end_result:
         if (t.x2 - t.x1) * (t.y2 - t.y1) < 20000:
             continue  # Too small to be a real end result
@@ -85,7 +85,7 @@ def do_ingame(img: np.ndarray) -> None:
             return
 
     # Get last 3 lines of text from the chat
-    text = ocr.find_text(img, 75, 999, 850, 1075, lower=False)
+    text = game_vision.find_text(img, 75, 999, 850, 1075, lower=False)
     text.sort(key=lambda x: x.y1)
     for t in text:
         # Bailout
