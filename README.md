@@ -1,5 +1,7 @@
 # AlphaLoL
 
+*Warning: This bot has not been tested since the release of Vanguard, but since it makes no attempt to hide itself, it probably won't work anymore and will definitely be flagged.*
+
 100% original name
 
 This is an applied machine learning project.
@@ -102,50 +104,46 @@ Also, there are some gameplay specific things you'll want to set up:
 ![Demo shop screen setup](https://i.gyazo.com/a09aa37af3330434cf06ab787b75522d.jpg)
 *Example shop screen setup*
 
-## Todo: Modern AI
-
-AI that uses a mix of manual logic and state-of-the-art deep learning to outperform the old Manual AI.
-
-- [X] Begin to explore machine learning to create a better, more human-like AI
-- [ ] Take some deep learning classes to figure out how we're going to approach this
-
-### Milestones I: Back to Basics
-
-  - [ ] Relearn the basics of the game.
-  - [ ] Win an intro Coop vs AI game with a positive KDA & at least 3 kills
-  - [ ] Learn how to execute an all-in.
-  - [ ] Win a beginner Coop vs AI game with a positive KDA & at least 3 kills
-
-### Milestones II: The Challenge
-
-  - [ ] Learn how to dodge skillshots.
-  - [ ] Win an intermediate Coop vs AI game with a positive KDA & at least 3 kills
-  - [ ] Perform decently in a 1v1 vs an Iron player: Don't int in the first 3 minutes.
-  - [ ] Get my account banned for using a bot (probably) (:/)
-  - [ ] Learn how to use map awareness to avoid ganks.
-  - [ ] Perform well in a 1v1 vs an Iron player: Get a solo kill in the first 10 minutes.
-
-### Milestones III: The Extra Mile
-
-  - [ ] Make a macro play in a real game that involves going out of lane - helping your jungler, objectives, or roams.
-  - [ ] Win a Draft Pick game with >=0.5 KDA & at least 2 kills.
-  - [ ] Master the art of skillshot dodging. Obtain "The Jukes!" challenge medal as proof.
-  - [ ] Win a Draft Pick game with a positive KDA & at least 3 kills.
-
-### Capstones: Good Luck
-
-  - [ ] Win a Ranked Solo/Duo game with a positive KDA & at least 3 kills.
-  - [ ] Get out of Iron IV.
-  - [ ] Beat me in a 1v1 (first turret), but I play Soraka as a support - with support item and all.
-  - [ ] Get out of Iron III.
-  - [ ] Carry a Ranked Solo/Duo game with >=2 KDA & at least 10 kills.
-  - [ ] Get out of Iron II.
-  - [ ] Beat me in a 1v1 (first turret), but I play Morgana mid - skillshot dodging :o
-  - [ ] Promote to Bronze IV!
-
 ## Todo: Manual AI (COMPLETE)
 
-AI without machine learning - The "standard" way of doing it, with computer vision techniques (OpenCV) and hardcoded logic. I moved this list into `misc/TODO_MANUAL.md`.
+AI without machine learning - The "standard" way of doing it, with computer vision techniques (OpenCV) and hardcoded logic.
+
+- [X] Create basic controllers
+  - [X] Basic mouse movements, semi-realistic
+  - [X] Basic keyboard controls
+  - [X] Basic League-specific "combos" (ex: aim then press an ability)
+- [X] Use vision to locate objects on the screen
+  - [X] Locate champions within the camera's view, and identify their loyalty / health
+  - [X] Locate turrets within the camera's view, and identify their loyalty / health
+  - [X] Locate minions within the camera's view, and identify their loyalty / health
+- [X] Create an AI with simple, hardcoded logic by combining vision and controllers
+- [X] Optimize image processing so the frame rate is at least manageable
+- [X] Use vision to help the AI buy recommended items from the shop
+- [X] Create a simple GUI to visualize the AI's actions
+- [X] Cleanup the AI to make it perform better
+- [ ] Fix a bug where the AI can't detect health bars of players shielded by Banshee's Veil
+- [ ] Do some serious code cleanup and organizing so we don't hit a brick wall later on
+- [X] Make the bot easier to setup on end user machines (ex: standalone installer, no Python venv required)
+
+Nice-to-have but not as important things
+- [ ] Add support for various resolutions
+  - Do this by adding a relative scaled coordinate thing in window_tracker, and updating bounding boxes for vision (resolutions scale based on vertical size, horizontal only affects FOV)
+- [ ] Try (and fail) to support Mac
+- [X] Add error resiliency (handle infinite loops / exceptions gracefully)
+
+### Milestones
+
+  - [X] Perform a fixed coordinate combo (2/11/22)
+  - [X] Perform a combo aimed at a champion (2/14/22)
+  - [X] Beat Tutorial Part 1 with a positive KDA & at least 1 kill (2/14/22)
+  - [X] Beat Tutorial Part 2 with a positive KDA & at least 1 kill (2/14/22)
+  - [X] Beat Tutorial Part 3 with a positive KDA & at least 3 kills (2/15/22)
+
+### Capstones
+
+  - [X] Win an intro Coop vs AI game with a positive KDA & at least 3 kills (2/15/22, KDA: 23/2/2)
+  - [X] Win a beginner Coop vs AI game with a positive KDA & at least 3 kills (2/24/22, KDA: 5/0/3)
+  - [X] Win a 1v1 against me in a custom game (first turret), but I have to play Yuumi mid using a trackpad cause why not (2/24/22, KDA: 1/0/0)
 
 ## Development Setup
 
